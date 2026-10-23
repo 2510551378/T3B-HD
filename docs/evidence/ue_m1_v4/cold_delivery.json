@@ -1,0 +1,23 @@
+{
+  "schema": "t3b-v4-cold-runtime-delivery/v1",
+  "source_commit": "e98f20f",
+  "clone": "C:\\T3BHD_M1_v4_e31d1fc6",
+  "zip_sha256": "008cbc552c1efc118ed0fac641fc1547c52dc67d7fdeaaa988603c1aade277c6",
+  "zip_bytes": 22964574,
+  "payload_files": 662,
+  "asset_files": 655,
+  "initial_install_written": 662,
+  "repeat_install_written": 0,
+  "asset_identity_verified": true,
+  "launcher_validated": true,
+  "actual_d3d11_combat_checks": 14,
+  "actual_nullrhi_combat_checks": 14,
+  "source_geometry_probe_verified": true,
+  "continuous_motion_samples": 361,
+  "source_only_checks": {
+    "source_data": 57,
+    "action": 29,
+    "collision": 41
+  },
+  "scope": "Editor-hosted development combat slice; no cooked standalone claim"
+}

@@ -1,6 +1,6 @@
 # 运行资产下载与交接
 
-Git 源码树仅承载源码与文档，运行资产由版本化 GitHub Release 提供。最新 v4 的[发布目标](https://github.com/2510551378/T3B-HD/releases/tag/runtime-assets-20261023-v4)等待最终验证与上传；发布后按下文安装。以下目录保持仓库相对路径：
+Git 源码树仅承载源码与文档，运行资产由版本化 GitHub Release 提供。最新 v4 的 [Release](https://github.com/2510551378/T3B-HD/releases/tag/runtime-assets-20261023-v4) 已发布，公开下载校验通过，按下文安装。以下目录保持仓库相对路径：
 
 | 目录 | 用途 |
 | --- | --- |
@@ -12,13 +12,13 @@ Git 源码树仅承载源码与文档，运行资产由版本化 GitHub Release 
 
 ## 可安装的运行包
 
-v4 发布后，从[运行资产 Release](https://github.com/2510551378/T3B-HD/releases/tag/runtime-assets-20261023-v4) 下载匹配版本：
+从 [v4 运行资产 Release](https://github.com/2510551378/T3B-HD/releases/tag/runtime-assets-20261023-v4) 下载匹配版本：
 
 - [运行包 ZIP](https://github.com/2510551378/T3B-HD/releases/download/runtime-assets-20261023-v4/T3B-HD-runtime-assets-20261023-v4.zip)
 - [SHA-256 校验文件](https://github.com/2510551378/T3B-HD/releases/download/runtime-assets-20261023-v4/T3B-HD-runtime-assets-20261023-v4.zip.sha256)
 - [安装说明](https://github.com/2510551378/T3B-HD/releases/download/runtime-assets-20261023-v4/INSTALL_RUNTIME.md)
 
-本地构建副本保存在忽略的 `dist/`。发布前不要将预定链接当作已完成交付；以 Release 实际文件及其 `.sha256` 为准。
+本地构建副本保存在忽略的 `dist/`。公开 ZIP 已回读 22,964,574 bytes，SHA-256 与本地一致；交付记录见 [release delivery](evidence/ue_m1_v4/published_release.json)。
 
 同事先更新源码，在仓库根目录执行（用 sidecar 中的实际 SHA-256 替换占位符）：
 
@@ -42,7 +42,7 @@ UE 使用本机已验证的 5.8.4 / CL 58902052 / module BuildId `55116800`：
 
 启动器检查 UE BuildId、module 哈希和对应源文件，默认使用本次启动测试通过的 D3D11。相同引擎可直接加载预编译 module；引擎不同或代码变动时加 `-Build`，这需要 MSVC/SDK。首次启动可能编译 shader；运行包不是 cooked Unreal 独立游戏，画面与 gameplay 的限制见 `CURRENT_STATUS.md`。
 
-v4 ZIP SHA-256 以实际发布文件为准；当前 v4 冷 clone 安装和交付复验仍在进行。旧 v2 的[delivery report](evidence/runtime_bundle_delivery_v2.json)记录安装、655 资产身份、C source-spawn、UE 地图/probe 与 D3D11 启动通过，以及重复安装写入 0 个 payload、已修改文件被拒绝覆盖；该历史结果不替代 v4 验证。
+v4 ZIP SHA-256 为 `008cbc552c1efc118ed0fac641fc1547c52dc67d7fdeaaa988603c1aade277c6`，大小 22,964,574 bytes。全新 clone 安装 662 个文件、重复安装写入 0 个文件，655 资产校验、实际 D3D11 / NullRHI 战斗各 14 项及 source 顶点/连续动作核验均通过，见 [v4 delivery](evidence/ue_m1_v4/cold_delivery.json)。旧 v2 的[delivery report](evidence/runtime_bundle_delivery_v2.json)记录安装、655 资产身份、C source-spawn、UE 地图/probe 与 D3D11 启动通过，以及重复安装写入 0 个 payload、已修改文件被拒绝覆盖；该历史结果不替代 v4 验证。
 
 维护者重新打包时，必须显式指定已验证的 build copy、引擎与 SDL 许可证：
 

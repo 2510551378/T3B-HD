@@ -1,0 +1,10 @@
+{
+  "schema": "t3b-actual-ue-combat-validation/v1",
+  "rhi": "nullrhi",
+  "exit_code": 0,
+  "actual_runtime": true,
+  "passed": true,
+  "run_id": "4FD45ED2-4603-2AB7-C7DE-5A8D491C8637",
+  "checks": 14,
+  "module_sha256": "6f999930639122ac59b32b824419cc7966478bd45d2c3b037663e734d70b5e83"
+}

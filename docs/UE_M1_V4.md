@@ -51,6 +51,10 @@ python -X utf8 work/t3b_unreal/Tools/validate_m1_combat.py --project C:/src/T3B-
 
 证据摘要保存在 [v4 验证目录](evidence/ue_m1_v4/)，完整原始日志和 PNG 保存在维护者本地 `dist/ue_m1_20261023_v4/`。Release 附锁定、Overdive、受击和战斗结束截图。
 
+全新 clone 安装 v4 ZIP 后，D3D11 / NullRHI 各 14 项检查、655 资产身份、实际 source 顶点与 361 个连续动作采样均通过；重复安装写入 0 个文件。公开下载已回读并核对 SHA-256，见 [交付记录](evidence/ue_m1_v4/published_release.json)。
+
+[锁定画面](https://github.com/2510551378/T3B-HD/releases/download/runtime-assets-20261023-v4/M1_locked.png) · [Overdive 外侧镜头](https://github.com/2510551378/T3B-HD/releases/download/runtime-assets-20261023-v4/M1_overdive.png) · [受击](https://github.com/2510551378/T3B-HD/releases/download/runtime-assets-20261023-v4/M1_hit.png) · [战斗结束](https://github.com/2510551378/T3B-HD/releases/download/runtime-assets-20261023-v4/M1_clear.png)
+
 ## 诊断入口
 
 ```powershell

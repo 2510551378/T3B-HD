@@ -1,0 +1,66 @@
+{
+  "schema": "t3b-runtime-release-delivery/v1",
+  "url": "https://github.com/2510551378/T3B-HD/releases/tag/runtime-assets-20261023-v4",
+  "id": 421641525,
+  "tag": "runtime-assets-20261023-v4",
+  "source_commit": "e98f20fd6eb1534ad2b108d0dde4f72baae236f3",
+  "public_download_verified": true,
+  "download_bytes": 22964574,
+  "zip_sha256": "008cbc552c1efc118ed0fac641fc1547c52dc67d7fdeaaa988603c1aade277c6",
+  "assets": [
+    {
+      "name": "Aya_material_fixed.png",
+      "size": 835045,
+      "digest": "sha256:972e8be01152c23d1724c67d8983b6aa79c7f6e02462f71486b3f62aa96b25c5",
+      "browser_download_url": "https://github.com/2510551378/T3B-HD/releases/download/runtime-assets-20261023-v4/Aya_material_fixed.png"
+    },
+    {
+      "name": "Aya_material_legacy.png",
+      "size": 845111,
+      "digest": "sha256:485bd878b1a9b586a8dea0abc9c0c0e0220d4003522de43233eda2340b2e8b1f",
+      "browser_download_url": "https://github.com/2510551378/T3B-HD/releases/download/runtime-assets-20261023-v4/Aya_material_legacy.png"
+    },
+    {
+      "name": "INSTALL_RUNTIME.md",
+      "size": 1671,
+      "digest": "sha256:86b0540192500ffbf72b6f8ff2511d9e687467ce52f27cef96dd6ac09585dc0e",
+      "browser_download_url": "https://github.com/2510551378/T3B-HD/releases/download/runtime-assets-20261023-v4/INSTALL_RUNTIME.md"
+    },
+    {
+      "name": "M1_clear.png",
+      "size": 1403747,
+      "digest": "sha256:f4f20dbc0680456089829a696f57f6a992e457441b8a762bb2d40f719d16a8fc",
+      "browser_download_url": "https://github.com/2510551378/T3B-HD/releases/download/runtime-assets-20261023-v4/M1_clear.png"
+    },
+    {
+      "name": "M1_hit.png",
+      "size": 1450692,
+      "digest": "sha256:c6a8a6a0668b74337dba7b4640bcbe26306c8493a2e550989a8cf644f0174a7a",
+      "browser_download_url": "https://github.com/2510551378/T3B-HD/releases/download/runtime-assets-20261023-v4/M1_hit.png"
+    },
+    {
+      "name": "M1_locked.png",
+      "size": 1471500,
+      "digest": "sha256:f0d9014bf2390783f2b6c8f087a456aca14b4e253b223bfbe3879262edb41c3b",
+      "browser_download_url": "https://github.com/2510551378/T3B-HD/releases/download/runtime-assets-20261023-v4/M1_locked.png"
+    },
+    {
+      "name": "M1_overdive.png",
+      "size": 1317383,
+      "digest": "sha256:3b7038050a38638b31564447a60f80f0feaa90c8df0032ab086c268be121857d",
+      "browser_download_url": "https://github.com/2510551378/T3B-HD/releases/download/runtime-assets-20261023-v4/M1_overdive.png"
+    },
+    {
+      "name": "T3B-HD-runtime-assets-20261023-v4.zip",
+      "size": 22964574,
+      "digest": "sha256:008cbc552c1efc118ed0fac641fc1547c52dc67d7fdeaaa988603c1aade277c6",
+      "browser_download_url": "https://github.com/2510551378/T3B-HD/releases/download/runtime-assets-20261023-v4/T3B-HD-runtime-assets-20261023-v4.zip"
+    },
+    {
+      "name": "T3B-HD-runtime-assets-20261023-v4.zip.sha256",
+      "size": 105,
+      "digest": "sha256:ac979849fcd61bd31c55a21382434abbf67f8240c4994302c8d9187486984645",
+      "browser_download_url": "https://github.com/2510551378/T3B-HD/releases/download/runtime-assets-20261023-v4/T3B-HD-runtime-assets-20261023-v4.zip.sha256"
+    }
+  ]
+}

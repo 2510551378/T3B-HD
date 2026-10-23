@@ -6,7 +6,7 @@
 - 已有锁定、持续射击、30 发弹夹、装填、敌人追击/近战、HP、受击/死亡、重启及 Overdive 镜头返回。玩法和碰撞属于 PC M1 适配规则。
 - Overdive 为 0.32 s 进入、1 s 停留、0.32 s 返回、3 s 冷却的镜头适配，尚无原版宿主转移系统。
 - 真实枪口射线准星；Mouse pitch 当前只改镜头，不改恢复动作的枪管 pitch。Aya 和武器共享原 affine 动作时间及 120 ms 循环过渡。
-- UE 5.8.4 / CL 58902052 / module BuildId `55116800`；Editor 编译通过。最终模块 NullRHI / D3D11 严格战斗检查均 14 项通过；D3D11 4 shots / 4 hits / enemy HP 0 和 Overdive 返回通过，外侧镜头已目视复验。v4 冷 clone 交付验证与 Release 上传仍在进行。
+- UE 5.8.4 / CL 58902052 / module BuildId `55116800`；Editor 编译通过。最终模块 NullRHI / D3D11 严格战斗检查均 14 项通过；D3D11 4 shots / 4 hits / enemy HP 0 和 Overdive 返回通过，外侧镜头已目视复验。v4 冷 clone 安装、实际 D3D11 / NullRHI 战斗、source probe 与公开 Release 下载均已校验通过。
 - 源码检查共 127 项（57 source-data + 29 动作 + 41 碰撞）。
 
 安装 v4 匹配运行包后，从仓库根目录运行：

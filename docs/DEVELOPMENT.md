@@ -23,7 +23,7 @@ py -3 -m venv .venv
 
 ## 2. 同步资产
 
-v4 运行包将发布至 [Release](https://github.com/2510551378/T3B-HD/releases/tag/runtime-assets-20261023-v4)，发布后按 [ASSET_HANDOFF.md](ASSET_HANDOFF.md) 安装。`Content`、C 原型 `assets`、原版输入不在 Git 源码树中；clone 后需先安装匹配的运行包。不要用旧 staging 脚本覆盖包含新增字段的 manifest。
+v4 运行包已发布至 [Release](https://github.com/2510551378/T3B-HD/releases/tag/runtime-assets-20261023-v4)，按 [ASSET_HANDOFF.md](ASSET_HANDOFF.md) 安装。`Content`、C 原型 `assets`、原版输入不在 Git 源码树中；clone 后需先安装匹配的运行包。不要用旧 staging 脚本覆盖包含新增字段的 manifest。
 
 ## 3. C / SDL2 对照原型
 
@@ -62,7 +62,7 @@ try {
 
 WASD 移动、Shift 跑、Mouse View、RMB / Tab 锁定、LMB 连射、R 装填、E Overdive、Backspace 重启。Esc 释放鼠标并停止输入，单击重新捕获。准星对应实际枪管射线；Mouse pitch 只改变镜头。
 
-在 `-ReplayOnly` 模式用 `T3B.Replay.Probe` 输出 `Saved/SourceReplay/`，再运行 `Tools/verify_unreal_replay.py`。`T3B.Replay.MotionProbe` 与 `Tools/verify_m1_motion.py` 检查同步动作；精确命令和战斗验收见 [UE_M1_V4.md](UE_M1_V4.md)。本机最终模块的 NullRHI / D3D11 严格战斗检查均 14 项通过，D3D11 战斗流程及外侧 Overdive 镜头复验通过；v4 包交付复验仍在进行。
+在 `-ReplayOnly` 模式用 `T3B.Replay.Probe` 输出 `Saved/SourceReplay/`，再运行 `Tools/verify_unreal_replay.py`。`T3B.Replay.MotionProbe` 与 `Tools/verify_m1_motion.py` 检查同步动作；精确命令和战斗验收见 [UE_M1_V4.md](UE_M1_V4.md)。本机最终模块的 NullRHI / D3D11 严格战斗检查均 14 项通过，D3D11 战斗流程及外侧 Overdive 镜头复验通过；v4 全新 clone 安装、实际战斗与 source probe 也已复验通过。
 
 Cook 示例（尚未验收，不保证当前成功）：
 

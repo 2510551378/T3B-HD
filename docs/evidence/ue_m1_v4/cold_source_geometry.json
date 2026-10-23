@@ -1,0 +1,78 @@
+{
+  "schema": "t3b-actual-UE-procedural-CPU-verification/v1",
+  "passed": true,
+  "scope": "actual procedural component CPU vertex buffer/world positions only",
+  "probe_metadata": {
+    "path": "C:\\T3BHD_M1_v4_e31d1fc6\\work\\t3b_unreal\\Saved\\SourceReplay\\probe_metadata.json",
+    "sha256": "06cd5cb716d03f20343aef97abb12b121b6cc9f37117a8859dc4acdb9dba907f"
+  },
+  "engine_version": "5.8.4-58902052+++UE5+Release-5.8",
+  "run_id": "D50D2A4E40378A3B79E55A854A5A6672",
+  "manifest": {
+    "path": "C:\\T3BHD_M1_v4_e31d1fc6\\work\\t3b_unreal\\Content\\SourceData\\manifest.json",
+    "sha256": "c4c25310cf4b27962f0476623799ecaee52070b16a2ee387f6135d436127bfa6"
+  },
+  "tolerance_cm": 0.002,
+  "geometry": {
+    "Street": {
+      "vertices": 31656,
+      "max_world_position_error_cm": 5.000000055588316e-05,
+      "source": {
+        "path": "C:\\T3BHD_M1_v4_e31d1fc6\\work\\t3b_unreal\\Content\\SourceData\\scene\\original_street.bin",
+        "sha256": "08f7e9617f41910f45c32fd54a34eb8c2ae0d6199d1845044dcb76b2b705fcba"
+      },
+      "actual_probe": {
+        "path": "C:\\T3BHD_M1_v4_e31d1fc6\\work\\t3b_unreal\\Saved\\SourceReplay\\Street_world.csv",
+        "sha256": "02f580b48e02e65cda528d9130f05f622d654bb31a6f7a727954e03895e8b887"
+      }
+    },
+    "Aya": {
+      "samples": 60,
+      "vertices_per_sample": 3456,
+      "max_source_position_error_original_units": 3.076953123581916e-05,
+      "max_world_position_error_cm": 4.561816405157515e-05,
+      "synchronization_group": "aya_fire_reverse120",
+      "source": {
+        "path": "C:\\T3BHD_M1_v4_e31d1fc6\\work\\t3b_unreal\\Content\\SourceData\\models\\aya_approach_fire.bin",
+        "sha256": "24de0df5d4062546fd52cd40c5344e0ca088fb6683b4865b6e835b93ed71e219"
+      },
+      "actual_probe": {
+        "path": "C:\\T3BHD_M1_v4_e31d1fc6\\work\\t3b_unreal\\Saved\\SourceReplay\\Aya_world.csv",
+        "sha256": "0fee217c1096fdffec8251927489097b4941acc52ea1799b65520643e7fdaf39"
+      }
+    },
+    "Weapon": {
+      "samples": 60,
+      "vertices_per_sample": 243,
+      "max_source_position_error_original_units": 1.5696289068500846e-05,
+      "max_world_position_error_cm": 1.5742187500222826e-05,
+      "synchronization_group": "aya_fire_reverse120",
+      "source": {
+        "path": "C:\\T3BHD_M1_v4_e31d1fc6\\work\\t3b_unreal\\Content\\SourceData\\models\\weapon_approach_fire.bin",
+        "sha256": "34eb9bafc04262ddcf442fea2694cec4e7febfc8b6f63ddf10e4dff175894cca"
+      },
+      "actual_probe": {
+        "path": "C:\\T3BHD_M1_v4_e31d1fc6\\work\\t3b_unreal\\Saved\\SourceReplay\\Weapon_world.csv",
+        "sha256": "835bb2e0d9a7d708346b207f728c82d99a9709a1283c9c2d48c649bf8968e499"
+      }
+    },
+    "Twisted": {
+      "samples": 60,
+      "vertices_per_sample": 1800,
+      "max_source_position_error_original_units": 6.123828126192166e-05,
+      "max_world_position_error_cm": 9.166406249505599e-05,
+      "synchronization_group": "original_actor_source_60",
+      "source": {
+        "path": "C:\\T3BHD_M1_v4_e31d1fc6\\work\\t3b_unreal\\Content\\SourceData\\models\\twisted.bin",
+        "sha256": "1055d5b96c722c4348b2f81355b67fe3b32b3807d2ab9de103e410d5f2743ec6"
+      },
+      "actual_probe": {
+        "path": "C:\\T3BHD_M1_v4_e31d1fc6\\work\\t3b_unreal\\Saved\\SourceReplay\\Twisted_world.csv",
+        "sha256": "0aa29864580d877c3fe863fc8841cbe8898afd0fe82bca78752d74e6ded160ae"
+      }
+    }
+  },
+  "gpu_pixels_verified": false,
+  "materials_verified": false,
+  "gameplay_verified": false
+}

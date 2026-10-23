@@ -1,6 +1,6 @@
 # 当前交接状态
 
-更新：2026-10-23。最新实现为 [UE M1 v4 战斗切片](UE_M1_V4.md)；[v4 Release 目标](https://github.com/2510551378/T3B-HD/releases/tag/runtime-assets-20261023-v4)等待运行包交付验证与上传。正式目标仍是独立 PC 高清重制，当前使用 UE Editor-hosted 开发工程。
+更新：2026-10-23。最新实现为 [UE M1 v4 战斗切片](UE_M1_V4.md)；[v4 Release](https://github.com/2510551378/T3B-HD/releases/tag/runtime-assets-20261023-v4) 已发布，公开 ZIP 下载 SHA-256 校验通过。正式目标仍是独立 PC 高清重制，当前使用 UE Editor-hosted 开发工程。
 
 ## 已有证据
 
@@ -15,10 +15,10 @@
 | Overdive | PC 镜头适配：0.32 s 进入、1 s 停留、0.32 s 返回、3 s 冷却；尚无原版宿主/意识转移系统 |
 | 实际 UE 验证 | 最终模块 NullRHI 和 D3D11 严格战斗检查均 14 项通过；D3D11 记录 4 shots / 4 hits / enemy HP 0、Overdive 1 次返回；外侧 Overdive 截图已目视确认无穿躯体 |
 | 独立源码检查 | 57 source-data + 29 动作 + 41 碰撞，共 127 项；CI 不替代 UE 构建或画面检查 |
-| 运行资产 | 655 个原资产；Release 另含 C exe / SDL2 / 自有 UE module，未包含 UE 引擎；v4 冷 clone 交付验证与公开发布仍在进行 |
+| 运行资产 | 655 个原资产；Release 另含 C exe / SDL2 / 自有 UE module，未包含 UE 引擎；v4 冷 clone 安装、重复安装、655 资产校验、D3D11 / NullRHI 战斗与 source probe 已通过；公开下载校验见交付记录 |
 | 高清化 | 原版资源已接入；可选 4× atlas 重采样仅为原型；脸部、服装细节重建和完整高清美术尚未完成 |
 
-v3 的材质与连续动作证据保留在 [历史报告](UE_M1_V3.md)，其修复已包含于 v4。旧运行包的冷 clone 交付记录见 [v2 delivery](evidence/runtime_bundle_delivery_v2.json)，不能据此推断 v4 已完成相同验证。`docs/evidence/` 是本机报告副本，部分大文件和绝对路径仅在原机器存在。
+v3 的材质与连续动作证据保留在 [历史报告](UE_M1_V3.md)，其修复已包含于 v4。v4 全新 clone 交付记录见 [cold delivery](evidence/ue_m1_v4/cold_delivery.json)；旧记录保留在 [v2 delivery](evidence/runtime_bundle_delivery_v2.json)。`docs/evidence/` 是本机报告副本，部分大文件和绝对路径仅在原机器存在。
 
 ## 启动与操作
 
@@ -32,7 +32,7 @@ v3 的材质与连续动作证据保留在 [历史报告](UE_M1_V3.md)，其修�
 
 ## 接手后优先做
 
-1. 完成 v4 冷 clone 安装及发布包验收，再测试 cooked standalone Game。
+1. 在已通过的 v4 Editor-hosted 战斗切片基础上测试 cooked standalone Game。
 2. 恢复更多 idle / strafe / 受击 / 倒地动作及原状态/事件调度；当前 approach_fire 不是完整 locomotion。
 3. 继续原版光照、fog/stencil 和更多姿态的材质复核，再推进高清模型/贴图。
 4. 恢复真实武器 socket / muzzle 语义及 pitch 控制；真实右手 timeline 当前 loaded、未绑定，不混接不同采集。
