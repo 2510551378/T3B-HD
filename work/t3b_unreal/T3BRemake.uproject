@@ -1,0 +1,8 @@
+{
+  "FileVersion": 3,
+  "EngineAssociation": "5.8",
+  "Category": "Games",
+  "Description": "Original The 3rd Birthday source-data replay migration. Engine build and visual acceptance required.",
+  "Modules": [{"Name": "T3BRemake", "Type": "Runtime", "LoadingPhase": "PostConfigInit"}],
+  "Plugins": [{"Name": "ProceduralMeshComponent", "Enabled": true}, {"Name": "PythonScriptPlugin", "Enabled": true}, {"Name": "EditorScriptingUtilities", "Enabled": true}]
+}

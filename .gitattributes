@@ -1,0 +1,2 @@
+# Preserve existing LF/CRLF bytes; do not mass-normalize this imported workspace.
+* -text

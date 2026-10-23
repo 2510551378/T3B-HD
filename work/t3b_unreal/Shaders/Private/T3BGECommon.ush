@@ -1,0 +1,7 @@
+// Shared pixel arithmetic, also exercised by the native D3D11 GPU reference.
+float4 T3BGECombine(float4 TextureRGBA, float4 PrimaryRGBA)
+{
+    float4 Combined = TextureRGBA * PrimaryRGBA;
+    if (Combined.a <= 0.0) discard;
+    return float4(saturate(Combined.rgb * 2.0), Combined.a);
+}

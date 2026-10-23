@@ -1,0 +1,5 @@
+# Optional analysis/import tools. Source-only checks need only the Python stdlib.
+Pillow
+numpy
+capstone
+# unreal/bpy/bmesh are supplied by Unreal Editor/Blender, not pip packages.

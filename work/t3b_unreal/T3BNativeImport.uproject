@@ -1,0 +1,12 @@
+{
+  "FileVersion": 3,
+  "EngineAssociation": "5.8",
+  "Category": "Tools",
+  "Description": "Content-only isolated native glTF candidate import host; does not build or replace T3BRemake source replay.",
+  "Plugins": [
+    {"Name": "PythonScriptPlugin", "Enabled": true},
+    {"Name": "EditorScriptingUtilities", "Enabled": true},
+    {"Name": "Interchange", "Enabled": true},
+    {"Name": "InterchangeEditor", "Enabled": true}
+  ]
+}

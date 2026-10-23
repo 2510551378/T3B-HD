@@ -1,0 +1,28 @@
+{
+  "schema": "t3b-ue-game-build-marker-probe/v1",
+  "status": "passed",
+  "engine": "UE 5.8",
+  "target": "T3BRemake Win64 Development",
+  "build_project_copy": "C:\\T3BRemakeBuild_20261021_markerprobe\\T3BRemake.uproject",
+  "result": "Succeeded",
+  "actions": "35/35",
+  "toolchain": {
+    "msvc": "14.44.35207",
+    "windows_sdk": "10.0.22621.0"
+  },
+  "output": "C:\\T3BRemakeBuild_20261021_markerprobe\\Binaries\\Win64\\T3BRemake.exe",
+  "output_bytes": 332131840,
+  "output_sha256": "101f74d5a76a5e33c20750d79ea24bf79497718548acee1a9db75f89ac4e85de",
+  "runtime_change": {
+    "probe": "T3B.Replay.Probe",
+    "output": "Saved/SourceReplay/weapon_markers.json",
+    "fields": [
+      "original_vertex_weight",
+      "expected_ge_root_3x4",
+      "original_local_matrices",
+      "source_indices"
+    ],
+    "semantic_names_inferred": false
+  },
+  "scope": "UE game target compile/link and runtime probe serialization path; no Editor launch or GPU render claim."
+}

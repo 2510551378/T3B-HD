@@ -1,0 +1,16 @@
+{
+  "schema": "t3b-repository-handoff-verification/v1",
+  "scope": "Local source-only checks before first GitHub publication; no UE runtime/asset redistribution claim",
+  "python_syntax_files": 394,
+  "source_data_checks": 57,
+  "source_data_failures": 0,
+  "runtime_asset_manifest_files": 655,
+  "runtime_asset_manifest_bytes": 51527383,
+  "runtime_asset_manifest_local_verification": "passed",
+  "powershell_new_helper_syntax": "passed",
+  "credential_pattern_scan": "passed (heuristic; not a proof of absence)",
+  "forbidden_asset_binary_path_scan": "passed",
+  "engine_editor_runtime_tested_this_handoff": false,
+  "reviewed_files_before_this_report": 677,
+  "reviewed_bytes_before_this_report": 4515646
+}

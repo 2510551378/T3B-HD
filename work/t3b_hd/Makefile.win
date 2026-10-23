@@ -1,0 +1,13 @@
+SDL2_ROOT ?= ../third_party_dl/sdl2/SDL2-2.32.10/x86_64-w64-mingw32
+CC = gcc
+CFLAGS = -O2 -Wall -Wextra -std=c11 -D_MINGW32 -DSDL_MAIN_HANDLED -I$(SDL2_ROOT)/include/SDL2
+LIBS = -L$(SDL2_ROOT)/lib -lSDL2 -lopengl32 -lm
+
+all: t3b_hd.exe
+
+t3b_hd.exe: src/m1_main.c src/aya_source_skin.h src/combat_ray.h src/original_actor_runtime.h src/combat_triangle.h src/original_scene_runtime.h src/original_scene_collision.h src/combat_capsule_triangle.h
+	$(CC) $(CFLAGS) -o $@ $< $(LIBS)
+	-powershell -NoProfile -Command "Copy-Item -LiteralPath '$(SDL2_ROOT)/bin/SDL2.dll' -Destination 'SDL2.dll' -Force"
+
+clean:
+	del /Q t3b_hd.exe SDL2.dll 2>NUL || exit 0

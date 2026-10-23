@@ -1,0 +1,14 @@
+{
+  "schema": "t3b-toolchain-handoff/v1",
+  "scope": "Observed installed host prerequisites; not a new Editor build",
+  "msvc_folder": "14.44.35207",
+  "windows_sdk": "10.0.22621.0",
+  "netfxsdk_version": "4.8.03928",
+  "netfxsdk_path": "C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.8",
+  "netfxsdk_directory_exists": true,
+  "developer_pack_installer_log_terminal": [
+    "[18320:1A078][2026-10-21T10:13:44]i399: Apply complete, result: 0x0, restart: None, ba requested restart:  No",
+    "[18320:1A078][2026-10-21T10:13:44]i007: Exit code: 0x0, restarting: No"
+  ],
+  "editor_build_after_install_verified": false
+}

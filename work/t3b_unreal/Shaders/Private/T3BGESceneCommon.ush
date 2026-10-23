@@ -1,0 +1,25 @@
+// Shared source-state pixel arithmetic, compiled by UE and the native bridge.
+uint T3BSceneFogByte(float Value)
+{
+    uint Bits=asuint(Value), Exponent=Bits>>23;
+    if ((Bits&0x80000000)!=0 || Exponent<=118) return 0;
+    if (Exponent>126) return 255;
+    return ((Bits&0x007fffff)|0x00800000)>>(16+126-Exponent);
+}
+float4 T3BSceneShade(float4 TextureRGBA,float4 Primary,float Fog,uint Flags,uint3 FogRGB)
+{
+    float4 C=TextureRGBA*Primary;
+    if ((Flags&8192)==0 && C.a<=0) discard;
+    C.rgb=saturate(C.rgb*((Flags&8)!=0?2.0:1.0));
+    if ((Flags&16)!=0) {
+        uint F=T3BSceneFogByte(Fog);
+        uint3 RGB=(uint3)round(C.rgb*255.0);
+        C.rgb=((RGB*F+FogRGB*(255-F)+255)>>8)/255.0;
+    }
+    if ((Flags&1024)!=0) {
+        float TwiceAlpha=C.a*2.0;
+        C.rgb*=TwiceAlpha;
+        C.a=saturate(TwiceAlpha);
+    }
+    return C;
+}

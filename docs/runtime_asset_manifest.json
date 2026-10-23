@@ -1,0 +1,3288 @@
+{
+  "schema": "t3b-private-runtime-asset-manifest/v1",
+  "scope": "Local runtime handoff only; no asset payloads or download URLs",
+  "roots": [
+    "work/t3b_hd/assets",
+    "work/t3b_unreal/Content/SourceData",
+    "work/t3b_unreal/Content/T3B"
+  ],
+  "file_count": 655,
+  "total_bytes": 51527383,
+  "files": [
+    {
+      "path": "work/t3b_hd/assets/materials/aya_albedo.bmp",
+      "bytes": 196662,
+      "sha256": "4e839333efdf1489a6e852c606173bf83334dc5a82a341fae9e72f8e08fbf2dc"
+    },
+    {
+      "path": "work/t3b_hd/assets/materials/aya_draw_materials.json",
+      "bytes": 253082,
+      "sha256": "0566baabac1560444718f9eb22db788a33a8e3fb4b36a79f5639e5db8bc9bb2d"
+    },
+    {
+      "path": "work/t3b_hd/assets/materials/materials.ini",
+      "bytes": 372,
+      "sha256": "6686908cff943fff8f9b306ff1cf2f268518a39d71c795c8a82040dc091c4673"
+    },
+    {
+      "path": "work/t3b_hd/assets/materials/original_actor/materials.json",
+      "bytes": 50511,
+      "sha256": "886d751d67fc6fec9a3f782e6a49125849521282890e4c8570fee0f791f4958a"
+    },
+    {
+      "path": "work/t3b_hd/assets/materials/original_actor/original_actor_281a607e3647543c.bmp",
+      "bytes": 262266,
+      "sha256": "f3269b3a870f71686f29f57deedd7893d13bc56ff0cc4126bca6c0e4e10ed742"
+    },
+    {
+      "path": "work/t3b_hd/assets/materials/original_actor/original_actor_281a607e3647543c.clut.bin",
+      "bytes": 1024,
+      "sha256": "9431f3ba5e5d3af635b653413287433d3a8cda148672e1d260070b43f0b52e57"
+    },
+    {
+      "path": "work/t3b_hd/assets/materials/original_actor/original_actor_281a607e3647543c.png",
+      "bytes": 161100,
+      "sha256": "d10007127cff620dab6a5c0d5af0512a833ff71b9de82482c3f592e0cf606669"
+    },
+    {
+      "path": "work/t3b_hd/assets/materials/original_actor/original_actor_281a607e3647543c.texture.bin",
+      "bytes": 65536,
+      "sha256": "70ee2537a15f93923fa3e732db6ac5d5e0f5f91e6484d57779ba40bf15d406b7"
+    },
+    {
+      "path": "work/t3b_hd/assets/materials/original_actor/original_actor_materials.txt",
+      "bytes": 106,
+      "sha256": "0ab8d74173c024923beb5ecca31e2b3ec21df0c0776e565d04c41facdd4e1911"
+    },
+    {
+      "path": "work/t3b_hd/assets/materials/original_aya/aya_506dc44780fe0539.bmp",
+      "bytes": 262266,
+      "sha256": "f69e9a9d9e59006741cbe1f3c873cbe46a27e1fe48fb39346698ab006227009c"
+    },
+    {
+      "path": "work/t3b_hd/assets/materials/original_aya/aya_506dc44780fe0539.png",
+      "bytes": 132914,
+      "sha256": "d3127abef3ca69332396cc523302af5f26e837aa975a8c80a7c8c9dfd5ce766d"
+    },
+    {
+      "path": "work/t3b_hd/assets/materials/original_aya/aya_506dc44780fe0539_hd_x4.bmp",
+      "bytes": 4194358,
+      "sha256": "cc1eb7b474c5dbd5a2a61081c51ec90313028d97c4b320ed1c22307039b38bd1"
+    },
+    {
+      "path": "work/t3b_hd/assets/materials/original_aya/aya_original_materials.txt",
+      "bytes": 93,
+      "sha256": "53d013142470a5cfeea87767364985df2f260890750ae2542735ed4cbc100af7"
+    },
+    {
+      "path": "work/t3b_hd/assets/materials/original_aya/aya_original_materials_hd_x4.txt",
+      "bytes": 99,
+      "sha256": "fc1fddc257db62ef23286f6ccd72897c3e97d4fc3aef961b615f1a22f5cc32d4"
+    },
+    {
+      "path": "work/t3b_hd/assets/materials/original_weapon/aya_original_weapon_materials.txt",
+      "bytes": 103,
+      "sha256": "4fde07bb8bfe5e8984c4916f01928756ac9a5442bf625f91b3b1725313972b9a"
+    },
+    {
+      "path": "work/t3b_hd/assets/materials/original_weapon/aya_original_weapon_materials_hd_x4.txt",
+      "bytes": 109,
+      "sha256": "24a6c6931eeecc3c94d34a1b119e73d5f8cd8a3d6d90274a445beed02b66142d"
+    },
+    {
+      "path": "work/t3b_hd/assets/materials/original_weapon/aya_weapon_c280ce4c15928ffc.bmp",
+      "bytes": 16506,
+      "sha256": "780f26c00ca7b58f4ca4e149f2a1bfac876062bc853a0908adf8c002741e7e5d"
+    },
+    {
+      "path": "work/t3b_hd/assets/materials/original_weapon/aya_weapon_c280ce4c15928ffc.png",
+      "bytes": 9049,
+      "sha256": "03e050bc0c52032ff247afce94bfafd4c653256c086258f953512dd7ab4f7336"
+    },
+    {
+      "path": "work/t3b_hd/assets/materials/original_weapon/aya_weapon_c280ce4c15928ffc_hd_x4.bmp",
+      "bytes": 262198,
+      "sha256": "ba6f54bd16c1f71f3cd520160a27a135be37a0647eb6b431e190d907d5ed6ebc"
+    },
+    {
+      "path": "work/t3b_hd/assets/materials/README.md",
+      "bytes": 696,
+      "sha256": "47fb72c4cda0156ba61610338dd7be3c5b5eec304358c30c7283d372b066fc8c"
+    },
+    {
+      "path": "work/t3b_hd/assets/materials/scene_albedo.bmp",
+      "bytes": 12342,
+      "sha256": "982e5b59621625d0a007f201a522a43502ef63b05c8e7b71d74df8eff6d70e04"
+    },
+    {
+      "path": "work/t3b_hd/assets/materials/twisted_albedo.bmp",
+      "bytes": 12342,
+      "sha256": "eff529c477e1aa0e114bdb6b19f1c45ddfd4405287504e3b181f6f3b23a209a2"
+    },
+    {
+      "path": "work/t3b_hd/assets/models/aya.anchors.txt",
+      "bytes": 175,
+      "sha256": "83b84db5e6bacab76e76e8593856977069fd18e0754e192ef69594e3525569d1"
+    },
+    {
+      "path": "work/t3b_hd/assets/models/aya.pmf",
+      "bytes": 1556032,
+      "sha256": "d46ae265131cee396b81b49f4a998355eb5280f817a235032d480c6c13b2f657"
+    },
+    {
+      "path": "work/t3b_hd/assets/models/aya_ge_hierarchy_timeline.csv",
+      "bytes": 43435,
+      "sha256": "02627bc6a4474c53dc6a7b6a061036f2b85faaf07695d42b3c29b95607677ced"
+    },
+    {
+      "path": "work/t3b_hd/assets/models/aya_ge_matrices.json",
+      "bytes": 3515,
+      "sha256": "8487e633efed01816b3301c60d0c98882f929fead4b53a234d021e5e70ebbc4c"
+    },
+    {
+      "path": "work/t3b_hd/assets/models/aya_ge_semantic_timeline.csv",
+      "bytes": 15365,
+      "sha256": "0357ec1130cbea599c367b8be712cc449a2b9e1be26838085d4872f385503117"
+    },
+    {
+      "path": "work/t3b_hd/assets/models/aya_ge_timeline.csv",
+      "bytes": 14697,
+      "sha256": "113aa87fe7967b3c815565181732fd36583acc3fe3c2f1be07bbbe2cfea3134f"
+    },
+    {
+      "path": "work/t3b_hd/assets/models/aya_ge_timeline.json",
+      "bytes": 81053,
+      "sha256": "304ad69ba2a358492f8aab84aeb78cb4ee640c19a36faf3fdd3f114ad871d9c9"
+    },
+    {
+      "path": "work/t3b_hd/assets/models/aya_original_runtime.obj",
+      "bytes": 166217,
+      "sha256": "b29ef55a62501927adab5e6e41352fcabdf991a800582c9a379d8b01933b6523"
+    },
+    {
+      "path": "work/t3b_hd/assets/models/aya_skeleton.rig",
+      "bytes": 926,
+      "sha256": "b130c6ecfcff5033aca4afaee980f5306befc3c38516f50fc4ebe77b823a6a69"
+    },
+    {
+      "path": "work/t3b_hd/assets/models/aya_source_clips.txt",
+      "bytes": 220,
+      "sha256": "4cd5e39a9d57116cd2044e27bd56b8c7072f347a1e2c9ad97235ec3bc3b3ab27"
+    },
+    {
+      "path": "work/t3b_hd/assets/models/aya_source_reference.obj",
+      "bytes": 260347,
+      "sha256": "0e2a72879163d32d07b6107e79ccb253ab8be79196ff76f0f9a4ebaef109eda0"
+    },
+    {
+      "path": "work/t3b_hd/assets/models/aya_source_skin.bin",
+      "bytes": 372920,
+      "sha256": "df9606f0ef7d4b91b2ddba62d0efba87536fcfcf56d0c448acc15d69a71811b5"
+    },
+    {
+      "path": "work/t3b_hd/assets/models/aya_source_weapon.bin",
+      "bytes": 25000,
+      "sha256": "beb0ebd6ee27cc3143eb11529898339fa4375ef7a2102a2c27bdd2f38850c34d"
+    },
+    {
+      "path": "work/t3b_hd/assets/models/aya_true_right_hand_timeline.csv",
+      "bytes": 19135,
+      "sha256": "b71ca36be6b1296f4ab06d48fd528e72d7803dd66db9f5376c0b9ee6b0bfb811"
+    },
+    {
+      "path": "work/t3b_hd/assets/models/aya_weapon_runtime.obj",
+      "bytes": 1009,
+      "sha256": "7d86be5b5eaef624bb2356564aa9327217632da09ffa80fa13cac7cb4c32c9c4"
+    },
+    {
+      "path": "work/t3b_hd/assets/models/clips/aya_aim.bin",
+      "bytes": 353876,
+      "sha256": "439046a04d133487de4b5e972b7aa02b83dbf8674dffcb3e8e4e6232c58a98a5"
+    },
+    {
+      "path": "work/t3b_hd/assets/models/clips/aya_aim_dense_capture.bin",
+      "bytes": 474488,
+      "sha256": "80056ff559affc1746248f054b4e1572a4476e35065c3047b9ad71d3f3d5b004"
+    },
+    {
+      "path": "work/t3b_hd/assets/models/clips/aya_aim_dense_capture_reference.obj",
+      "bytes": 260130,
+      "sha256": "ccabc4381e4856509599968f6844cc7a7155aa414f854f1c1b04f7e46826f741"
+    },
+    {
+      "path": "work/t3b_hd/assets/models/clips/aya_aim_reference.obj",
+      "bytes": 259980,
+      "sha256": "3a33bfebdcd410c95f9e3b5c4df931d8a08888ce185563393dcd32fd928fdf21"
+    },
+    {
+      "path": "work/t3b_hd/assets/models/clips/aya_fire.bin",
+      "bytes": 351760,
+      "sha256": "910ac84290443b0ed49b3810338479cfbbeb01c762fefba203c12c5e3cfcb2fe"
+    },
+    {
+      "path": "work/t3b_hd/assets/models/clips/aya_fire_dense_capture.bin",
+      "bytes": 474488,
+      "sha256": "375fe670f332704ff46be4e19e31021ab75cb2b70fcab0baa4c66fef5ae3b881"
+    },
+    {
+      "path": "work/t3b_hd/assets/models/clips/aya_fire_dense_capture_reference.obj",
+      "bytes": 260115,
+      "sha256": "668d54d9a6873fc52658288bad3a23074cc435bc6433306ad79df5f0ee9e85d0"
+    },
+    {
+      "path": "work/t3b_hd/assets/models/clips/aya_fire_reference.obj",
+      "bytes": 260157,
+      "sha256": "a6c2ebe5dbbf4236d354131b8c6a4b8e9d003a6a7756332ccb532dc6c9baadd1"
+    },
+    {
+      "path": "work/t3b_hd/assets/models/clips/aya_fire_retreat_capture.bin",
+      "bytes": 474488,
+      "sha256": "24de0df5d4062546fd52cd40c5344e0ca088fb6683b4865b6e835b93ed71e219"
+    },
+    {
+      "path": "work/t3b_hd/assets/models/clips/aya_fire_retreat_capture_reference.obj",
+      "bytes": 260567,
+      "sha256": "ce2dc8aeec871252d9b73603b512868d468b2be2f3c1469645af1836665984c9"
+    },
+    {
+      "path": "work/t3b_hd/assets/models/clips/aya_fire_reverse_capture.bin",
+      "bytes": 474488,
+      "sha256": "6f7e39a203452cf6725b40efe354fdf92702c5dc2a0cc47add1823471bcb3070"
+    },
+    {
+      "path": "work/t3b_hd/assets/models/clips/aya_fire_reverse_capture_reference.obj",
+      "bytes": 259763,
+      "sha256": "b3092ebe278c63452d4dbacda740e2142597ed30635e1eb32242eddf88b37f3b"
+    },
+    {
+      "path": "work/t3b_hd/assets/models/clips/weapon_aim.bin",
+      "bytes": 24532,
+      "sha256": "36bec757cf5118bb96224e9e8ecad158567d79544ec4210c5bbd4ef193300360"
+    },
+    {
+      "path": "work/t3b_hd/assets/models/clips/weapon_aim_dense_capture.bin",
+      "bytes": 27496,
+      "sha256": "06197710a10da25250a48c5460a3e35b6882485c2bcf231ea10ac59c6c98834a"
+    },
+    {
+      "path": "work/t3b_hd/assets/models/clips/weapon_fire.bin",
+      "bytes": 24480,
+      "sha256": "44f2db419b44b5071773a00fbb14acd0354aeb308b0887fe6ae10459ff8aa594"
+    },
+    {
+      "path": "work/t3b_hd/assets/models/clips/weapon_fire_dense_capture.bin",
+      "bytes": 27496,
+      "sha256": "ea5a01c9adf42c27912d16b0a13ba70addf3b3126936bb56066d10674c0f61bf"
+    },
+    {
+      "path": "work/t3b_hd/assets/models/clips/weapon_fire_retreat_capture.bin",
+      "bytes": 27496,
+      "sha256": "34eb9bafc04262ddcf442fea2694cec4e7febfc8b6f63ddf10e4dff175894cca"
+    },
+    {
+      "path": "work/t3b_hd/assets/models/clips/weapon_fire_reverse_capture.bin",
+      "bytes": 27496,
+      "sha256": "46ea9ee9123665b2596b78b84c7e4eb32bcdaf5e9be9e49ea0ee13c430cd32b7"
+    },
+    {
+      "path": "work/t3b_hd/assets/models/guard.anchors.txt",
+      "bytes": 139,
+      "sha256": "ee181e5705105e3070157bcb06f92396b391ee0ad706f2641e202bc110562646"
+    },
+    {
+      "path": "work/t3b_hd/assets/models/guard.pmf",
+      "bytes": 610560,
+      "sha256": "1cf0c69dbe7a0c405199a2da10cdac3c1241fa5171075786b5631f5bf91372b0"
+    },
+    {
+      "path": "work/t3b_hd/assets/models/original_actor_source.bin",
+      "bytes": 212468,
+      "sha256": "1055d5b96c722c4348b2f81355b67fe3b32b3807d2ab9de103e410d5f2743ec6"
+    },
+    {
+      "path": "work/t3b_hd/assets/models/original_actor_source_reference.obj",
+      "bytes": 133202,
+      "sha256": "a1b957f0a24b3930f2b190d11ac954c99bc091aa19ecf694f86bb2fd79e6515a"
+    },
+    {
+      "path": "work/t3b_hd/assets/models/poses/ULJM05798_0001.obj",
+      "bytes": 165916,
+      "sha256": "d2c1f6139ce8a83f3dcaa507003d1a927b226b293c384233c4468f863037e65d"
+    },
+    {
+      "path": "work/t3b_hd/assets/models/poses/ULJM05798_0002.obj",
+      "bytes": 100325,
+      "sha256": "abded66925b8de1db7f884ffc7acff633a4df8ad75cf134eaf36a7c022af4e57"
+    },
+    {
+      "path": "work/t3b_hd/assets/models/poses/ULJM05798_0003.obj",
+      "bytes": 100325,
+      "sha256": "abded66925b8de1db7f884ffc7acff633a4df8ad75cf134eaf36a7c022af4e57"
+    },
+    {
+      "path": "work/t3b_hd/assets/models/poses/ULJM05798_0004.obj",
+      "bytes": 160460,
+      "sha256": "91caf8e503c143601e4f7de9f8d84dc8ef61448d1bc6e9781845bf202fd05b34"
+    },
+    {
+      "path": "work/t3b_hd/assets/models/poses/ULJM05798_0005.obj",
+      "bytes": 160460,
+      "sha256": "91caf8e503c143601e4f7de9f8d84dc8ef61448d1bc6e9781845bf202fd05b34"
+    },
+    {
+      "path": "work/t3b_hd/assets/models/poses/ULJM05798_0006.obj",
+      "bytes": 150372,
+      "sha256": "902ce327638589bb480cb247abfdacc210d3ba532546d8d3df58eac3fd68354c"
+    },
+    {
+      "path": "work/t3b_hd/assets/models/poses/ULJM05798_0007.obj",
+      "bytes": 122727,
+      "sha256": "c57c52c79df302d1c5e0b4d7be312861916f068da2aaacc7679f8d530d4fdbd0"
+    },
+    {
+      "path": "work/t3b_hd/assets/models/poses/ULJM05798_0008.obj",
+      "bytes": 125376,
+      "sha256": "6157b0bdfce4e366d507d7a59c360963618ac434c67095ff484d586f57d2cfdd"
+    },
+    {
+      "path": "work/t3b_hd/assets/models/poses/ULJM05798_0009.obj",
+      "bytes": 166217,
+      "sha256": "b29ef55a62501927adab5e6e41352fcabdf991a800582c9a379d8b01933b6523"
+    },
+    {
+      "path": "work/t3b_hd/assets/scene/index.csv",
+      "bytes": 112,
+      "sha256": "49c5836da180422a2c543d9ae3b066690c8fe08ecc67e128bbd22372fee97af0"
+    },
+    {
+      "path": "work/t3b_hd/assets/scene/nyc_block.col.txt",
+      "bytes": 262,
+      "sha256": "848c481989a50fdea8a3473e1c4de683a2ad352d62217a18f343f0213ef20bc9"
+    },
+    {
+      "path": "work/t3b_hd/assets/scene/nyc_block_uv.obj",
+      "bytes": 5685897,
+      "sha256": "0470e74b5ec56ee020c64449a7178e3497d321a7b93c98a8eaf130a2824c1dc1"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_0c6f7fac145cf663.clut.bin",
+      "bytes": 1024,
+      "sha256": "229556e1839db166138b76615c3ebd6541d380e6226b4ab7b4dfc650840f8e67"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_0c6f7fac145cf663.texture.bin",
+      "bytes": 2048,
+      "sha256": "b5cae44514b2b2fa24a86d0b58f8c122da4355f275c7321bd2c00b03765c5d40"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_0e061d6451fb376c.clut.bin",
+      "bytes": 1024,
+      "sha256": "a38157f342269fdcebb3550c1da7568520b34bcf2fd462d1541d054e1bcb496c"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_0e061d6451fb376c.texture.bin",
+      "bytes": 8192,
+      "sha256": "3a53cb7cbbc97631aac6f0d1cd9c291ee41d5079f993a1031c6ad8b7173ebd0c"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_0e8748e2ade35fce.clut.bin",
+      "bytes": 1024,
+      "sha256": "0415c40fe72ee8d712486d51fbfdd2a83a72f5cd9090f5d603e3546b7c09ac02"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_0e8748e2ade35fce.texture.bin",
+      "bytes": 2048,
+      "sha256": "7e8703e121ca5c318452b35fd28564979db2c09644e1641bcef4a97255f63b7b"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_0ef5fcb677bc521d.clut.bin",
+      "bytes": 1024,
+      "sha256": "876af6a34b48599eafad910658f169b7de3184946fe36fef6f2d43fd55352d34"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_0ef5fcb677bc521d.texture.bin",
+      "bytes": 4096,
+      "sha256": "04499504d6065aa1ec87508411279b11a863132f090f388ebb7ec70477cdd05d"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_14d5a3b78f52fa44.clut.bin",
+      "bytes": 1024,
+      "sha256": "e37848d975dd0826026525311c1fb065796a548f2b1a76b06ed973e869410923"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_14d5a3b78f52fa44.texture.bin",
+      "bytes": 8192,
+      "sha256": "66edf84bf725d4d2c3f1baf1287bbc4445ff61c4bad6b581c1a1fc2f670c483f"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_18b4197a4860c740.clut.bin",
+      "bytes": 1024,
+      "sha256": "310859c36688a5c46336190b263d88a08112b3b475982e29b9e0c32e4b6b3fb2"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_18b4197a4860c740.texture.bin",
+      "bytes": 8192,
+      "sha256": "7d3c2ba3451cae1caccb3551ad21bde2dc52d5f68af8b7929a772653c06d914d"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_1ba26277401bf410.clut.bin",
+      "bytes": 1024,
+      "sha256": "a283e3dc0ac0af99cd8ca0a4a5e27143fe9fc4605f1caa0c14631a9b3ebaf61f"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_1ba26277401bf410.texture.bin",
+      "bytes": 8192,
+      "sha256": "7bf82f61b17d3f244083a5a2e421037c74c287cbf608a7bc4bbb40ed28da7afc"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_1e368687866a7c2d.clut.bin",
+      "bytes": 1024,
+      "sha256": "83eaaa49e27508f6a7321d0b3bc589e1dddca5a00c6bbf49289be007cb2f85d2"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_1e368687866a7c2d.texture.bin",
+      "bytes": 8192,
+      "sha256": "4a0c52c19691d65d2f8b64837cc21b5408b198058f65459c3d44b8846cd741a6"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_1e76fcc21aecaf21.clut.bin",
+      "bytes": 1024,
+      "sha256": "9a739007423d83f93881524d82363e656ba0ca5352545b2638bb34149d9749b9"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_1e76fcc21aecaf21.texture.bin",
+      "bytes": 2048,
+      "sha256": "98d0d43032cedb6b47f7bf6e230d1e54f8bb19984407ddb34bf7bd4f51482467"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_20d2ad20ff57cd5e.clut.bin",
+      "bytes": 1024,
+      "sha256": "56adeca9a43b24cb48404813d3792e7106de2c5aaaafa08ce80dabebc8b73938"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_20d2ad20ff57cd5e.texture.bin",
+      "bytes": 4096,
+      "sha256": "15ca8baae08046bf4f4241ecb4d52facbd99e6d4de728ac97fef55945b7d7ef9"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_23682cde3cd4b056.clut.bin",
+      "bytes": 1024,
+      "sha256": "a8bc897ac393dfa915d8b901c60fadf9fae21f135a60a3fb12a081b22a87abc6"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_23682cde3cd4b056.texture.bin",
+      "bytes": 1024,
+      "sha256": "e488c46e99bf3509cd81a234a4bb1d4db892db9e89345b13ed8f9b3856368b8d"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_264c908e4fb15559.clut.bin",
+      "bytes": 1024,
+      "sha256": "2060e0c819bbff92f27c07ceaf128b9bb7e14b38087d25413d0758fecc3471a6"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_264c908e4fb15559.texture.bin",
+      "bytes": 8192,
+      "sha256": "1df49734fa04d6eec0ee66158c329cdffdf95c8cb2515e9ec5c27517509e7960"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_2d1d50dd4a5be7e4.clut.bin",
+      "bytes": 1024,
+      "sha256": "aa2cd1a907deb145388384eb5430f3a1be6911b672c072398809db5164d6853f"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_2d1d50dd4a5be7e4.texture.bin",
+      "bytes": 32768,
+      "sha256": "2b0226ee4bff60a4646939c51ab8f0a8e7f33957f31edcdaa6f6c89080ad1aaf"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_2e459bd68d274dc6.clut.bin",
+      "bytes": 1024,
+      "sha256": "7709fa0ace451ec7cbf7d3ea28289ebb137dcc9a6fd1243af232848fce1e4e53"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_2e459bd68d274dc6.texture.bin",
+      "bytes": 2048,
+      "sha256": "76fc88c73fd20f03dacdfe841a6c055602141022d6858dec82036ed9618591c1"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_3503748cd345572c.clut.bin",
+      "bytes": 1024,
+      "sha256": "d22699bbce1bae2a0dbac409e538954c6de13760c33d1ecb2fbb1955cdeb7431"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_3503748cd345572c.texture.bin",
+      "bytes": 8192,
+      "sha256": "7945603312204525dde4bc710ebf62dfe6b1865d4aa35e74e34994a7c872e248"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_3c0d6fe106e1f18b.clut.bin",
+      "bytes": 1024,
+      "sha256": "2bf8f5d98803896e3e00e04de5d13f760165a5fe9b9fb6c821c81788f9979934"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_3c0d6fe106e1f18b.texture.bin",
+      "bytes": 2048,
+      "sha256": "aabb5b4576f96c8b56cc6827c04e5daba27b20cc0234b320e065505e2367b532"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_3d8d203ccf2493fd.clut.bin",
+      "bytes": 1024,
+      "sha256": "0de249dd4b59776f6b74d3ded11e786e2edac84372fc11243b719a99b6ce84bd"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_3d8d203ccf2493fd.texture.bin",
+      "bytes": 4096,
+      "sha256": "7890937aeb852c1b76225aae5c1960cf84fe03279cb90bc5f97dde0b737145f7"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_3f83583d0a27fa04.clut.bin",
+      "bytes": 1024,
+      "sha256": "4ade20ec60f0d30d8d6db1a2354e21cf1c6f0437966cfbb1159c780d59501b38"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_3f83583d0a27fa04.texture.bin",
+      "bytes": 4096,
+      "sha256": "a76441ada5bfe467d605459b4121838099ee867d6027ef1d61275967f99adc22"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_489f4a34482bd5be.clut.bin",
+      "bytes": 1024,
+      "sha256": "1fd69c822ee9187b35acba2f5068c463a0c06262d65f6e412622998847e18d60"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_489f4a34482bd5be.texture.bin",
+      "bytes": 2048,
+      "sha256": "b0fcab6529c318c4fdb26542d6bb9dd0eb645b2fc0f9e4129ad25e40d8044593"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_4e6f67164054491d.clut.bin",
+      "bytes": 1024,
+      "sha256": "71c1054667d0d659f0be72f62fa371f8ef0d6333b4e27634742f26f0d4e2033f"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_4e6f67164054491d.texture.bin",
+      "bytes": 2048,
+      "sha256": "38140d28830110266190cbbaada36665a6edfa891dba0cc82db93e10781718a5"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_52c9e87445eac194.clut.bin",
+      "bytes": 1024,
+      "sha256": "861661090b690eede115f4b2d87f52695d3a22f58bbabb371a67b84cdf059624"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_52c9e87445eac194.texture.bin",
+      "bytes": 2048,
+      "sha256": "3e151e68546f3e5d2e87c0fcd136ea8cd4544d1734e16c28e5e4c20924998ee5"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_55c620a0828b852d.clut.bin",
+      "bytes": 1024,
+      "sha256": "99769dc60c21ba89c325005a1b4c5fd0fbe2fa1bb8423e032d9cb3925993ebeb"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_55c620a0828b852d.texture.bin",
+      "bytes": 1024,
+      "sha256": "910eba88ec0437f66a0f078a6c47e1eaf864ce6c484a88673602397290e57d49"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_5751df1ba07e2443.clut.bin",
+      "bytes": 1024,
+      "sha256": "e84b03473e82af437d390183632a9f4e8e2013ad2ebc2172e34f801213c3fc49"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_5751df1ba07e2443.texture.bin",
+      "bytes": 2048,
+      "sha256": "a64565d8b2a06416576c703b759d79309c9b275e82e4f7c4986192047d5ad04c"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_60a5d55480c4ee17.clut.bin",
+      "bytes": 1024,
+      "sha256": "ba91c10bd1b4425bcd96c882ba0b359e598b47f8171e7f9fa02429ee530e61ae"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_60a5d55480c4ee17.texture.bin",
+      "bytes": 2048,
+      "sha256": "0df79c97eb7f68f7c9824ff8ebf7aca56fffd2bc91307a34dd30ea86a2b2819d"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_62c76f8366d6a16f.clut.bin",
+      "bytes": 1024,
+      "sha256": "fba05dfff36e800b17ad872828679f6b056ec5dbd6f5898f6ea8df612e87d132"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_62c76f8366d6a16f.texture.bin",
+      "bytes": 4096,
+      "sha256": "0f535f2f4c00a7f62ad61dd301d4edafc98e10ffe7fd4ccda3f0fd4ed1004881"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_66966f1e24c08c21.clut.bin",
+      "bytes": 1024,
+      "sha256": "bd8c3dd5f911ac9b72cb266cfe0438fca3f0459dad9f57a345556092c77ac09c"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_66966f1e24c08c21.texture.bin",
+      "bytes": 8192,
+      "sha256": "b1a2e81ccccebda37ab272825282d90449c75dca42afdb2efd2a56c8fbe0fd6a"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_699da93288bcd630.clut.bin",
+      "bytes": 1024,
+      "sha256": "dcb48753bfc63b55e55260b13a3924f993b3d5ed6218b9a3bf7eecfef8ce061d"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_699da93288bcd630.texture.bin",
+      "bytes": 8192,
+      "sha256": "8e92aa42a6da86e05cda5aabab0b030db871ac7659ad3036dae746800108eef7"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_69fe361c610fc148.clut.bin",
+      "bytes": 1024,
+      "sha256": "40f45cb511da50946301e2a100ad61a1797d8dd784fa05dc1ea8b84c249d2262"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_69fe361c610fc148.texture.bin",
+      "bytes": 8192,
+      "sha256": "2da0d27f914428a1ed60bf6d0163da58c79d938cadecf6b7ad809ef66d39a7b6"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_6c09b3ed37b81791.clut.bin",
+      "bytes": 1024,
+      "sha256": "b9bfb153fa3b093b5eed0c109c06ab4208cc94a3f61c3f6913e3992a9db5fcb0"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_6c09b3ed37b81791.texture.bin",
+      "bytes": 8192,
+      "sha256": "13180bd83306b8f59556842428981911398d9a76c0ad711886383cc1f321885f"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_6ceebf78a8be87be.clut.bin",
+      "bytes": 1024,
+      "sha256": "9808f2ebd7dd64a91a72c5a506eb1b7eae9e1de9bfcbe5956340bbcbca80a31b"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_6ceebf78a8be87be.texture.bin",
+      "bytes": 2048,
+      "sha256": "1519c248f75bf84a370b30cf84e3dffe937526e5063cd0ebdc69866a7e256bea"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_6dbc377b90a7f221.clut.bin",
+      "bytes": 1024,
+      "sha256": "8fd1dbd81687d603ea705553a3e4a720e36639e82129e73e68ac327f69bdf057"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_6dbc377b90a7f221.texture.bin",
+      "bytes": 8192,
+      "sha256": "a98a8215a462d483819547a989763d57a7bc28c87c49ea5464f4e863a47b637a"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_70cc269b77e76c81.clut.bin",
+      "bytes": 1024,
+      "sha256": "d4fedb6af9a3d9a118154505dac1aefb0550166de84ef4f56906c7e1afe256d5"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_70cc269b77e76c81.texture.bin",
+      "bytes": 4096,
+      "sha256": "7cbee12f0201f8c04da2a344c82a446bc867d5a5173e68498f0cb4c55501c6c5"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_7575e58b3d897067.clut.bin",
+      "bytes": 1024,
+      "sha256": "7dd0d1ecb87b7afa87eecaa2662af356c8d9478b4c809f86843b1ab0bda30e08"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_7575e58b3d897067.texture.bin",
+      "bytes": 1024,
+      "sha256": "22fcc3e943e02aa1238b0ab9120ba775e7a2dce95f3a6488e73b1133a82f4dc9"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_7b9af6f36196d9ee.clut.bin",
+      "bytes": 1024,
+      "sha256": "b796952160fa9429806e9926e9ae27a5d057b3b2bcc9337ba944f6c62c7ab040"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_7b9af6f36196d9ee.texture.bin",
+      "bytes": 16384,
+      "sha256": "0ae9d2efb908d1972f2dcba8262539e6c8170644f7122b0bb410b0bee08c42f1"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_7db81c7776e1cf87.clut.bin",
+      "bytes": 1024,
+      "sha256": "3be97346ec63462ebbff9eab98cbe5e63d88aa0f552f816e26d5998c0e19bae4"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_7db81c7776e1cf87.texture.bin",
+      "bytes": 1024,
+      "sha256": "f10e5f2c080e4f0b5ccfef9f81227f1a13d036f34e61f106392e89e35003f88b"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_87bf8554a5d86ede.clut.bin",
+      "bytes": 1024,
+      "sha256": "51c67848b3b82d5d056b2065acae7b3fa4f9804716f55964735af1023fc84955"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_87bf8554a5d86ede.texture.bin",
+      "bytes": 8192,
+      "sha256": "bcf5eaba32f83877346b3be5a65a97454edac246070733bad39546f30511342e"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_8be3321880e12538.clut.bin",
+      "bytes": 1024,
+      "sha256": "9c52cdeda62ddbbcba6df48ced13ea87c4646bd2ff357accb93eba1bbccbd473"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_8be3321880e12538.texture.bin",
+      "bytes": 16384,
+      "sha256": "f1da5922c1d432f2f66085c0a7cf26f5e72d754fe24ac4be5ea726d586ece0d0"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_8f5b06f7dc1d97b8.clut.bin",
+      "bytes": 1024,
+      "sha256": "810c4251097a78163d7084df874dd0dad0149456461b576b74f905420d344fa5"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_8f5b06f7dc1d97b8.texture.bin",
+      "bytes": 8192,
+      "sha256": "32e798a997dc5489acffc0524e2bcc372d38bd7cd7eb6773cb30234174dec40c"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_9045c8a4a4c707c9.clut.bin",
+      "bytes": 1024,
+      "sha256": "310859c36688a5c46336190b263d88a08112b3b475982e29b9e0c32e4b6b3fb2"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_9045c8a4a4c707c9.texture.bin",
+      "bytes": 8192,
+      "sha256": "7d3c2ba3451cae1caccb3551ad21bde2dc52d5f68af8b7929a772653c06d914d"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_94be5e814427a8dd.clut.bin",
+      "bytes": 1024,
+      "sha256": "25023fa2d62a4b18804498f3125771830ecd5be6daf860526a154d1fc81a4254"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_94be5e814427a8dd.texture.bin",
+      "bytes": 8192,
+      "sha256": "b377b4019b3d18180bdc08b5aad6b3c06f125bfedb586059c80bd4d936d21dea"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_95e98c3419cf4000.clut.bin",
+      "bytes": 1024,
+      "sha256": "5e973d052d4ae129019bd35e8e2712d6ab8dbe96adc714256a072351792077cd"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_95e98c3419cf4000.texture.bin",
+      "bytes": 2048,
+      "sha256": "9cefd87647299dd9370a7ea047586b4817406b7318e1358bcf68f2c52b7326d9"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_996bdd71f3dec40b.clut.bin",
+      "bytes": 1024,
+      "sha256": "0fdd029f94c096d3f569bce4fdda46c0f667c35830ec9b1ed4da6663cd4ecc06"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_996bdd71f3dec40b.texture.bin",
+      "bytes": 8192,
+      "sha256": "98b8299d1f8cf76631f0d2d069f7855b77eccb0cd578d4765377b96b97b0c6cb"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_99a18dcec82ed955.clut.bin",
+      "bytes": 1024,
+      "sha256": "53b7b3afc35793517ea1f4d059ff99a979083bd4ae9d43de2f25806dfffede6b"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_99a18dcec82ed955.texture.bin",
+      "bytes": 8192,
+      "sha256": "32e798a997dc5489acffc0524e2bcc372d38bd7cd7eb6773cb30234174dec40c"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_9a30edbce1733401.clut.bin",
+      "bytes": 1024,
+      "sha256": "2b44ad4d7e03bd46883cb6ebc277764d6d432a1a25b8819345bfd2b1055b5bf4"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_9a30edbce1733401.texture.bin",
+      "bytes": 2048,
+      "sha256": "6e6093bb326fdb60ef7df51fade9f8ba03de9b785d2d2c6e6ff3bef46c55c51f"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_a438c2320aabcbb8.clut.bin",
+      "bytes": 1024,
+      "sha256": "d947b5e7061d1296a00169b6de5f259ff3d00cd3d9bcbcce9669a5622f20a25a"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_a438c2320aabcbb8.texture.bin",
+      "bytes": 8192,
+      "sha256": "00036079a7a7a702ba4ec32b9dcc64a74eea82b9f8c4f50f04afcafdcc1f2920"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_a73c4d2885a8c93a.clut.bin",
+      "bytes": 1024,
+      "sha256": "3d298383fd3f77bc9061354cdede7516eb4e601549b0b242b7bfaca3e6c7dcd3"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_a73c4d2885a8c93a.texture.bin",
+      "bytes": 8192,
+      "sha256": "334011f98b9ac3ed42c0e8aa5dea4122be5e56cdeba36ed300b8df9bdd9edda2"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_a7677ddf7ea2cc74.clut.bin",
+      "bytes": 1024,
+      "sha256": "545359df4ebccf60ac39e9f63d6b834e9ab485c8b233f25ed6b07137d3d07b39"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_a7677ddf7ea2cc74.texture.bin",
+      "bytes": 512,
+      "sha256": "fce4aca8a2121795d668d8d02b353de61352ed4a0334a735fe64b49252a099c4"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_a8114af11bfd222d.clut.bin",
+      "bytes": 1024,
+      "sha256": "dcdda295a5aa05a26aff97d5abbacf1b0c2d4c14334f522d7cbb382b90136e6b"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_a8114af11bfd222d.texture.bin",
+      "bytes": 8192,
+      "sha256": "87ff7e7a4cf12ec7a415764536bc3f50fb3cfd148ab8ba1d7abd09726e030fc7"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_ab0a2dedf505e587.clut.bin",
+      "bytes": 1024,
+      "sha256": "20fdc2d844c89f5ee1dc27d094c3b42dc05547941a63b2d9b239c469e21f8634"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_ab0a2dedf505e587.texture.bin",
+      "bytes": 4096,
+      "sha256": "2b511d9ba7cfc8cd9fe15d9d7ea75251c0d92e97ee6cb900f29b28a0f290dfb0"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_b09338697bd6be70.clut.bin",
+      "bytes": 1024,
+      "sha256": "2b44ad4d7e03bd46883cb6ebc277764d6d432a1a25b8819345bfd2b1055b5bf4"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_b09338697bd6be70.texture.bin",
+      "bytes": 2048,
+      "sha256": "6e6093bb326fdb60ef7df51fade9f8ba03de9b785d2d2c6e6ff3bef46c55c51f"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_b59f2d42045bfaac.clut.bin",
+      "bytes": 1024,
+      "sha256": "8558f533c3968eaa9b37c3a8b51cac3eaf1e41fe1265f6054c8d9bc1ef78fea3"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_b59f2d42045bfaac.texture.bin",
+      "bytes": 16384,
+      "sha256": "31b907571028a86e745f05d982a6e710b97ffbadbe19d1d7b09a9a7086e90022"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_bc49aba4c5ea528b.clut.bin",
+      "bytes": 1024,
+      "sha256": "d1d9f095bc3f91dada25f57ab5cd8e09a59fd241b8123b754081965ba23be5b2"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_bc49aba4c5ea528b.texture.bin",
+      "bytes": 2048,
+      "sha256": "a1dcd292cb59057bc90aacb50ee9107d4384a3039a65ff946148572708c4336b"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_bed04af6a3337105.clut.bin",
+      "bytes": 1024,
+      "sha256": "82794c8a4f16144a03e454f86adf7b67527f454492f2007678025bae9fd57d25"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_bed04af6a3337105.texture.bin",
+      "bytes": 8192,
+      "sha256": "44a5ebe0a0b25b37f21afd0e38c1776cd65a1bae45f7e6dbdd134c54266daf93"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_bf7e2fa2bcb6fa7d.clut.bin",
+      "bytes": 1024,
+      "sha256": "bbe55f9ccbdda1703317fe3fbff9a9d1adb4c4466eac59becb679ca81c979e19"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_bf7e2fa2bcb6fa7d.texture.bin",
+      "bytes": 8192,
+      "sha256": "eb4ea5cb17177a770e35b6aedc53e79e0830222dea14d6d06f360241085a4d49"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_c005f7ebaeadc68b.clut.bin",
+      "bytes": 1024,
+      "sha256": "c118017d8f2f58720bfc4d5e1e5460ff3fbb8d8062ecffa35686f3c68b149470"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_c005f7ebaeadc68b.texture.bin",
+      "bytes": 2048,
+      "sha256": "dae77267c676783fccb80281d5feecd447d879bf72e287ff91a48636a862334c"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_c18f72d600ff25ef.clut.bin",
+      "bytes": 1024,
+      "sha256": "39af9c0d3d3d7ed095785cf3d98ec2ea3f2b8f5e4752deb2109fdebb991fe765"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_c18f72d600ff25ef.texture.bin",
+      "bytes": 1024,
+      "sha256": "12f5441b06a8b4a50854f2dc665b3ef7d9bad79feda984364a72d6aaacaac65c"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_c1eed19cf9f76ca5.clut.bin",
+      "bytes": 1024,
+      "sha256": "a801e1958082275af85ad6464c5b0b83eb26f4be9ee731a5d97827ea4639b245"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_c1eed19cf9f76ca5.texture.bin",
+      "bytes": 512,
+      "sha256": "510c0d061049e7a622c1ee7c343b05e7a440b9228439918ae9d225ae5b6a8473"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_c202f3e65f48993f.clut.bin",
+      "bytes": 1024,
+      "sha256": "5e33c8d6e3ceaa5af29a62f5c0aa1e060e9579253131dbbd9d91c86a27afc707"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_c202f3e65f48993f.texture.bin",
+      "bytes": 2048,
+      "sha256": "d3152c2a0434d120a8e01359cc65be9c03bda1d11555edf02f47e873095b8c47"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_c2a7f71d5da9bcb2.clut.bin",
+      "bytes": 1024,
+      "sha256": "36bd1dd3e14558e9b25c20dd045ebd12e3691459f44a9b30388624dc939ae302"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_c2a7f71d5da9bcb2.texture.bin",
+      "bytes": 4096,
+      "sha256": "a25980889cdc1b7bbe0cfa78d741cb2063022daffa6aeaed6f4510ddfeb2fa52"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_c9de9616941b5c1a.clut.bin",
+      "bytes": 1024,
+      "sha256": "128e929151f9baff34e7fe8046ad1bbd37e272be012c97e1894c955168e79e4e"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_c9de9616941b5c1a.texture.bin",
+      "bytes": 8192,
+      "sha256": "b1a2e81ccccebda37ab272825282d90449c75dca42afdb2efd2a56c8fbe0fd6a"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_cbbe1ad662bf05f7.clut.bin",
+      "bytes": 1024,
+      "sha256": "8b2a564556fe60738b2fe3597ebaabb56064de7b93dd98cfe41b73f83c578b28"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_cbbe1ad662bf05f7.texture.bin",
+      "bytes": 8192,
+      "sha256": "7a50805a2ceaff440e59220e634cc7a83578f86197702fb8be3edcbb30d48add"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_d4612902f7195655.clut.bin",
+      "bytes": 1024,
+      "sha256": "2bf8f5d98803896e3e00e04de5d13f760165a5fe9b9fb6c821c81788f9979934"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_d4612902f7195655.texture.bin",
+      "bytes": 2048,
+      "sha256": "aabb5b4576f96c8b56cc6827c04e5daba27b20cc0234b320e065505e2367b532"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_d6f7dfc5a4d72241.clut.bin",
+      "bytes": 1024,
+      "sha256": "eac0f81a1a675e98a5c0a3ea665081e9755032ffeef3f985fa61cf0f56cff60e"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_d6f7dfc5a4d72241.texture.bin",
+      "bytes": 2048,
+      "sha256": "de17c8962a39d41f66ba8e3f73c73022b5f840b2e38972c343b2cb0e88c7dcc0"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_d7ce10537da86ec2.clut.bin",
+      "bytes": 1024,
+      "sha256": "411afdc09c100df089107b4e546d8a62fac0e4d07c584ab1c9d03c27c3ad12b3"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_d7ce10537da86ec2.texture.bin",
+      "bytes": 2048,
+      "sha256": "8b8db3e214c9e84173d1c9e38b7cf904282e266e0b534f332301bc6d025d9093"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_da8fb17e9a41b338.clut.bin",
+      "bytes": 1024,
+      "sha256": "a99fdbfd2c93a4b126fea046a0615de8a60c567c109b3b7adec257edd6a875f2"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_da8fb17e9a41b338.texture.bin",
+      "bytes": 8192,
+      "sha256": "a515fdc65f594c389d757f51cf382a86f4cdf6fec9b4d8ba93d1c89dba87e23a"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_dd3645317152ab7a.clut.bin",
+      "bytes": 1024,
+      "sha256": "da55b3042109f2278792b5c7fd88bea153226147e954e2b6793c80c6f3fc0ee8"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_dd3645317152ab7a.texture.bin",
+      "bytes": 4096,
+      "sha256": "480f0310d7e69609aa74cd459fb35452acb8c769302b7aace8bfc4468967918d"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_de778b422260ddd4.clut.bin",
+      "bytes": 1024,
+      "sha256": "39952107816f07d0720958c571e72cfb486b585ad64b559f5bd0b861f4c14c03"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_de778b422260ddd4.texture.bin",
+      "bytes": 4096,
+      "sha256": "f2efef152696fdd8767e72e1fee8accdd886448c062b6a0b9d27d7d6dcd7034c"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_dfcf4fcd6dc6a25b.clut.bin",
+      "bytes": 1024,
+      "sha256": "545359df4ebccf60ac39e9f63d6b834e9ab485c8b233f25ed6b07137d3d07b39"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_dfcf4fcd6dc6a25b.texture.bin",
+      "bytes": 512,
+      "sha256": "fce4aca8a2121795d668d8d02b353de61352ed4a0334a735fe64b49252a099c4"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_e0967f076c6c0e32.clut.bin",
+      "bytes": 1024,
+      "sha256": "e8603a14b0e7cb30f1d7c3d77e537888e05f27729e00ddfc17fc9e7d5256a792"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_e0967f076c6c0e32.texture.bin",
+      "bytes": 2048,
+      "sha256": "b65ca67a760c3304cff995ec60f8e02bf6c1038a1f13aba3953be13b236ffb72"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_e204ea488e5d27e2.clut.bin",
+      "bytes": 1024,
+      "sha256": "bf1deeab47c704e8838f5f78e1e3d2d5923f6cbf82addf96d75ef469c10562a5"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_e204ea488e5d27e2.texture.bin",
+      "bytes": 8192,
+      "sha256": "726944f1b46d856c92479545e251b2a6a87961f3f06d93ad4bf057d1a3d4fe85"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_e4545cf7c0072847.clut.bin",
+      "bytes": 1024,
+      "sha256": "2982fc27b033307b5d9dc916b3e533ec80d50674ac24aa1c2c7cdcc5cb5ce91f"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_e4545cf7c0072847.texture.bin",
+      "bytes": 8192,
+      "sha256": "ae967a0bda43c4d5e1bd5f2f1ea44e33d8738198234e0dfc837df9e2c788525f"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_e5fa8021173dbd10.clut.bin",
+      "bytes": 1024,
+      "sha256": "0837bfdb8bceb32aa3d0f6882605fc2fe2d7c5f9fda7835b828ec14353f74965"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_e5fa8021173dbd10.texture.bin",
+      "bytes": 8192,
+      "sha256": "b80a74c4a6a2dc83898e519f85a45ee9ed28010c5483dc52bf9b70eb3024a62b"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_e6054424b7ac309d.clut.bin",
+      "bytes": 1024,
+      "sha256": "7fdc1501c24ebe416d150ebbfbfb042c5c17e8576328144c58f7183869589644"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_e6054424b7ac309d.texture.bin",
+      "bytes": 8192,
+      "sha256": "06d116e5a8e959119590ff85e7827727021c87ff4a8f5caa05920753150b161b"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_e63fa1f9ab075761.clut.bin",
+      "bytes": 1024,
+      "sha256": "82dc609d464849bf0c6bcb5bf43e888afff6fe52184b21c00befc18dcbe4c7d8"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_e63fa1f9ab075761.texture.bin",
+      "bytes": 4096,
+      "sha256": "ef73b4c479ba5d4eecb6eafa62a8b3e43274420755d159aeb99564d2d2bcb8b3"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_e9b85ab6f129f344.clut.bin",
+      "bytes": 1024,
+      "sha256": "98d95a4d26d88fdfd750e00c6ca50a1c8674c70d60f8d030124f288693e0b7cf"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_e9b85ab6f129f344.texture.bin",
+      "bytes": 4096,
+      "sha256": "2805a6c53c32731b8e1ff7d9f5e84ed3361f1aede1e6470874559fdba7ecb85b"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_edcf94cb0614653f.clut.bin",
+      "bytes": 1024,
+      "sha256": "3414e197cc1fff50260b90a501725e438284c1d54c695e06f8c7b0e2eacc5f69"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_edcf94cb0614653f.texture.bin",
+      "bytes": 8192,
+      "sha256": "15b1eec394e5bb6a3223674b9de76bb0d6109dbe67bb93c720f1d439669b79e0"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_eea23217bfe23eff.clut.bin",
+      "bytes": 1024,
+      "sha256": "2c09258fd2b2f7c404f9bf7c8888a88ea70c94efc59e821ab9d55ded19355320"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_eea23217bfe23eff.texture.bin",
+      "bytes": 2048,
+      "sha256": "7e8703e121ca5c318452b35fd28564979db2c09644e1641bcef4a97255f63b7b"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_f3a1c258aecde343.clut.bin",
+      "bytes": 1024,
+      "sha256": "56e671ee6d3aa322463e1c2b750ba61ce305ad2b1bc71ecce6e29dd316f8ffce"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_f3a1c258aecde343.texture.bin",
+      "bytes": 8192,
+      "sha256": "9e774431dc4a267d34afd48d1ab932c8c38105c1f6d23c1a6217d95603d64a1d"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_f6cb5a62fbc05420.clut.bin",
+      "bytes": 1024,
+      "sha256": "a81ce2dcc365b17d0d6b224867a85e58fa71ff99daae350b74f70ea5bcc25774"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_f6cb5a62fbc05420.texture.bin",
+      "bytes": 4096,
+      "sha256": "805d2983a7dec8d6d4d04185dbedce0e966102f44b92203fdfd949da61a39c04"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_f912fa3f98582dc3.clut.bin",
+      "bytes": 1024,
+      "sha256": "0df688af40633482ee33c64a32c5f67e6ce4fbd34fa3b04d33ca13b454f90a27"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_f912fa3f98582dc3.texture.bin",
+      "bytes": 8192,
+      "sha256": "b80a74c4a6a2dc83898e519f85a45ee9ed28010c5483dc52bf9b70eb3024a62b"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_fc6bfb422c926878.clut.bin",
+      "bytes": 1024,
+      "sha256": "c40f5271b672b9dc62f435b47471c46208f8d53cf947f356dfe8bb6cfb12c4e3"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/material_fc6bfb422c926878.texture.bin",
+      "bytes": 4096,
+      "sha256": "6567fc523f09ac2f04dc769e6e2024b66f68ac0eda833c6c33bc32265d4f9e09"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/original_street.bin",
+      "bytes": 761480,
+      "sha256": "08f7e9617f41910f45c32fd54a34eb8c2ae0d6199d1845044dcb76b2b705fcba"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/original_street.json",
+      "bytes": 2282875,
+      "sha256": "731118cc96df900f27cf3fcf803023a02010fad5add47983800605d648c9e586"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/original_street_materials.txt",
+      "bytes": 6007,
+      "sha256": "7ec1b9da147ed851c5d56ead3515e2328857e73ac6696c7cd2614eb309b705f6"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_00404cef1f9157cd.bmp",
+      "bytes": 16506,
+      "sha256": "b5f27758941fbe40e627eb5584029a1496fdc012eefcf5a3ffe3440583056a79"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_00404cef1f9157cd.png",
+      "bytes": 3144,
+      "sha256": "a9afd801ddb65b3f55c51625a7d4d5756298272b2cdeb106b1ff3e3bdf337e15"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_0166f3217a16725f.bmp",
+      "bytes": 32890,
+      "sha256": "c6103562b196d3c9257ab073608f63a9ff21b46e730e94920982a0c1cc599818"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_0166f3217a16725f.png",
+      "bytes": 6564,
+      "sha256": "81ed312898c27da2c333d7d5853d434517d4328cf42aa5739449e33489d5cd98"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_042f443564bdc202.bmp",
+      "bytes": 32890,
+      "sha256": "215ba6442575bb0cac3b3fa0611909369c9c258d559c2713c535c8a48e597881"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_042f443564bdc202.png",
+      "bytes": 14595,
+      "sha256": "a0899b3345cf488d8647cb0d975d866310f73cd4ce5ed6eff7f0b7b4d2af0103"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_048045135dd406f5.bmp",
+      "bytes": 65658,
+      "sha256": "3734f833721483790cfdf02ccfde2c0494f38ff27b6ade4c22977518d4755824"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_048045135dd406f5.png",
+      "bytes": 16602,
+      "sha256": "9724760e38836017d1b1142ded718341579b44c637f5a5fb38312c9720e93a73"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_04f1201245f3105d.bmp",
+      "bytes": 16506,
+      "sha256": "3836f12ad25931c36e5a39a3a7adfa9a64432053b037c8bf24f0b81012c15860"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_04f1201245f3105d.png",
+      "bytes": 5525,
+      "sha256": "0cddc0ebc2eeda08764c6ae8d956ba780fca683393804a6c750a2852224bb915"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_06e6f20e45f769b1.bmp",
+      "bytes": 32890,
+      "sha256": "f251361e6f676b730e05329a1d8a84ead8f4703334b02ffdcc65a8c2597d0ebf"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_06e6f20e45f769b1.png",
+      "bytes": 4668,
+      "sha256": "634d5b527fb2326b23d30dc243eae752bae8e92fe897e32a1bbd6831946a97eb"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_08d5553e20ed0c86.bmp",
+      "bytes": 16506,
+      "sha256": "2ac9b184a53c3591471e095fa31e834ef116d742a8f48ea10baf9ccc3537aa1f"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_08d5553e20ed0c86.png",
+      "bytes": 6284,
+      "sha256": "01b6e7bbe4b8637010f93cae5ff628d69a41f08036c2ea6a3aa60ed85df7d510"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_0941241508b4b2b0.bmp",
+      "bytes": 65658,
+      "sha256": "69459f80e4ff8be0fc7e508a6358ad48c8c8044bd4a05e26ed5f6f5c40a2f634"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_0941241508b4b2b0.png",
+      "bytes": 13017,
+      "sha256": "6e5380f2fc6a8e2f6eba7d71d3dabefd06f9176576037568b4c5534bb36e86f1"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_0ff6804827da064f.bmp",
+      "bytes": 65658,
+      "sha256": "8f9b8d0777c5faf54d8020be16f83703c0a3c78ba7195bcf9729f76201549b70"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_0ff6804827da064f.png",
+      "bytes": 16631,
+      "sha256": "4f38d9159527fa41e3624b33f6dc259eb44ff714ce4657df0403a5dffefbfb46"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_131465ee2a7c8213.bmp",
+      "bytes": 131194,
+      "sha256": "9b6b7204ea3542e2f7a97094b146b8edf8a9543d33313c877b0860becc0206b8"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_131465ee2a7c8213.png",
+      "bytes": 38845,
+      "sha256": "dfb3377811f0b791bbf4beaa7525c818f45723e558bcffe913c46ecb0eee2c72"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_177a760f633c545f.bmp",
+      "bytes": 65658,
+      "sha256": "06b3ee1d62f0d4f5a86f3dd69cfec35a9a0ff5d4bcf492aef5faaa258013a0ff"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_177a760f633c545f.png",
+      "bytes": 7556,
+      "sha256": "52dab6221b51a6d7ab1f7c190ffd8303dbb454981b5b91b9405f481237b2a0a5"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_17c4d3e8f9d357d9.bmp",
+      "bytes": 16506,
+      "sha256": "ce091c8339790bf97d6de8af17fbb602abd813335539070bda149476ec2b50cd"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_17c4d3e8f9d357d9.png",
+      "bytes": 3524,
+      "sha256": "6064c9157be5549201954475cd78061a7fa5d3a554cf714b36cd833016141f3c"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_1be06aa665dc1378.bmp",
+      "bytes": 16506,
+      "sha256": "17e5c1212baadc9928add55412d2532ec556af6ae1fb6c828e91d25dd9475412"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_1be06aa665dc1378.png",
+      "bytes": 3933,
+      "sha256": "68c3c3bcd0ba355bc9366e13a3163bf9e2f8528bca38773c47847d2e55883ee4"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_1dc8cda5020d88a5.bmp",
+      "bytes": 65658,
+      "sha256": "5ae4909702616cc38cafac91be3654e8707949e659dfb1a78eeb67dd6d90227a"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_1dc8cda5020d88a5.png",
+      "bytes": 19576,
+      "sha256": "5dd521fb2e2bc50879a7ebcb05a6aa048c3e8533bba5b7cd16a20c085ad910ef"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_20a5a7cb6c5e5434.bmp",
+      "bytes": 16506,
+      "sha256": "3d17edfda64e1e7727b74e86f3fb2ec1d858b39f3228ecc6152f023681ba8878"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_20a5a7cb6c5e5434.png",
+      "bytes": 4950,
+      "sha256": "16c3e181dcc05a1c830bdf52d7e39051e937ce0af7c24d47530e5d58b5dc5c2b"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_20e55ae680d2206f.bmp",
+      "bytes": 4218,
+      "sha256": "1fd0c577781968a4bf9d0b54925144b7d956d76620561d154751b2d4b805559d"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_20e55ae680d2206f.png",
+      "bytes": 542,
+      "sha256": "df70411d30fd454055cfc290d4c4ccf4a71ecd251adbe2a54b8f5498cb2ff9a0"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_2266ef7b23cb0d43.bmp",
+      "bytes": 65658,
+      "sha256": "6fbe781e48a1617d6f2ac5110afe5311201432324547698a0dad719e9cef391e"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_2266ef7b23cb0d43.png",
+      "bytes": 13738,
+      "sha256": "48be0ed230a170733c56b6e65fb46caab65bb4b489633631ada6ff45318f7a5f"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_22a27d601b19f185.bmp",
+      "bytes": 16506,
+      "sha256": "79deb8ceb44cdc5ec8ee1e86f128feb6570668b8c11caa6fc15269fff40e42df"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_22a27d601b19f185.png",
+      "bytes": 3751,
+      "sha256": "2fe8f043462e9e7d5a49fe716f26947f63e1d04aa5800fece8dcb1af2d3889be"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_237ad90a345ab392.bmp",
+      "bytes": 65658,
+      "sha256": "20a14470b2d512c9c3329f4c317820b15279fbc1471e5acd2c588e54b31b67c9"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_237ad90a345ab392.png",
+      "bytes": 9378,
+      "sha256": "01bb1a40d56b6fd4b5763b73474028e8b38a595177bda88f14673e244ca88821"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_24cd30462ca7a5cb.bmp",
+      "bytes": 65658,
+      "sha256": "d0d9ab35e403e47d451a49c8e6021f29aa8f54c0864184d4a675e18969c10259"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_24cd30462ca7a5cb.png",
+      "bytes": 8615,
+      "sha256": "6de39d165da0e67c051a0c22f5c66287c0d365d6b1decb7f8612af6bbf076883"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_26f1dab14f08e3e4.bmp",
+      "bytes": 65658,
+      "sha256": "af34a1357d7edb91986e1d59f61e39d28197d412ad347ad2fb8901d3354dcb33"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_26f1dab14f08e3e4.png",
+      "bytes": 16284,
+      "sha256": "df1137c491655ebfbdd5547b20fe5135299a7b9783f207f86b03a43cfbcf50b2"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_28cdc84304e8ab87.bmp",
+      "bytes": 32890,
+      "sha256": "50f156c7c6fba16c6dae5e2b8f6f81bc79545e96080235cf2c7d61249cb14356"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_28cdc84304e8ab87.png",
+      "bytes": 3541,
+      "sha256": "698565d674176c535c053ddc56cfb6e2a2fea65170906328266e8bb831e60617"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_2b854324d5a89a5a.bmp",
+      "bytes": 32890,
+      "sha256": "50611e6f30b3f7d91c91f471cf12a027aac7249ebacaaa3ed47320ef4af9acfc"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_2b854324d5a89a5a.png",
+      "bytes": 6606,
+      "sha256": "ab8a7e48915e2ba2b2b70cf4e8a4bb44ecbe0056c0ee3ef9628ba4431e08559f"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_2e0bdc8315b10351.bmp",
+      "bytes": 16506,
+      "sha256": "103d38515ae60968be3aa8aabfa825c07634f3076607ba5d5d9fc50cb35e3fe6"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_2e0bdc8315b10351.png",
+      "bytes": 2564,
+      "sha256": "cd9a3b879fa6e7ab07c19d82663e52a4c80ac5cf2664843139cf95483813ab88"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_30b82e752725f29d.bmp",
+      "bytes": 65658,
+      "sha256": "def9d5fc3ce556eb511f94625ff07c353e0e30b62aa288e02df9d3e7e31f7f34"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_30b82e752725f29d.png",
+      "bytes": 9884,
+      "sha256": "cea4762788129319069fecc39035477732c52455414fc434133247ff228c5508"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_38df17c1bda2ece9.bmp",
+      "bytes": 65658,
+      "sha256": "6412662b7025aa9c5a8269d8891875c016e488a93b67370e03c4e368fb61e0ec"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_38df17c1bda2ece9.png",
+      "bytes": 16870,
+      "sha256": "626febb2b7d48a1e8b1c742eece0e6fde9f4ba84644593de39db7c5d15cfa1f0"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_3dca8307cf043ff7.bmp",
+      "bytes": 16506,
+      "sha256": "02ac19f4056cea4064a90b940473a015051dda3303a4ed984c356891b4bd0f96"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_3dca8307cf043ff7.png",
+      "bytes": 12332,
+      "sha256": "220f4ffbd351e4616312efbd35f6c755de7ee87d84db018c761a1223a6b9315f"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_43ea76969c9dfc3a.bmp",
+      "bytes": 65658,
+      "sha256": "0e5824746cfd61000ff7926e04277adb2a9eb6faa9f94070776a92b8de9e43be"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_43ea76969c9dfc3a.png",
+      "bytes": 13639,
+      "sha256": "b44d31f7ea72843cd7b92c808d8e3de736c2a608792e432a7a339a76fbfb4708"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_486e8607738aac4e.bmp",
+      "bytes": 65658,
+      "sha256": "f679763bf96f69c0702c3b871ab9bb6306e78820f0b074cd2727d22a53803bc0"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_486e8607738aac4e.png",
+      "bytes": 15115,
+      "sha256": "8129950a5d6d674dc339050629a37f1fdfef2deae8d52230cc3f7d05d4e6e682"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_496a2f12c844364b.bmp",
+      "bytes": 8314,
+      "sha256": "fd2525f1772c75847c319d60746eb403078fbc8b436665c34dc33bbf2fc0759f"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_496a2f12c844364b.png",
+      "bytes": 3454,
+      "sha256": "093831837440ce2b2358372951e4ae4aa5dcb3be6ffa5fb3a5a5000ea2918a0b"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_4bee9b2e7eb8cac4.bmp",
+      "bytes": 65658,
+      "sha256": "1622a8a87db1a7fbe00ec9aab7e85fb6e74f42960bbe982c3f6a911ab8d08762"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_4bee9b2e7eb8cac4.png",
+      "bytes": 9039,
+      "sha256": "397afd0b80fdfa7d1611a2c7a8b632fca9673b0b3599cc251f95de3f3ed9c917"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_4daca4880a395210.bmp",
+      "bytes": 8314,
+      "sha256": "cfa025358febe0b32ab199ece0d56ff5877b7d7223ad254b099886d5de41c663"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_4daca4880a395210.png",
+      "bytes": 3440,
+      "sha256": "12f7e0029ce078abe059b02b778670ebb4e58dfd66f71c37e2d9b7bc48c8e643"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_4fb9d1208f78e40e.bmp",
+      "bytes": 65658,
+      "sha256": "08a949fcb2e96123ece1328b8063f96d0fcf314b4adb135ea4c4c995a111c546"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_4fb9d1208f78e40e.png",
+      "bytes": 9337,
+      "sha256": "535fd4e8927786a3c6134f43fd5d360f6be7a13aa0bef258fb199b6a96a8b5a2"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_51d46a12bb78cbe3.bmp",
+      "bytes": 16506,
+      "sha256": "3a907587a3d2bb45b0642f3cf13d8dfd19498d6b52261b3b35d797a2a55a7553"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_51d46a12bb78cbe3.png",
+      "bytes": 7674,
+      "sha256": "943d8b535f714c5332ee9a797a1a99b5d72186bcb3205939d822620d4c5eec7a"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_53c5d6bf6975f910.bmp",
+      "bytes": 32890,
+      "sha256": "f2b90d0245bfa8a1ab6516774ab25b762feaa3c105f2351e21be7e130d56d9e9"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_53c5d6bf6975f910.png",
+      "bytes": 8726,
+      "sha256": "8618c72c901d17b446279c90b241570bce4b86f42ca96b90350d81839cefad26"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_551ffd28a2593106.bmp",
+      "bytes": 65658,
+      "sha256": "bc4130f503ebdeadf45b1a34ece7e30f3d064e02b5e364823f61b98f87ac0269"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_551ffd28a2593106.png",
+      "bytes": 13630,
+      "sha256": "1c9729c23a83493c20cfcf5ea68890e277ebb807d5c0d1e7280418acea5109c2"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_556cdb2e860c4b45.bmp",
+      "bytes": 32890,
+      "sha256": "9ba83e823b8f09b6a4886a9fdbf0f628db50731d6f9cfdafa033f7d2230b0020"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_556cdb2e860c4b45.png",
+      "bytes": 7060,
+      "sha256": "a324e24c49a57b50dc3aab76ca472866d0412c538c17009ce041ec496a6e4396"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_5a45be12d9d6aa79.bmp",
+      "bytes": 16506,
+      "sha256": "432b08dddfdb9dccfea7c4718e3a392838391ecdc768dc3246b2bc60f2f02237"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_5a45be12d9d6aa79.png",
+      "bytes": 2153,
+      "sha256": "9909f83a3dee042cdb2644e3f232b42530cfd554e5fa7e014a8054282603dc4d"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_653c3ffb92b3c5e3.bmp",
+      "bytes": 65658,
+      "sha256": "7f5a453901ecaf3cb6091d38612922106c914e3144f9829173e1a05e41939d2d"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_653c3ffb92b3c5e3.png",
+      "bytes": 14052,
+      "sha256": "c9ff22726b7a7aef81179ad644372a6b7fa60a88f73b231f890322a2fa8c442c"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_66417b5af26d9513.bmp",
+      "bytes": 131194,
+      "sha256": "d743b21f7dd320e0edc2c5ff3532252b6d3a9b0bca53f45e689c177b168af295"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_66417b5af26d9513.png",
+      "bytes": 18720,
+      "sha256": "4eebba62198c65ee1cda7cedc5f7225f1665a5dfaad841d63fce69d9c7c312ba"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_698d8f504e58f5ea.bmp",
+      "bytes": 8314,
+      "sha256": "c5a3e408d158083820078fe10515772a207c2bc9060011f7a46d3112ead690a2"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_698d8f504e58f5ea.png",
+      "bytes": 2634,
+      "sha256": "4bfdfc1e5802c456f7c028edc0be1cdc2fbca3e505f6bf18ba59bc9dede565d2"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_6b5602bca2185840.bmp",
+      "bytes": 65658,
+      "sha256": "ed0ba3cadcfe4f12b4751ef6fa1f6ac461c726594eb05273bd3dcf7f23535da3"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_6b5602bca2185840.png",
+      "bytes": 16884,
+      "sha256": "573f77b69bda3ba9514508bba66f8ebabe694ab7e3fc714700fcb1ee65aec106"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_6bb36b3e3e60d19e.bmp",
+      "bytes": 32890,
+      "sha256": "bcf02ebb20d6f264f52b10e444cad370649634ab2a499161aafbf4c4b391f95c"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_6bb36b3e3e60d19e.png",
+      "bytes": 9368,
+      "sha256": "50b279019dc1b6762710e938b44b2a1a688258af560566e2f7c5fe83193fdc67"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_7d3ba7b1ef6505c0.bmp",
+      "bytes": 32890,
+      "sha256": "a3796bddffd79db8c46e7d90d2367ae7d1e910bd39314a48e1e46aedc86b940c"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_7d3ba7b1ef6505c0.png",
+      "bytes": 11303,
+      "sha256": "7d1d25aef21f32bd2f2692def1459660a847f906f5e0d7288c291c9fd7dd62df"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_818414bf6c45ec0e.bmp",
+      "bytes": 32890,
+      "sha256": "1ada8649b17c66dcc11650b5c5d3caa9b0b609e8d83a0360974293e638c0e232"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_818414bf6c45ec0e.png",
+      "bytes": 6475,
+      "sha256": "6be715b4b8c9bfeb78ee54ba42e0a7d8e77fb2d6e72a6bf9229c75c80d4d2782"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_83e87c4f9acb182a.bmp",
+      "bytes": 32890,
+      "sha256": "9bb40d5f97cee83ccca7b2ecb6889f9b824f41b5c6472a6a20e1a5c61d40d4f9"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_83e87c4f9acb182a.png",
+      "bytes": 5919,
+      "sha256": "3099dcc574b98cca1a3c17d429ce2fc41ef9cdf1c1ef0e8b8d6366d4e9879a2b"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_858164310fad669b.bmp",
+      "bytes": 8314,
+      "sha256": "104202d7f1b0df21993359aa07bb8dfffcf7f6ec220d2341646cd1165ab1922b"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_858164310fad669b.png",
+      "bytes": 163,
+      "sha256": "89faa852ee282faf92583fcde4b49a314e1db8803ab669ad0ab8de10185cffd2"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_8729a4e3cdbfe7bf.bmp",
+      "bytes": 16506,
+      "sha256": "e73e40cf230976f6fba837b311c7ba2d4c86aaa85ebff1eafa83120e6b578153"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_8729a4e3cdbfe7bf.png",
+      "bytes": 4499,
+      "sha256": "0e962a08b74f387c9d9eb39a7f92697350fd1456b5f13bbad149f3dff107218f"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_8cbe4b557e5ebb48.bmp",
+      "bytes": 65658,
+      "sha256": "fec882898898e05ea4453a3ad82a770af8cbc9ad8b79a276e793fad5748f7957"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_8cbe4b557e5ebb48.png",
+      "bytes": 11750,
+      "sha256": "72895df6a06847109995a0121bc515746274cda7f3850c753be70f205f66e8f9"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_8f344bfa3b0b08fa.bmp",
+      "bytes": 8314,
+      "sha256": "cfac88abf2952ee4a95c433ee2a3895d810c361c54d5aa924dfe5ed986a2c93a"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_8f344bfa3b0b08fa.png",
+      "bytes": 1420,
+      "sha256": "20bb001ae9e9c6a71c19ae7abbcf0d62c206310dad88ae1aa9c7348e25b5f2f6"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_999ec1913c62bb81.bmp",
+      "bytes": 65658,
+      "sha256": "8349d6f0f73e8a018f51ca43a92bb2ee22dca7455322d06d40ca82009748c089"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_999ec1913c62bb81.png",
+      "bytes": 13928,
+      "sha256": "40022a13b7688c6dd9113459f53aec37f28eb88382f860d3bdb2d4844860ca8e"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_a2e0da844c2d2054.bmp",
+      "bytes": 65658,
+      "sha256": "ce6f57674d6036612b0491188eaee1e5e3accbb7006d887a9bd06dfff0ec2623"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_a2e0da844c2d2054.png",
+      "bytes": 18249,
+      "sha256": "3801b468d41bb0f4a9e3435b93dfc5f9389a669d555f9988a7b3039256d7db45"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_a3ff552464d3a0d2.bmp",
+      "bytes": 16506,
+      "sha256": "5e9d4b7bbce49a1754e459a89f161739c3764c4dcc9d93b57c34ed67f95ad103"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_a3ff552464d3a0d2.png",
+      "bytes": 417,
+      "sha256": "46fe89f5817f5ca77676d22595f3710526d4e2915422b2268eb0b1f18e87f98e"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_aec35ad0701973d7.bmp",
+      "bytes": 65658,
+      "sha256": "902b38dcc91d524f2ca24b594dfcd10fc081e3c5af701444d63b5bfe8d169fa1"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_aec35ad0701973d7.png",
+      "bytes": 15643,
+      "sha256": "36a7568c78c9aa32be3f91132664162415c84bbedc2bcdd2c85a91c59c84e746"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_bb067a1f3ff402bc.bmp",
+      "bytes": 65658,
+      "sha256": "49d4b2ec659993dbaecc379b98839a53c6d53c54aaf4f5c2569255c0a3926cff"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_bb067a1f3ff402bc.png",
+      "bytes": 9823,
+      "sha256": "79162c050e691027f3ba8ae64f9cb23a1115e126bad0f9e31e90f94bcd51a39d"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_bcba912b88b0ab5e.bmp",
+      "bytes": 16506,
+      "sha256": "7eebcecbc4e7b3f88645e32e350ee2b49a615565a9bab05363b55b3e2e1cc290"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_bcba912b88b0ab5e.png",
+      "bytes": 5424,
+      "sha256": "6c286641124faea7fddb2d6af8a53f4e70647739dc4a70700359d2c9b39238a7"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_c75139eca2d9f842.bmp",
+      "bytes": 65658,
+      "sha256": "be29e0083adeff2cabbe7d8466529afa07f93f7bcb6658b17d15961b43584ffa"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_c75139eca2d9f842.png",
+      "bytes": 12573,
+      "sha256": "ed57069d6553f5f7febab628bc024eda05d5167450299ebb8a73821175731111"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_d0d899fdf8b637e2.bmp",
+      "bytes": 32890,
+      "sha256": "73a71790a9c37819892e1c565ea519a174dc763f34a2890c239c1a165c71f643"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_d0d899fdf8b637e2.png",
+      "bytes": 11808,
+      "sha256": "1f61bf09d87372b531ee0e854860d40b371cd7a0e246f47fd6e3bfe603de1a35"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_d187735b95b5bb39.bmp",
+      "bytes": 65658,
+      "sha256": "6f12cffaca887b0d50d981c72f9565954da71e5a3647aea098ea8dcbb785848b"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_d187735b95b5bb39.png",
+      "bytes": 9468,
+      "sha256": "85a6d16edf4218631feeb803593d6628f6355bedd08e2b0163858f5023581de6"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_d2746ca129f3fe99.bmp",
+      "bytes": 16506,
+      "sha256": "f19e8cd41affe9d634aba039f667fb51922cbdedbcf8b2b9fa929468159de7a6"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_d2746ca129f3fe99.png",
+      "bytes": 5445,
+      "sha256": "857b9483a21f0758d77c125dd8780a4df6c148a4470691351e980481e11b75be"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_d441c3b14248383f.bmp",
+      "bytes": 16506,
+      "sha256": "6076ca363dc94b45504cb19a799936b7ac63024c37e9c90e0d626d7894e7feca"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_d441c3b14248383f.png",
+      "bytes": 5572,
+      "sha256": "6798e72f3cdb82c1441b33f03d12c6fe0df9b1ac405cfc8274fe90d9fb741d36"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_d5e989492eb65ffe.bmp",
+      "bytes": 16506,
+      "sha256": "c5c8780d420d2e81c158fa951f41f626a6008dfb0aba395e1b72202a6bfa86db"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_d5e989492eb65ffe.png",
+      "bytes": 4766,
+      "sha256": "d2ddb9033aadddd3c47347a9ce76f9505c52413fc0c04b635e287e93d3a48bce"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_d9da1025c9078f59.bmp",
+      "bytes": 65658,
+      "sha256": "e7a5cf05ddb601d59cad518e637a53dd6f65b8126e0d4f4d3936a8d4feec66dd"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_d9da1025c9078f59.png",
+      "bytes": 31377,
+      "sha256": "611558e3c6b04b668ef52394dc78d0c555df1f04b671c2b970ac5851239d5f77"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_daeb4d961b3d5ffd.bmp",
+      "bytes": 65658,
+      "sha256": "e732abea646b7870be4af48bffda7d220b4feae39b64a956a93912c8975e0e96"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_daeb4d961b3d5ffd.png",
+      "bytes": 6493,
+      "sha256": "9e312cabbd5dbe1886b199ebe32cbf8c5f0feae369ccb11954a34b687ba9c14d"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_dec3862daa6db8bb.bmp",
+      "bytes": 16506,
+      "sha256": "bc05145cfa250f7ec9acde60b3e098a9f217d8dda37d7b06e7d2b5400504bebf"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_dec3862daa6db8bb.png",
+      "bytes": 2409,
+      "sha256": "aaf68f8009c85cef36f7aab92d5cf3ee3a18aa24edea1800fc18006252ad0a6e"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_e1ec37b5eff829b6.bmp",
+      "bytes": 4218,
+      "sha256": "0cdd08163f77e941fd54efc51a1f5cffd18e6413c1502637b6ae17743d53916e"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_e1ec37b5eff829b6.png",
+      "bytes": 948,
+      "sha256": "c8c8d5070934b65b24bd8590b6530321abb61c4d4ffe764d4fccb641c596bb6d"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_e77beff7c6dab4c4.bmp",
+      "bytes": 65658,
+      "sha256": "7529468b9629fc8ed2a764c13425bff258cd3145cf5cf88e88734185fde6b40c"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_e77beff7c6dab4c4.png",
+      "bytes": 23024,
+      "sha256": "5ab1006910738a35316525a69696bcdc04de33375a6e47d20e98761983993874"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_e876d29fa710260b.bmp",
+      "bytes": 65658,
+      "sha256": "f6e41bd6a859d40cc981def5de336be67f484caf6e968a0ddf99df3d472fc63f"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_e876d29fa710260b.png",
+      "bytes": 31754,
+      "sha256": "09bdf2e3b01f4d1fdebb6c45cde569b82d5fd8e28e29c1981397b57458d186ac"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_ed09a79cff010faa.bmp",
+      "bytes": 65658,
+      "sha256": "81597614b9e0302b3dcc5b92f5358ca1bf1e80e6774a55499c781b8c8c5f5770"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_ed09a79cff010faa.png",
+      "bytes": 24080,
+      "sha256": "54f75e383fa134a566aa92154f15b8652d3cad1e17fbda5cdd9c2244e53b47ad"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_ef39eed641b71600.bmp",
+      "bytes": 16506,
+      "sha256": "a73f143e0fcb69d6989ec7c026c8f043cc0ffdd4c3a8dbea2eb09fd4b214b532"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_ef39eed641b71600.png",
+      "bytes": 3071,
+      "sha256": "5c98b8f0048e3e20d2947d78c39e088b0e348eabc16e8c6df5bd21b6a1a8e86f"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_f2f356699f6e12ac.bmp",
+      "bytes": 16506,
+      "sha256": "3e59c675373b180cdd8fe0a67ff047397d88fb671116a3b38345b11d85766823"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_f2f356699f6e12ac.png",
+      "bytes": 7397,
+      "sha256": "5885bb6492828370950b756c310d502be3786f171c173784aaadc74cba66c0c3"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_f8006df8bc8c90e2.bmp",
+      "bytes": 65658,
+      "sha256": "3b1a4db196e486fdcfacc56d3220eba0c3898fca49fdc5d3a7c1ab6efa21d20c"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_f8006df8bc8c90e2.png",
+      "bytes": 9701,
+      "sha256": "f5f1205049b2f38378f86b12ffddb04d2e563defd4682d35440acd75cde6ae92"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_ffec3d66ae5b20f2.bmp",
+      "bytes": 32890,
+      "sha256": "e096c8f95095f466e8b1ffb5526b2f7e2a9ba651170caace081f1b3a029392ea"
+    },
+    {
+      "path": "work/t3b_hd/assets/scenes/original_street/textures/street_ffec3d66ae5b20f2.png",
+      "bytes": 8774,
+      "sha256": "64dce9cffda1d3ee3eb3e3ef2132c482c2fe2659756b101e402eef2ca7c0c792"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/manifest.json",
+      "bytes": 160127,
+      "sha256": "c4c25310cf4b27962f0476623799ecaee52070b16a2ee387f6135d436127bfa6"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/models/aya_approach_fire.bin",
+      "bytes": 474488,
+      "sha256": "24de0df5d4062546fd52cd40c5344e0ca088fb6683b4865b6e835b93ed71e219"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/models/aya_fire.bin",
+      "bytes": 474488,
+      "sha256": "6f7e39a203452cf6725b40efe354fdf92702c5dc2a0cc47add1823471bcb3070"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/models/twisted.bin",
+      "bytes": 212468,
+      "sha256": "1055d5b96c722c4348b2f81355b67fe3b32b3807d2ab9de103e410d5f2743ec6"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/models/weapon_approach_fire.bin",
+      "bytes": 27496,
+      "sha256": "34eb9bafc04262ddcf442fea2694cec4e7febfc8b6f63ddf10e4dff175894cca"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/models/weapon_fire.bin",
+      "bytes": 27496,
+      "sha256": "46ea9ee9123665b2596b78b84c7e4eb32bcdaf5e9be9e49ea0ee13c430cd32b7"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/models/weapon_source_markers.bin",
+      "bytes": 208,
+      "sha256": "d8d1a054a96005958db2036267c1ae1a2c04f062faf59f96b840f4e58d34c673"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/raw/3rd.fsd",
+      "bytes": 7932,
+      "sha256": "11acb78315ce7de04865b887c8ca972263d83678cf18b61ee3b5f6c358873723"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/scene/original_street.bin",
+      "bytes": 761480,
+      "sha256": "08f7e9617f41910f45c32fd54a34eb8c2ae0d6199d1845044dcb76b2b705fcba"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/aya_506dc44780fe0539_hd_candidate.png",
+      "bytes": 3321308,
+      "sha256": "cdb121f4083674010dd47e40377c05f6d0e45d0d06f82ceca30a9af9f7a2cf0e"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/aya_506dc44780fe0539_hd_conservative_candidate.png",
+      "bytes": 1647249,
+      "sha256": "1b9303dea23b04f3da13f65c4589dc8665236c616ac20289d18a0e53359df528"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/aya_506dc44780fe0539_hd_uvsafe_candidate.png",
+      "bytes": 2026438,
+      "sha256": "8742d79e2947656726e5997c05fe311efc058429af8805ac73c00138ddeada2b"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_0283c2066e4d86cd7995d9e7.png",
+      "bytes": 9337,
+      "sha256": "535fd4e8927786a3c6134f43fd5d360f6be7a13aa0bef258fb199b6a96a8b5a2"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_05a0f168ade858ea710079db.png",
+      "bytes": 13017,
+      "sha256": "6e5380f2fc6a8e2f6eba7d71d3dabefd06f9176576037568b4c5534bb36e86f1"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_093465c5c83602d8dc5093d7.png",
+      "bytes": 23024,
+      "sha256": "5ab1006910738a35316525a69696bcdc04de33375a6e47d20e98761983993874"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_0e091998da3d441be49ae2f3.png",
+      "bytes": 16602,
+      "sha256": "9724760e38836017d1b1142ded718341579b44c637f5a5fb38312c9720e93a73"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_128a23fedeadb1da526025b2.png",
+      "bytes": 9823,
+      "sha256": "79162c050e691027f3ba8ae64f9cb23a1115e126bad0f9e31e90f94bcd51a39d"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_133efa40a0068d8943a0ecec.png",
+      "bytes": 13639,
+      "sha256": "b44d31f7ea72843cd7b92c808d8e3de736c2a608792e432a7a339a76fbfb4708"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_144f311cedb82574e265b6a8.png",
+      "bytes": 4499,
+      "sha256": "0e962a08b74f387c9d9eb39a7f92697350fd1456b5f13bbad149f3dff107218f"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_16d07bad1358faaac63f010c.png",
+      "bytes": 2409,
+      "sha256": "aaf68f8009c85cef36f7aab92d5cf3ee3a18aa24edea1800fc18006252ad0a6e"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_17398f4abfd65f8233d0685b.png",
+      "bytes": 12573,
+      "sha256": "ed57069d6553f5f7febab628bc024eda05d5167450299ebb8a73821175731111"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_17d4469b82b14eddc393b482.png",
+      "bytes": 3440,
+      "sha256": "12f7e0029ce078abe059b02b778670ebb4e58dfd66f71c37e2d9b7bc48c8e643"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_1da01d76a4b9f9d645473978.png",
+      "bytes": 3541,
+      "sha256": "698565d674176c535c053ddc56cfb6e2a2fea65170906328266e8bb831e60617"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_1f1fdabe12445231b80789a8.png",
+      "bytes": 6493,
+      "sha256": "9e312cabbd5dbe1886b199ebe32cbf8c5f0feae369ccb11954a34b687ba9c14d"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_25b64d8dab77a9fb463a2fb1.png",
+      "bytes": 38845,
+      "sha256": "dfb3377811f0b791bbf4beaa7525c818f45723e558bcffe913c46ecb0eee2c72"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_275aeb134949ecd2386e8f1d.png",
+      "bytes": 4950,
+      "sha256": "16c3e181dcc05a1c830bdf52d7e39051e937ce0af7c24d47530e5d58b5dc5c2b"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_2986c1a07546bfd23fff63c7.png",
+      "bytes": 8615,
+      "sha256": "6de39d165da0e67c051a0c22f5c66287c0d365d6b1decb7f8612af6bbf076883"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_3059ca9e3bc0cd5454b3957f.png",
+      "bytes": 542,
+      "sha256": "df70411d30fd454055cfc290d4c4ccf4a71ecd251adbe2a54b8f5498cb2ff9a0"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_3554812b018ceb7bd463ae8d.png",
+      "bytes": 5445,
+      "sha256": "857b9483a21f0758d77c125dd8780a4df6c148a4470691351e980481e11b75be"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_3ff68c8b8fd7f1467ba85f75.png",
+      "bytes": 7397,
+      "sha256": "5885bb6492828370950b756c310d502be3786f171c173784aaadc74cba66c0c3"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_4165d1611fe17e83bb828d79.png",
+      "bytes": 18720,
+      "sha256": "4eebba62198c65ee1cda7cedc5f7225f1665a5dfaad841d63fce69d9c7c312ba"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_5060ba99071d5e457b233da0.png",
+      "bytes": 5919,
+      "sha256": "3099dcc574b98cca1a3c17d429ce2fc41ef9cdf1c1ef0e8b8d6366d4e9879a2b"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_5148ff978b5d8270811524d0.png",
+      "bytes": 16631,
+      "sha256": "4f38d9159527fa41e3624b33f6dc259eb44ff714ce4657df0403a5dffefbfb46"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_54bdab2a661efc6a75c3415c.png",
+      "bytes": 9378,
+      "sha256": "01bb1a40d56b6fd4b5763b73474028e8b38a595177bda88f14673e244ca88821"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_59a796938bb23e9c34328334.png",
+      "bytes": 9884,
+      "sha256": "cea4762788129319069fecc39035477732c52455414fc434133247ff228c5508"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_59eb7a38dbf7ef362423530f.png",
+      "bytes": 9368,
+      "sha256": "50b279019dc1b6762710e938b44b2a1a688258af560566e2f7c5fe83193fdc67"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_5a23697d632ec55860a737e9.png",
+      "bytes": 1420,
+      "sha256": "20bb001ae9e9c6a71c19ae7abbcf0d62c206310dad88ae1aa9c7348e25b5f2f6"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_5ae974d799e6b3e03d2e1f87.png",
+      "bytes": 11750,
+      "sha256": "72895df6a06847109995a0121bc515746274cda7f3850c753be70f205f66e8f9"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_5bdaf9af838fe923b3a61325.png",
+      "bytes": 5525,
+      "sha256": "0cddc0ebc2eeda08764c6ae8d956ba780fca683393804a6c750a2852224bb915"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_5f2436dc3f1c5c236918d63c.png",
+      "bytes": 15115,
+      "sha256": "8129950a5d6d674dc339050629a37f1fdfef2deae8d52230cc3f7d05d4e6e682"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_61aae23a2efeb6a31d85abfb.png",
+      "bytes": 9049,
+      "sha256": "03e050bc0c52032ff247afce94bfafd4c653256c086258f953512dd7ab4f7336"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_61f1d4636505bd1b2f187029.png",
+      "bytes": 13630,
+      "sha256": "1c9729c23a83493c20cfcf5ea68890e277ebb807d5c0d1e7280418acea5109c2"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_6467aee256ab4c40be18e82c.png",
+      "bytes": 6284,
+      "sha256": "01b6e7bbe4b8637010f93cae5ff628d69a41f08036c2ea6a3aa60ed85df7d510"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_64a5ef0903d458cb96f4f4c6.png",
+      "bytes": 3144,
+      "sha256": "a9afd801ddb65b3f55c51625a7d4d5756298272b2cdeb106b1ff3e3bdf337e15"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_65673b9f121b2c0225104cd0.png",
+      "bytes": 13928,
+      "sha256": "40022a13b7688c6dd9113459f53aec37f28eb88382f860d3bdb2d4844860ca8e"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_65a8ee5c2c0837b4e6ff44e0.png",
+      "bytes": 16284,
+      "sha256": "df1137c491655ebfbdd5547b20fe5135299a7b9783f207f86b03a43cfbcf50b2"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_6887ded488ee20caf8699963.png",
+      "bytes": 12332,
+      "sha256": "220f4ffbd351e4616312efbd35f6c755de7ee87d84db018c761a1223a6b9315f"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_72eaec18420528dfa4b5d2e0.png",
+      "bytes": 6564,
+      "sha256": "81ed312898c27da2c333d7d5853d434517d4328cf42aa5739449e33489d5cd98"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_74aa20eb7893fc8744108ca7.png",
+      "bytes": 16870,
+      "sha256": "626febb2b7d48a1e8b1c742eece0e6fde9f4ba84644593de39db7c5d15cfa1f0"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_7c961e90492c1d33743bc19b.png",
+      "bytes": 132914,
+      "sha256": "d3127abef3ca69332396cc523302af5f26e837aa975a8c80a7c8c9dfd5ce766d"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_7cf8288c76eee10e1e5c62d2.png",
+      "bytes": 3524,
+      "sha256": "6064c9157be5549201954475cd78061a7fa5d3a554cf714b36cd833016141f3c"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_82c5d1f05e32b87f727a19f0.png",
+      "bytes": 7674,
+      "sha256": "943d8b535f714c5332ee9a797a1a99b5d72186bcb3205939d822620d4c5eec7a"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_84196d246e046590ee3a28bf.png",
+      "bytes": 2564,
+      "sha256": "cd9a3b879fa6e7ab07c19d82663e52a4c80ac5cf2664843139cf95483813ab88"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_852a1a30be95a6c3de7205a2.png",
+      "bytes": 7060,
+      "sha256": "a324e24c49a57b50dc3aab76ca472866d0412c538c17009ce041ec496a6e4396"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_8b51f05df2adafd84456e90a.png",
+      "bytes": 161100,
+      "sha256": "d10007127cff620dab6a5c0d5af0512a833ff71b9de82482c3f592e0cf606669"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_8b5da7fdad0f5036101c3c3c.png",
+      "bytes": 11303,
+      "sha256": "7d1d25aef21f32bd2f2692def1459660a847f906f5e0d7288c291c9fd7dd62df"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_9cda5e06942d0590ab57b8f6.png",
+      "bytes": 163,
+      "sha256": "89faa852ee282faf92583fcde4b49a314e1db8803ab669ad0ab8de10185cffd2"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_9fa0be7d99d1f1ff30e4f7d9.png",
+      "bytes": 3454,
+      "sha256": "093831837440ce2b2358372951e4ae4aa5dcb3be6ffa5fb3a5a5000ea2918a0b"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_a5e54348a68401768fce67de.png",
+      "bytes": 948,
+      "sha256": "c8c8d5070934b65b24bd8590b6530321abb61c4d4ffe764d4fccb641c596bb6d"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_a80a296332ad3f766737252c.png",
+      "bytes": 13738,
+      "sha256": "48be0ed230a170733c56b6e65fb46caab65bb4b489633631ada6ff45318f7a5f"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_a890559efc3431c492a170a5.png",
+      "bytes": 5572,
+      "sha256": "6798e72f3cdb82c1441b33f03d12c6fe0df9b1ac405cfc8274fe90d9fb741d36"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_a949f1494dd4686114fd3893.png",
+      "bytes": 15643,
+      "sha256": "36a7568c78c9aa32be3f91132664162415c84bbedc2bcdd2c85a91c59c84e746"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_ab6da94f4c386d2a9d655e04.png",
+      "bytes": 14052,
+      "sha256": "c9ff22726b7a7aef81179ad644372a6b7fa60a88f73b231f890322a2fa8c442c"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_b164a067542e5cacddfea7be.png",
+      "bytes": 3933,
+      "sha256": "68c3c3bcd0ba355bc9366e13a3163bf9e2f8528bca38773c47847d2e55883ee4"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_b40c5aa550a26e893e00989c.png",
+      "bytes": 9701,
+      "sha256": "f5f1205049b2f38378f86b12ffddb04d2e563defd4682d35440acd75cde6ae92"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_bc0cee60e1d228202ad17a84.png",
+      "bytes": 19576,
+      "sha256": "5dd521fb2e2bc50879a7ebcb05a6aa048c3e8533bba5b7cd16a20c085ad910ef"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_bcffacc0d1b52aa3fcc0b2f6.png",
+      "bytes": 9468,
+      "sha256": "85a6d16edf4218631feeb803593d6628f6355bedd08e2b0163858f5023581de6"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_c05426501efc974ef016795a.png",
+      "bytes": 3071,
+      "sha256": "5c98b8f0048e3e20d2947d78c39e088b0e348eabc16e8c6df5bd21b6a1a8e86f"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_c2990acbce1218e6baa6f6ce.png",
+      "bytes": 3751,
+      "sha256": "2fe8f043462e9e7d5a49fe716f26947f63e1d04aa5800fece8dcb1af2d3889be"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_c6bc6dc0f5abb47464d68040.png",
+      "bytes": 5424,
+      "sha256": "6c286641124faea7fddb2d6af8a53f4e70647739dc4a70700359d2c9b39238a7"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_ccf9f9e726e4c8c97ee422f2.png",
+      "bytes": 2153,
+      "sha256": "9909f83a3dee042cdb2644e3f232b42530cfd554e5fa7e014a8054282603dc4d"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_cf766de2e9ca1f8df3262402.png",
+      "bytes": 4766,
+      "sha256": "d2ddb9033aadddd3c47347a9ce76f9505c52413fc0c04b635e287e93d3a48bce"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_cfbe5850e3e94d8fe563171f.png",
+      "bytes": 4668,
+      "sha256": "634d5b527fb2326b23d30dc243eae752bae8e92fe897e32a1bbd6831946a97eb"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_d35f402e3cf54d84aecc6e4b.png",
+      "bytes": 417,
+      "sha256": "46fe89f5817f5ca77676d22595f3710526d4e2915422b2268eb0b1f18e87f98e"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_d3a8b97cebae09638e420637.png",
+      "bytes": 18249,
+      "sha256": "3801b468d41bb0f4a9e3435b93dfc5f9389a669d555f9988a7b3039256d7db45"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_d41d81634d3d45cd95fa5814.png",
+      "bytes": 31754,
+      "sha256": "09bdf2e3b01f4d1fdebb6c45cde569b82d5fd8e28e29c1981397b57458d186ac"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_d5bc7290124fb18e13861fa9.png",
+      "bytes": 24080,
+      "sha256": "54f75e383fa134a566aa92154f15b8652d3cad1e17fbda5cdd9c2244e53b47ad"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_d7c960f2e7e99d1ccc21e5ce.png",
+      "bytes": 9039,
+      "sha256": "397afd0b80fdfa7d1611a2c7a8b632fca9673b0b3599cc251f95de3f3ed9c917"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_d829fc37f0f822fbb704f67c.png",
+      "bytes": 8774,
+      "sha256": "64dce9cffda1d3ee3eb3e3ef2132c482c2fe2659756b101e402eef2ca7c0c792"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_d8303cfbb9e60aeb5f2366bf.png",
+      "bytes": 11808,
+      "sha256": "1f61bf09d87372b531ee0e854860d40b371cd7a0e246f47fd6e3bfe603de1a35"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_db54897f05af3275a15e9fcb.png",
+      "bytes": 14595,
+      "sha256": "a0899b3345cf488d8647cb0d975d866310f73cd4ce5ed6eff7f0b7b4d2af0103"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_de7348be2b46e208b913cbda.png",
+      "bytes": 8726,
+      "sha256": "8618c72c901d17b446279c90b241570bce4b86f42ca96b90350d81839cefad26"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_e9c9a5beffdbd7320a9fc8c6.png",
+      "bytes": 16884,
+      "sha256": "573f77b69bda3ba9514508bba66f8ebabe694ab7e3fc714700fcb1ee65aec106"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_eb6b3f0bfbcfcb2038043fb1.png",
+      "bytes": 2634,
+      "sha256": "4bfdfc1e5802c456f7c028edc0be1cdc2fbca3e505f6bf18ba59bc9dede565d2"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_ed9966eab309ce9fd831f09b.png",
+      "bytes": 31377,
+      "sha256": "611558e3c6b04b668ef52394dc78d0c555df1f04b671c2b970ac5851239d5f77"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_f4d25fc558c37e9db13c6303.png",
+      "bytes": 6475,
+      "sha256": "6be715b4b8c9bfeb78ee54ba42e0a7d8e77fb2d6e72a6bf9229c75c80d4d2782"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_fbc9d9a1c257bc03092c517b.png",
+      "bytes": 6606,
+      "sha256": "ab8a7e48915e2ba2b2b70cf4e8a4bb44ecbe0056c0ee3ef9628ba4431e08559f"
+    },
+    {
+      "path": "work/t3b_unreal/Content/SourceData/textures/rgba_ffc65b9ea635a21c73d88998.png",
+      "bytes": 7556,
+      "sha256": "52dab6221b51a6d7ab1f7c190ffd8303dbb454981b5b91b9405f481237b2a0a5"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Maps/M1_SourceReplay.umap",
+      "bytes": 6407,
+      "sha256": "c3aea76c323f9f7843008f0800c6d89d295f0724c83c4e3b196266ee82b54173"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Aya_000.uasset",
+      "bytes": 11888,
+      "sha256": "6090b0a8c2cef9270020946a656b6b6051bf4b5dc3cd03a6d57f4398db9fffca"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_000.uasset",
+      "bytes": 11297,
+      "sha256": "bda7b48b32716e962de7f9fe63569b0ea5b459a9925c4e46726f73f8e43f5aa9"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_001.uasset",
+      "bytes": 11339,
+      "sha256": "0a4b9955f29fb8e014a09716402f9598cf8c5ec39dd1bdd9eb8187ce66851979"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_002.uasset",
+      "bytes": 11339,
+      "sha256": "a5565772c15d6bad1e77deff009732ab85e2709d5b0c071a916efcb03cf2b622"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_003.uasset",
+      "bytes": 11339,
+      "sha256": "f66a4b18aed70b97fb5d622fd0badcf2039401ddf79d493cb55036476c04b92e"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_004.uasset",
+      "bytes": 11297,
+      "sha256": "05cad4b4e407866a31b88bb71e1d1ad3555839e7554547f239b9548ebf522c94"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_005.uasset",
+      "bytes": 11861,
+      "sha256": "e074d0c9bf164464b74f3684e8d7b6c9e506d3822fcdc0e56d281196b0b1f5cd"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_006.uasset",
+      "bytes": 11297,
+      "sha256": "ce2f2b518fb1e5fe7e3e8c4975cd92b59ff9d3328ca4872a56dc667913fb47f7"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_007.uasset",
+      "bytes": 11297,
+      "sha256": "2ea6b2b6aeb1c4eda1b42814c73930f0ac968af280d9936742db9e68e6be3247"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_008.uasset",
+      "bytes": 11297,
+      "sha256": "5e8b5ca456e27beeacf17e90941ae73de2d4d4dfa1a2c94a994814b30388ee69"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_009.uasset",
+      "bytes": 11297,
+      "sha256": "951ed0bb02aff142a77a11cc14007f3ab3f523903b70ed5db60522f127ad2b81"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_010.uasset",
+      "bytes": 11297,
+      "sha256": "91c6a88466092cda2b6925e8c2f09a9c877209d5cc9263e0e0b453d47b65d83f"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_011.uasset",
+      "bytes": 11297,
+      "sha256": "5f1e455cac03002b74e090c14fa2e6e2505b3669d253516851de6640299f5b2a"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_012.uasset",
+      "bytes": 11297,
+      "sha256": "9fda29b01bd584cb3ef5a2320424cfced888b3877a6b6a4b1dc3afc4db65873c"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_013.uasset",
+      "bytes": 11297,
+      "sha256": "23578e6dd4f068a64d0d60bf757f3cfb3e6aad230b9d38e5dfd4d17fffa5ec50"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_014.uasset",
+      "bytes": 11861,
+      "sha256": "6ff206e20f9970f8ffd0614ff13e073653f5f391a7c3fe33eb60c894eae1f65a"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_015.uasset",
+      "bytes": 11903,
+      "sha256": "9b88a33e0f6728e2757d98adb5b3d5a4fdc47d57450ebea1780b029baf3349ba"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_016.uasset",
+      "bytes": 11297,
+      "sha256": "868847e346e94c0cd978e3db625c2d1f9343faaab2c2b8dfa02ae1184ec09e10"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_017.uasset",
+      "bytes": 11297,
+      "sha256": "699e9071b064547b8e03fe5bc1ddd323fb37b044ba1fff71d6156653cdecdd9c"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_018.uasset",
+      "bytes": 11297,
+      "sha256": "35bb4d6c93deaad1fedb5a4bb9cdb36d37c7e9412cd5599646d33b77ad94a779"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_019.uasset",
+      "bytes": 11861,
+      "sha256": "3927ebfdb1e637b157b09a4e6e05994013b2baf0429e3fc701c88e4c54da1150"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_020.uasset",
+      "bytes": 11297,
+      "sha256": "137132080e51d7236c933f2d17e2b625572a783593890eca1db2eb74a9814cf4"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_021.uasset",
+      "bytes": 11297,
+      "sha256": "7adea79b7d8516aed5ae83ab28e14c17d7b43491e9973d3228ff719133f1f654"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_022.uasset",
+      "bytes": 11339,
+      "sha256": "b7f01dc4ca56a07a3a9928949c82fe27eac58d43f787e4b40669b16ab9eda5a1"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_023.uasset",
+      "bytes": 11297,
+      "sha256": "d5436f205f9bcb5fb56d0c859dd11a50a25b55aa5b4a696dcae7410139e93fb2"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_024.uasset",
+      "bytes": 11297,
+      "sha256": "5b35529eb09ea486913fd72ec8dd864006882e3399ebca7a5ccff398be0f515a"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_025.uasset",
+      "bytes": 11297,
+      "sha256": "54c5fee41724c351bd039f9bb0c6e6ba3284f00a50b2baed198a084ac3ca5d28"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_026.uasset",
+      "bytes": 11297,
+      "sha256": "6458deda76a197cbe973d2c273082d135ba5bcfbdc9a3db52abc750e447dfb2b"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_027.uasset",
+      "bytes": 11297,
+      "sha256": "3d4ac4ec309d75c97d7e3cf78e3cf938afa9bf289953046bf4ec44851a5de539"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_028.uasset",
+      "bytes": 11297,
+      "sha256": "c260b8cc937452a49ea8b7e28c8f22172f390213b69bccb5199d08990734d1a5"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_029.uasset",
+      "bytes": 11297,
+      "sha256": "ad19c29ae37f8670d54ad80437313981e2b985056635df37d64f98c0210d1ad0"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_030.uasset",
+      "bytes": 11339,
+      "sha256": "b7ecfbb7a066e0d5dd01bb15d89c7d43ed4cbeff984f4d8c284d99c1f3db895b"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_031.uasset",
+      "bytes": 11297,
+      "sha256": "2a89ae6e2049f9f8e44bb9a347c6f2b907db9cb5654e30cd89d6097cc31fc708"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_032.uasset",
+      "bytes": 11861,
+      "sha256": "084e7677663d528b207f59469e78300460b22d46b7ce70ef8455b0a68862af02"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_033.uasset",
+      "bytes": 11297,
+      "sha256": "34b04248864440227018251590dd0edf1d9e540e2c62f83225a8cf6123618eea"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_034.uasset",
+      "bytes": 11297,
+      "sha256": "5dd775028e183b18e6e57bfc08b7eb5692e6f12b84891eec3511cbedd2b13994"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_035.uasset",
+      "bytes": 11297,
+      "sha256": "08368795c229335ef1cad8b1a0a41cc18c2ffd40ace16c630c726384a0946420"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_036.uasset",
+      "bytes": 11297,
+      "sha256": "764f266e739d26bbef390a70fd9b372dbabc09fbdbca10033fe618acd0706d2e"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_037.uasset",
+      "bytes": 11297,
+      "sha256": "fbf789114a43900cf1a2e5d1bc91115b9ccc86663ffc8f6ccee899793d626db6"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_038.uasset",
+      "bytes": 11861,
+      "sha256": "d2d724ec249a255e0fa435974ca02d47e8ea8c6fa15b5ae85d7cda8850a4e005"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_039.uasset",
+      "bytes": 11297,
+      "sha256": "77850bc31611751d03a4122736d3af27bc9f22a3ec795bcd6f11fba5c0e5c57c"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_040.uasset",
+      "bytes": 11297,
+      "sha256": "75e526ff7cbddeaa1c2ef928ef5cf4079fb064e70ab5189050736591d5191606"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_041.uasset",
+      "bytes": 11339,
+      "sha256": "2cf362860d3c4fbc161f0b5c92c910df3f748ae31607d4bf2c160deea407d23f"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_042.uasset",
+      "bytes": 11861,
+      "sha256": "8a3960590664fd48c4f054c912ef59fcfae944154b96070abaf7cce23deecc46"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_043.uasset",
+      "bytes": 11339,
+      "sha256": "538c58d3ec0d30efebbf7eea96cb26b66cf84b87aa9c9446408db8dd4efd5f2e"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_044.uasset",
+      "bytes": 11297,
+      "sha256": "9caa7c384e882a9252f76db47c1bb5bb2f1ec84c4611f1b975b7a1e0f9ecbb8e"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_045.uasset",
+      "bytes": 11297,
+      "sha256": "63d0290c04accfd2f1e408186acebae3074690a6f39dde3b5276464bd7906b60"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_046.uasset",
+      "bytes": 11903,
+      "sha256": "cb69d6ed5d4a99a73822e78926786d0982cf3adc060949bc677c1db6d53e00be"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_047.uasset",
+      "bytes": 11297,
+      "sha256": "af8e8e4e880134b6e18c18b7f5cd0a2e8ec29ae79002ea09c1be763934926f50"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_048.uasset",
+      "bytes": 11297,
+      "sha256": "5843f63789105db83125a3bfec4d04136a2e512ceadfedf790da084ed9ea24d3"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_049.uasset",
+      "bytes": 11297,
+      "sha256": "67b9ec724f57d41aca799b9b645a74612e46324d941c85f0ccc0376f87890fac"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_050.uasset",
+      "bytes": 11297,
+      "sha256": "81581e43ec342877f2575d8fcd1eda05c33717b04cb50dd7a7c1437cfa51c6b5"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_051.uasset",
+      "bytes": 11297,
+      "sha256": "27f743992d6d326362c9381ea8ea2c2c399d5dc7de2cd834a632b412b706c967"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_052.uasset",
+      "bytes": 11297,
+      "sha256": "f5c0709ae03c2fe78d1e26cc352b08dc6eb4f9995d8ef41ac5c04f3addd3cee1"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_053.uasset",
+      "bytes": 11297,
+      "sha256": "a7f67507a8c803084d1b74e68173cb109fd4523ce9565a5d4e3af804687d6e13"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_054.uasset",
+      "bytes": 11297,
+      "sha256": "892d11e501e61f096f24179136a6b2acdebcf05f3ba37295c75d85c33e693c0f"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_055.uasset",
+      "bytes": 11297,
+      "sha256": "c78dfec63d8d231209e90d25388d2d7b8f1e4a14fb45bb0088378000f59afdd5"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_056.uasset",
+      "bytes": 11297,
+      "sha256": "545018c283bddaafcf0d27eeee94a78bd07bfe829864c8f4dc128489c0b58e98"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_057.uasset",
+      "bytes": 11339,
+      "sha256": "ead137fde08c868e4c194478b235148c0195dfb1e9895b1813c2e1264e36a17f"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_058.uasset",
+      "bytes": 11297,
+      "sha256": "d60ab8d4cc5a42d42c44d2b5536dad37b1188714214e3a2d9047f243cbbd4ff6"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_059.uasset",
+      "bytes": 11339,
+      "sha256": "8ddb22b4a5970c1427c3cf34825cf118cda8f3ac779d65e3fdbcf7e37bbbd835"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_060.uasset",
+      "bytes": 11297,
+      "sha256": "bb9cce2f4671a19dda916c8e3ff8a54c7a38213683280e08408ee294447bb97a"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_061.uasset",
+      "bytes": 11861,
+      "sha256": "2a1afa6c970d5e0a1b2067f0fdcca1b2095f394fb7a6f9adef256d6931e195f2"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_062.uasset",
+      "bytes": 11297,
+      "sha256": "f2fe52f9e7b17c93f952768a4ee127ca78d15cc8d3e82c666448c45e6777a9ee"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_063.uasset",
+      "bytes": 11297,
+      "sha256": "441a161284c25463f4d66205252d9b252de3b3d57d61d78dab3776414522ef71"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_064.uasset",
+      "bytes": 11297,
+      "sha256": "02ecdab9bb4cf1c31fc85575764d394dd56792c898abe48046c5631954a5422f"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_065.uasset",
+      "bytes": 11297,
+      "sha256": "c122ed6d04e652f596320c50f5c8f7113e571f87654f601e46b72f62900010b5"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_066.uasset",
+      "bytes": 11297,
+      "sha256": "e73f2ef0102d6f6c05ac47de29f662b7fe7c5ed0e7555102fa980c978f4dada5"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_067.uasset",
+      "bytes": 11861,
+      "sha256": "56a6fe6a5b290db4df5b99a5f399c8e6e34759dbf0ee108d029b2b9d1ae759c6"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_068.uasset",
+      "bytes": 11339,
+      "sha256": "5031d39a91553406b44d7e93aafcbf1aa873dfcb131bd641707e14823243ee3c"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_069.uasset",
+      "bytes": 11297,
+      "sha256": "bddfc0f21d876a1dc5794aa58c7e2638d7434a6e46e804a2b5f4fee351d7055a"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_070.uasset",
+      "bytes": 11297,
+      "sha256": "f23063f0b8fb959a0b10da4d8c9d3cbaf51825da67f33cfe1080e44f51e89fd1"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_071.uasset",
+      "bytes": 11297,
+      "sha256": "d41493ddc8fbba4e3d3fc4f5b125447ce1b54b490a76a5f25e60697f58731b03"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_072.uasset",
+      "bytes": 11297,
+      "sha256": "f1256b7a74eb66aee28d33c152826c872ed97881ac5a59c441dd7046dbf67bbf"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_073.uasset",
+      "bytes": 11297,
+      "sha256": "aecec95cca697bf875984bdded0015e261c63d45259c18acfadb4a9cf6a96c96"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_074.uasset",
+      "bytes": 11297,
+      "sha256": "bc87d3c1efbaaeb6860707760305703d643611b8f03c7ce2b9f90f7cfc45b6ee"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_075.uasset",
+      "bytes": 11297,
+      "sha256": "211d799e7735d06c243f0520eb43850890e759d369c427414bf4d2e78c0211a2"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_076.uasset",
+      "bytes": 11297,
+      "sha256": "80881226cb2a9116e9eaf3cf90c2d6db629c994c6af8ce1903fb87a0a49cc394"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_077.uasset",
+      "bytes": 11861,
+      "sha256": "1c126d8dea998cc304d4a96525ea7554f28a1e6c351a1f9c4d5cd06a7a6bd37f"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_078.uasset",
+      "bytes": 11297,
+      "sha256": "f4102669da42bea7a058ddf0b78db1dd8887959a7aa1b9ae26953cd452bb3593"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_079.uasset",
+      "bytes": 11297,
+      "sha256": "847114d5009a2e636a7811800fe2017d762d338dbc131767354e9c540f49f467"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Street_080.uasset",
+      "bytes": 11339,
+      "sha256": "b9cd4935d749c4c881e73f14691862c2f84a881fbb26e21a31dfa3a5c5727465"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Twisted_000.uasset",
+      "bytes": 11908,
+      "sha256": "61b5e22f0b54a78b1c30746c49c185b529cbf0aaacb02460e6f270595a148dcf"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Materials/M_Weapon_000.uasset",
+      "bytes": 11903,
+      "sha256": "3a905639c5fe9af52013ca9b535fec99c557070a38d78ed48516157b4f34965a"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/NativeCandidates/Aya/Run_64e9826c75854a7ba8f7f36eabefb4cf/aya_native.uasset",
+      "bytes": 1360625,
+      "sha256": "7625dc175a94bf969a1b8bab15a33fc30e9482f863010231224687af7726ad71"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/NativeCandidates/Aya/Run_64e9826c75854a7ba8f7f36eabefb4cf/aya_native_Anim.uasset",
+      "bytes": 605646,
+      "sha256": "3738fae5764b0b8dec9891395a635ab7ff3d056558c73efc2a93c3d6300835ca"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/NativeCandidates/Aya/Run_64e9826c75854a7ba8f7f36eabefb4cf/aya_native_Skeleton.uasset",
+      "bytes": 25027,
+      "sha256": "6f4a131c06fec22c27a5654ab90854203b7599d38620427c910ce90f6989835b"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/NativeCandidates/Aya/Run_d33ab6cdf7c140b68ff90a9d6e527e16/aya_000_15d1850ff7828d8c.uasset",
+      "bytes": 127156,
+      "sha256": "1b5079a871fc4b5cae0e1331e7973d67b013a605e083004ed6faf8a587cd22e1"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/NativeCandidates/Aya/Run_d33ab6cdf7c140b68ff90a9d6e527e16/aya_native.uasset",
+      "bytes": 1366689,
+      "sha256": "ddc7ff5ce7c7521c5cdb182d914bbd82785fcc3a31a40ac62963d2875c06d94b"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/NativeCandidates/Aya/Run_d33ab6cdf7c140b68ff90a9d6e527e16/aya_native_Anim.uasset",
+      "bytes": 611596,
+      "sha256": "204cc6d75b74d1bf62795921a559c52c9043aafde0c31732f51451c0b02a93f0"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/NativeCandidates/Aya/Run_d33ab6cdf7c140b68ff90a9d6e527e16/aya_native_Skeleton.uasset",
+      "bytes": 25027,
+      "sha256": "078a860430aca21eb0bbb7f38689721a72909a93d4ee8aa11b90a42396408df7"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/NativeCandidates/Aya/Run_d33ab6cdf7c140b68ff90a9d6e527e16/Aya_original_RGBA_000.uasset",
+      "bytes": 29474,
+      "sha256": "df4388acce539a00caea67098caa2b104523b9bcc45c4d546481cddc368e6c52"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/NativeCandidates/Aya/Run_e02980700c794c43bd84466ca2e7a288/aya_native.uasset",
+      "bytes": 1360665,
+      "sha256": "a464ae7d0bbcca20e32ec65835d55df7c2f636ae368677847fb404a9b5199cdb"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/NativeCandidates/Aya/Run_e02980700c794c43bd84466ca2e7a288/aya_native_Anim.uasset",
+      "bytes": 605646,
+      "sha256": "764af24792887f979514f5440cc28bb0451afc1d4c9a94253b405d57263c142d"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/NativeCandidates/Aya/Run_e02980700c794c43bd84466ca2e7a288/aya_native_Skeleton.uasset",
+      "bytes": 25027,
+      "sha256": "7de264e55d7024a0ee1bc727eaa6d2d476a2db6b14fdaea279a0a7cf7beddaf2"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/NativeCandidates/AyaCompact/Run_fbcb0ef145134ee58227c6c44f4835cb/aya_native.uasset",
+      "bytes": 997486,
+      "sha256": "f1a8ee3d15dabf2ce475ca3cf76a45b97a5d553e18d0d03d2455168f93f02f77"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/NativeCandidates/AyaCompact/Run_fbcb0ef145134ee58227c6c44f4835cb/aya_native_Anim.uasset",
+      "bytes": 643997,
+      "sha256": "b7b9d9e284584700fd542e8973ee688604142ca96a243372aefb091f82c4b269"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/NativeCandidates/AyaCompact/Run_fbcb0ef145134ee58227c6c44f4835cb/aya_native_Skeleton.uasset",
+      "bytes": 25055,
+      "sha256": "10f79c75158378ba37b40f19b25a554f2571e05b8f689ba56257483265e7c9af"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/NativeCandidates/AyaCull/Run_8198e8faa071458c834fa911389cc582/M_Aya_SingleSided.uasset",
+      "bytes": 12495,
+      "sha256": "bb0b82a335dd46be947e9f890601d9b314c00d23facc94e9d0db3637d6bc62be"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/NativeCandidates/AyaFullUV/Run_f34679f35e3744e58f694342fba517d5/aya_native_full_uv.uasset",
+      "bytes": 899330,
+      "sha256": "eb6d75dbeb9beeb627497a4b1987eed0a6acdcff43f969e9807f58bbe5fa4374"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/NativeCandidates/AyaLighting/Run_eba2fb82205441b9ac4176e392ce967c/ge_lit/aya_ge_lit_calibration.uasset",
+      "bytes": 139195,
+      "sha256": "ab415e9974127490e6bd0d3f0bceb023b685c1b8d061da05e870f33eaf87d541"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/NativeCandidates/AyaLighting/Run_eba2fb82205441b9ac4176e392ce967c/white/aya_white_calibration.uasset",
+      "bytes": 132531,
+      "sha256": "5f524ec49d7903b802ae0e8391515920f90a695ca00cb9c23a45d4c2e98cc97b"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/NativeCandidates/AyaLightingNoNanite/Run_9516045f29bc4b40a2569ad97e0b6a79/ge_lit/aya_ge_lit_calibration.uasset",
+      "bytes": 113814,
+      "sha256": "9ca3bbae9096e7a3afd7987a87c36b5735437a18754a9fd8a51c649a77466e22"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/NativeCandidates/AyaLightingNoNanite/Run_9516045f29bc4b40a2569ad97e0b6a79/white/aya_white_calibration.uasset",
+      "bytes": 107362,
+      "sha256": "fa61ace78fc2700628cdb6d5e6edb72b225794f4cb4909fdfa56321268acef61"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/NativeCandidates/AyaSourceCull/Run_6868dd144f284465bf4c9124fc47d335/aya_source_cull.uasset",
+      "bytes": 899326,
+      "sha256": "b5f9cffdc22c8788b3ea684bf46ef98d229c4d79ad89e0027fa52e92a56d91b8"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/NativeCandidates/AyaSourceCull/Run_831698320b0d40c8becacb7e91609889/aya_source_cull.uasset",
+      "bytes": 899462,
+      "sha256": "6390a31f691ffacdf342722351c9f7fa254fbe373b6a92b3c113c744ce847403"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/NativeCandidates/OtherActorGEPaired/Run_40fedc9fa49f4ad3ab9660645c77717e/M_Creature_SourceCull.uasset",
+      "bytes": 12653,
+      "sha256": "a08239e78b1a50543c4ccc3bf9ee61ad79144bf086ce7601e3c4ecebffdf2711"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/NativeCandidates/WeaponGEPaired/Run_a8dd1edb915b4dd0816d496e9a7bd8bd/M_Weapon_SourceCull.uasset",
+      "bytes": 12464,
+      "sha256": "35ad745c26cd8c7111c016f1eaca99b0d9be0f8f1e226fb48e89f6284664967a"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_0283c2066e4d86cd7995d9e7.uasset",
+      "bytes": 13688,
+      "sha256": "ab5f40ba3d6ba486aa6f5cd77b82eff4bbfd9713d3d49fd86ff68b0490cb3839"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_05a0f168ade858ea710079db.uasset",
+      "bytes": 16170,
+      "sha256": "accd56df213f1cd7dd82852ee68763ac56b57a6a61008430dfce490233865fcf"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_093465c5c83602d8dc5093d7.uasset",
+      "bytes": 23192,
+      "sha256": "215fdccee63dc545b218e18e729c3437211ac830d97faac59ca72add31aa5e96"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_0e091998da3d441be49ae2f3.uasset",
+      "bytes": 18793,
+      "sha256": "843b494e33c59aadd054e7723bef3bb748f12cbbfcf9e4ddf035c764b0d05fec"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_128a23fedeadb1da526025b2.uasset",
+      "bytes": 13529,
+      "sha256": "8bb189d835fdef151273d295e1b05b6e9ddd8a68558fbb112b9c52add471985c"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_133efa40a0068d8943a0ecec.uasset",
+      "bytes": 16888,
+      "sha256": "226c25f129dbc7985216423b2bbbb18a43a157d155ff1d3760795c839bfa2a57"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_144f311cedb82574e265b6a8.uasset",
+      "bytes": 8698,
+      "sha256": "01d051748c4c70916d21b3ba7bc2f11d445765c853f3fb5e59b9510674dd7953"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_16d07bad1358faaac63f010c.uasset",
+      "bytes": 7492,
+      "sha256": "c1241fc8042260d9ab3700c046e2dfa2c077129949200b2405d2090a1f028527"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_17398f4abfd65f8233d0685b.uasset",
+      "bytes": 15802,
+      "sha256": "4204a9ab74de5b679652f7616dc0833aef5f7bd40cc039fac012972c3c6341d0"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_17d4469b82b14eddc393b482.uasset",
+      "bytes": 7546,
+      "sha256": "bb37eabdc84e0ef16e14ab7a769e9264509ea5d86bb94dcb5ad3872d5fedcb04"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_1da01d76a4b9f9d645473978.uasset",
+      "bytes": 9605,
+      "sha256": "a969aa2d7f7c6b068ba06d60bfc21b24de3d4d08f29c2539155ae5771d154bb3"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_1f1fdabe12445231b80789a8.uasset",
+      "bytes": 11146,
+      "sha256": "40c98e24f67a85d46057822e001f08acafc954122488b6d12c5818cd1b454115"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_25b64d8dab77a9fb463a2fb1.uasset",
+      "bytes": 41530,
+      "sha256": "4e510172e504a2234e13a39b01e880a0f021d2493e4bcfe4219007f90d1a3fb7"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_275aeb134949ecd2386e8f1d.uasset",
+      "bytes": 8517,
+      "sha256": "b06cdcd2f627ab14e0b9bcb1784dda734fbbf885b02431e708854c4e05320889"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_2986c1a07546bfd23fff63c7.uasset",
+      "bytes": 12366,
+      "sha256": "3aeb5b38a920a59c850c58969edacbd8849fc004915c7f971af721a158ca7b93"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_3059ca9e3bc0cd5454b3957f.uasset",
+      "bytes": 5777,
+      "sha256": "04ed9bdb2895454c450a1f017039a66944b7acb97fa668bab914374747e03233"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_3554812b018ceb7bd463ae8d.uasset",
+      "bytes": 9468,
+      "sha256": "20823bfcc9a36ca88fd36ca34b2d283a83ca1c43e433e1532c8fd7f71cb53c30"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_3ff68c8b8fd7f1467ba85f75.uasset",
+      "bytes": 9866,
+      "sha256": "fa6c89271919eb1fbc95e5d965330452ee9479624879e90ec8c50b1ccbf012f6"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_4165d1611fe17e83bb828d79.uasset",
+      "bytes": 21981,
+      "sha256": "79fa16a3006fb08f7bb1f06e27ea25b101250748b516ea09aff196bea10ba604"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_5060ba99071d5e457b233da0.uasset",
+      "bytes": 9874,
+      "sha256": "8bb63ff0ec88d5ef37912a90f33b9033f87cf526254fab1bf0eb325cd72e0dc3"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_5148ff978b5d8270811524d0.uasset",
+      "bytes": 18686,
+      "sha256": "2421e04ec26a645d5f2db3f93a6f5e737dd638fa8d025b36ab153744056463e4"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_54bdab2a661efc6a75c3415c.uasset",
+      "bytes": 12305,
+      "sha256": "c4092d6c5052f9127884e0d3cfe9ae7a5fae50f4405c28c3331b9db50de59ee0"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_59a796938bb23e9c34328334.uasset",
+      "bytes": 15182,
+      "sha256": "4133c1050625b999a2ab343ebc29c6f6f3790f1b0ca5994ad3858688b82b54f5"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_59eb7a38dbf7ef362423530f.uasset",
+      "bytes": 12460,
+      "sha256": "b91fd09295ab75f36915711db8236a4d5c954f3f40f944b5babecc949eca5150"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_5a23697d632ec55860a737e9.uasset",
+      "bytes": 6641,
+      "sha256": "1d7b2f408394f71de78325627610d5bf55b3141a4355414c6ec6394a7ed1c36a"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_5ae974d799e6b3e03d2e1f87.uasset",
+      "bytes": 16012,
+      "sha256": "fd02c28355b9979e9874cdcb8a627b73d6d9905eb22a9bc33944e3a54c900191"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_5bdaf9af838fe923b3a61325.uasset",
+      "bytes": 9323,
+      "sha256": "9ae6ea018748a282948baf0ac2340316e5d0811c89a04559304959fb32988257"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_5f2436dc3f1c5c236918d63c.uasset",
+      "bytes": 17236,
+      "sha256": "b7f0387cefc72e55b3bbe7c9f19d7f0738e81bc6364c4c49b818a7e396b3b819"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_61aae23a2efeb6a31d85abfb.uasset",
+      "bytes": 13926,
+      "sha256": "01c1977226aa7945f7ebd049516fc7750bb963ff36dd9a5e6956abd1507e56b7"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_61f1d4636505bd1b2f187029.uasset",
+      "bytes": 16757,
+      "sha256": "fb74047d2ec333b84ce1c07562b394e48f9bf7b8bfbd9ca13f3a97975c370e92"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_6467aee256ab4c40be18e82c.uasset",
+      "bytes": 9474,
+      "sha256": "1a54d6812246a877c5780b4468b26a32f8b7b70e34fe38e5889f4e3ed008e361"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_64a5ef0903d458cb96f4f4c6.uasset",
+      "bytes": 7942,
+      "sha256": "eb734b9c04030f22e6994a46c6277c73422c5703efa02e34a84379314bab31b5"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_65673b9f121b2c0225104cd0.uasset",
+      "bytes": 16318,
+      "sha256": "89fab191f1dda4b33c9964bfdcf8f949df48be11d12f3e2c14a0ea11fb80d82f"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_65a8ee5c2c0837b4e6ff44e0.uasset",
+      "bytes": 19189,
+      "sha256": "8479ff4a54e7ff53f6bb47866be694786620be7cb6ec0d18ae50d061ef826567"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_6887ded488ee20caf8699963.uasset",
+      "bytes": 17250,
+      "sha256": "49ee216d732d3db2219f72b4437e44ec8af82356a4aad17822335f6727ff2d2f"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_72eaec18420528dfa4b5d2e0.uasset",
+      "bytes": 10781,
+      "sha256": "2e3fa6b809ff57f54073921fe3c6fbad3f4e34d463d893484406859821380248"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_74aa20eb7893fc8744108ca7.uasset",
+      "bytes": 18800,
+      "sha256": "5bad4272197965f5dca3d80ad74e14daef94473289a382827f6a91bcdd9e1ea0"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_7c961e90492c1d33743bc19b.uasset",
+      "bytes": 113527,
+      "sha256": "b7d67b932c34d1bb8a821b214a099460bbf91d9434232b973de2f33c429c82f3"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_7cf8288c76eee10e1e5c62d2.uasset",
+      "bytes": 7897,
+      "sha256": "9a04f2fabf81710e0aed7eca0c47510548d1f18fe37d361f63a3a5e32b115866"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_82c5d1f05e32b87f727a19f0.uasset",
+      "bytes": 10139,
+      "sha256": "73df01e3914fa0454ec0aab597fa631af602a7f1bc5581f7179d217a64f60c7f"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_84196d246e046590ee3a28bf.uasset",
+      "bytes": 7639,
+      "sha256": "f4ff83fa6f39ff112564dfa5ac41e8651f03003e82eaa09ec834b6c07398ab65"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_852a1a30be95a6c3de7205a2.uasset",
+      "bytes": 11306,
+      "sha256": "64dbab62a5e7cb84d44afcab655b7488809b4132f728613bd316d25f1ef04557"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_8b51f05df2adafd84456e90a.uasset",
+      "bytes": 139922,
+      "sha256": "6da5833a2c13993aa81abf5b90a8535e00ad80d84bba687a347ebc776fdf9df9"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_8b5da7fdad0f5036101c3c3c.uasset",
+      "bytes": 14283,
+      "sha256": "42c1efc64abe2917bd1742b0e234a3d53bcfd56f06a42a799ae4821f9bafd9cf"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_9cda5e06942d0590ab57b8f6.uasset",
+      "bytes": 5167,
+      "sha256": "f3f2ec3369201af63e29567b5c5142cb6bc0971b6d9819ed1e1cf808b0bd1685"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_9fa0be7d99d1f1ff30e4f7d9.uasset",
+      "bytes": 7502,
+      "sha256": "1d32410d76b63e90cc1421e4c479de23e2635e036f2d9a21a864ece0de101126"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_a5e54348a68401768fce67de.uasset",
+      "bytes": 5960,
+      "sha256": "71bfebcb487f5ff2ac0eb9f6ed5333c92c9ea231399d9fc3b5159fa5d7436d21"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_a80a296332ad3f766737252c.uasset",
+      "bytes": 17180,
+      "sha256": "fca91eaf70bb40cd35da3b58d368b564514a3cc1fd7772b996ab0e325f60b5ad"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_a890559efc3431c492a170a5.uasset",
+      "bytes": 9696,
+      "sha256": "8f38442b34f4dcc6d8de5af4ad5c7e89806974b82af733f44d02a3b8d173c0ab"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_a949f1494dd4686114fd3893.uasset",
+      "bytes": 18072,
+      "sha256": "2c8ad65c1230671c02b4a0d8fd640383d84436995c63f1713bb2a20b28984b89"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_ab6da94f4c386d2a9d655e04.uasset",
+      "bytes": 16591,
+      "sha256": "9b82793d1fbaaafa3ce982b6a5d2e260c9358b8a10cde98faa1e872bd463567e"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_b164a067542e5cacddfea7be.uasset",
+      "bytes": 8004,
+      "sha256": "741ef654bf5a8918a16d6ecc51c12c82744447a0540d52d9ee3458a4f632c6c7"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_b40c5aa550a26e893e00989c.uasset",
+      "bytes": 14000,
+      "sha256": "6f30eb2497864398ead8baf59fdc4fe7d7134fd639705995b8b472c44ddfb899"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_bc0cee60e1d228202ad17a84.uasset",
+      "bytes": 20825,
+      "sha256": "6a5d90b8abeec6285099af0e2e9e40e29fc769b2f170ce6479ded05e776c7540"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_bcffacc0d1b52aa3fcc0b2f6.uasset",
+      "bytes": 13343,
+      "sha256": "b122413993779294a233c0a722b9027a1e891a498aaeb06af2af5d36d9d064a4"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_c05426501efc974ef016795a.uasset",
+      "bytes": 7555,
+      "sha256": "3890e759eb98b28fd8447f594ffb0b9d0e97a42a182e3014a9eefd27fcb2f673"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_c2990acbce1218e6baa6f6ce.uasset",
+      "bytes": 8505,
+      "sha256": "5547e720640c7a4bac8def3ed84e412ce41e609be4581b6c2806655e35601314"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_c6bc6dc0f5abb47464d68040.uasset",
+      "bytes": 9654,
+      "sha256": "fe7f1141c38b250a9e9eef864885cf19a85d4cd44846a01e08372ffdf4c2edbe"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_ccf9f9e726e4c8c97ee422f2.uasset",
+      "bytes": 7201,
+      "sha256": "f4de9b078a53bcb94a7f2ed4e27d05ca3c7e547d9e889e6295ffa3484f66179d"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_cf766de2e9ca1f8df3262402.uasset",
+      "bytes": 8320,
+      "sha256": "cda0141ef56108949f4199df1010c0ac44ceaaef00170e454fb60b8c3b39eac7"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_cfbe5850e3e94d8fe563171f.uasset",
+      "bytes": 9186,
+      "sha256": "4bc2a1dca4957201ca87f02c9f0d30d3da957a08b7883b96021a5e7d89ec995e"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_d35f402e3cf54d84aecc6e4b.uasset",
+      "bytes": 5405,
+      "sha256": "5ecc600a3bf14b136724f93465c8bd819d43acde4902cf7ce7f47812ebd404a4"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_d3a8b97cebae09638e420637.uasset",
+      "bytes": 20035,
+      "sha256": "d38a608051522c9f546733c452e70aa6ed9540374940437dd72c94d5f1244ea2"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_d41d81634d3d45cd95fa5814.uasset",
+      "bytes": 34640,
+      "sha256": "1d2dd8d97141b7a2fef7e171bad5f846a203f204ae9fcbcbee56acdd3a91354e"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_d5bc7290124fb18e13861fa9.uasset",
+      "bytes": 21187,
+      "sha256": "b0c3b9dacea60faaa1e96ee2cbfaedcf5c4df7a4201dc4d52432712c5b6bff26"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_d7c960f2e7e99d1ccc21e5ce.uasset",
+      "bytes": 12644,
+      "sha256": "3ff817dce6ead8d1db4533cdbb141d271132d30317d8a8cb519f7c139e2b6e68"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_d829fc37f0f822fbb704f67c.uasset",
+      "bytes": 12211,
+      "sha256": "ef82b86612e840172f65130c5cc5e0f962edb920d841fb8e07bdf40336c65e87"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_d8303cfbb9e60aeb5f2366bf.uasset",
+      "bytes": 14298,
+      "sha256": "ac772e31ea1d2f07c0fa1b72f1a4286c8aec8d70578e5162fafb4409a38d1625"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_db54897f05af3275a15e9fcb.uasset",
+      "bytes": 14168,
+      "sha256": "86e33c6be68eefb98c871dfa5ff5bcd3ac772c67ebbc5fb36a11ad5ee63b000c"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_de7348be2b46e208b913cbda.uasset",
+      "bytes": 12267,
+      "sha256": "b708ad094e7f9f6717cd632ad9808a657b9a7a730e59afc9420f214dc83ea3c7"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_e9c9a5beffdbd7320a9fc8c6.uasset",
+      "bytes": 18992,
+      "sha256": "682e30fd482d9acad861de5fac6038af7c641bfd365fdafc19c61bb43ee0d47c"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_eb6b3f0bfbcfcb2038043fb1.uasset",
+      "bytes": 6906,
+      "sha256": "dc6a67913961bc3b4c7cd3b9da3fc42643b43a5e40dbd8a8411864ece80e13ad"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_ed9966eab309ce9fd831f09b.uasset",
+      "bytes": 34709,
+      "sha256": "f8369cd080b09b876e7616103c4153e7667bf690cc32db9371b2408e8bcf524e"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_f4d25fc558c37e9db13c6303.uasset",
+      "bytes": 11203,
+      "sha256": "42e8970441167de00f0273e9fb5a57becd56de535ab8b6af54834bfcf5e97217"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_fbc9d9a1c257bc03092c517b.uasset",
+      "bytes": 10827,
+      "sha256": "d5676c60c465444c61a5caf322f94196da07924fceece0c05e23892583c194c7"
+    },
+    {
+      "path": "work/t3b_unreal/Content/T3B/Textures/T_ffc65b9ea635a21c73d88998.uasset",
+      "bytes": 12077,
+      "sha256": "13e41e6d8b82ba280db204f94af950839e0c80977d3d833ee52e431d6577e540"
+    }
+  ]
+}

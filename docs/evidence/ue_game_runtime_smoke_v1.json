@@ -1,0 +1,18 @@
+{
+  "schema": "t3b-ue-game-runtime-smoke/v1",
+  "status": "failed_runtime_asset_load",
+  "project_copy": "C:\\T3BRemakeBuild_20261021_markerprobe\\T3BRemake.uproject",
+  "target": "T3BRemake Win64 Development",
+  "map": "M1_SourceReplay",
+  "command": "T3BRemake.exe M1_SourceReplay -nullrhi -unattended -NoSound -NoAsyncLoadingThread -NoAssetRegistryCache -ExecCmds=\"T3B.Replay.Probe;quit\"",
+  "process_exit_code": 3,
+  "log": "C:\\T3BRemakeBuild_20261021_markerprobe\\Saved\\Logs\\marker_probe_runtime_noasync.log",
+  "log_sha256": "59363b6b9231104766cf4e3635d92af9ea798ca29f1cf5f0fad4da2e7563fec6",
+  "observed": [
+    "UE engine initialized with Null RHI",
+    "premade asset registry load reported LoadResult=1",
+    "loose map/package startup hit FBufferReader ReaderPos+Num<=ReaderSize assertion in IOThreadPool",
+    "Saved/SourceReplay/weapon_markers.json was not produced"
+  ],
+  "scope": "Game executable startup was exercised; map/cooked asset loading and runtime replay probe are not accepted until a cooked or Editor-validated map is available."
+}

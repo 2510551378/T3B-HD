@@ -1,0 +1,30 @@
+#include "/Engine/Public/Platform.ush"
+#include "/T3B/Private/T3BGECommon.ush"
+
+// UE packs row-major by default and its parameter parser rejects the row_major qualifier.
+#pragma pack_matrix(row_major)
+float4x4 WorldToClip;
+float ScenePreExposure;
+uint DrawId;
+Texture2D<float4> Atlas;
+SamplerState AtlasSampler;
+
+struct FInput { float3 Position : ATTRIBUTE0; float2 UV : ATTRIBUTE1; float4 Color : ATTRIBUTE2; };
+struct FInterpolated { float4 Position : SV_Position; float2 UV : TEXCOORD0; float4 Color : COLOR0; };
+FInterpolated MainVS(FInput Input)
+{
+    FInterpolated Output;
+    Output.Position = mul(float4(Input.Position, 1.0), WorldToClip);
+    Output.UV = Input.UV;
+    Output.Color = Input.Color;
+    return Output;
+}
+struct FPixel { float4 Color : SV_Target0; uint Owner : SV_Target1; };
+FPixel MainPS(FInterpolated Input)
+{
+    FPixel Output;
+    Output.Color = T3BGECombine(Atlas.Sample(AtlasSampler, Input.UV), Input.Color);
+    Output.Color.rgb *= ScenePreExposure;
+    Output.Owner = DrawId;
+    return Output;
+}

@@ -1,0 +1,20 @@
+{
+  "schema": "t3b-action-clip-probe-verification/v1",
+  "status": "passed",
+  "probe": "work\\t3b_unreal\\Validation\\action_clip_probe.exe",
+  "cases": {
+    "valid": {
+      "exit_code": 0,
+      "stdout": "{\"bodyBones\":44,\"bodyVertices\":3456,\"weaponBones\":1,\"weaponVertices\":243,\"samples\":60,\"duration\":1.96863}"
+    },
+    "truncated_weapon": {
+      "exit_code": 1,
+      "stderr": "source byte count mismatch"
+    },
+    "mismatched_body": {
+      "exit_code": 1,
+      "stderr": "Aya/weapon sample times differ"
+    }
+  },
+  "scope": "synchronized sample-time and binary contract rejection; no action semantics inferred"
+}

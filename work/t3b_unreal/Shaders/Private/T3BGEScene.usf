@@ -1,0 +1,33 @@
+#include "/Engine/Public/Platform.ush"
+#include "/T3B/Private/T3BGESceneCommon.ush"
+// UE packs row-major by default and its parameter parser rejects the row_major qualifier.
+#pragma pack_matrix(row_major)
+float4x4 LocalToClip;
+float4 FogPlane;
+uint DrawFlags;
+uint DrawId;
+uint4 FogRGB;
+float ScenePreExposure;
+Texture2D<float4> Atlas;
+SamplerState AtlasSampler;
+struct FSceneInput { float3 Position:ATTRIBUTE0;float2 UV:ATTRIBUTE1;float4 Color:ATTRIBUTE2; };
+struct FSceneInterpolated {
+    float4 Position:SV_Position;
+    float2 UV:TEXCOORD0;
+    noperspective float4 Color:COLOR0;
+    noperspective float Fog:TEXCOORD1;
+};
+FSceneInterpolated MainVS(FSceneInput V)
+{
+    FSceneInterpolated O;
+    O.Position=mul(float4(V.Position,1),LocalToClip);
+    O.UV=V.UV;O.Color=V.Color;O.Fog=dot(float4(V.Position,1),FogPlane);
+    return O;
+}
+struct FScenePixel { float4 Color:SV_Target0;uint Owner:SV_Target1; };
+FScenePixel MainPS(FSceneInterpolated V)
+{
+    FScenePixel O;
+    O.Color=T3BSceneShade(Atlas.Sample(AtlasSampler,V.UV),V.Color,V.Fog,DrawFlags,FogRGB.rgb);
+    O.Color.rgb*=ScenePreExposure;O.Owner=DrawId;return O;
+}
