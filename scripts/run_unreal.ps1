@@ -39,6 +39,6 @@ if(-not $Build){
 }
 if($ValidateOnly){Write-Output 'UE launch prerequisites validated; editor not started.';return}
 if($Build){& (Join-Path $projectRoot 'Tools\build_unreal.ps1') -EngineRoot $EngineRoot -Target Editor}
-$editorArgs=@((Join-Path $projectRoot 'T3BRemake.uproject'))
+$editorArgs=@((Join-Path $projectRoot 'T3BRemake.uproject'),'-d3d11')
 if($Game){$editorArgs+=@('/Game/T3B/Maps/M1_SourceReplay','-game')}
 Start-Process -FilePath $editorFile -ArgumentList ($editorArgs | ForEach-Object {'"'+$_+'"'}) -WorkingDirectory $projectRoot

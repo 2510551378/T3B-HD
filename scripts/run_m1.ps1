@@ -11,6 +11,7 @@ foreach($relative in @('t3b_hd.exe','SDL2.dll','assets\models\original_actor_sou
 $runtimeArgs=@()
 if($HDSampling){$runtimeArgs+='--hd-sampling'}
 if($TestSourceSpawn){$runtimeArgs+='--test-source-spawn'}
+New-Item -ItemType Directory -Path (Join-Path $projectRoot 'build') -Force | Out-Null
 Push-Location -LiteralPath $projectRoot
 try {
     & (Join-Path $projectRoot 't3b_hd.exe') @runtimeArgs

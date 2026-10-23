@@ -1,6 +1,6 @@
 # 当前交接状态
 
-这是首次 GitHub 整理时的状态快照；继承的验证报告日期为 2026-10-21。正式目标为独立 PC 高清重制，当前项目仍在开发。
+最新交接验证：2026-10-23。私有运行包已在全新 clone 中安装、校验并启动；正式目标仍为独立 PC 高清重制，当前项目仍在开发。
 
 ## 已有证据
 
@@ -12,15 +12,17 @@
 | 枪械与动作 | 原枪 243 顶点；60 帧同步 Aya/weapon source pair；`approach_fire` 为移动+开火采样，不是完整 locomotion |
 | 场景与敌人 | 街景 140 draws / 31,656 顶点 / 81 材质状态；一个 11-bone 原异形；碰撞为可见网格适配，8,551 个三角形 |
 | UE Game target | `T3BRemake Win64 Development` 实际完成编译链接，最新 marker probe 代码已包含；见 [构建快照](evidence/ue_game_build_markerprobe_v1.json) |
-| UE 最新启动 | loose-map Game target 启动 exit 3，`FBufferReader` 断言；未产出 `weapon_markers.json`，见 [失败快照](evidence/ue_game_runtime_smoke_v1.json) |
-| 工具链 | MSVC 14.44、Windows SDK 10.0.22621.0 已安装；.NET Framework 4.8 Developer Pack 日志最终 exit 0，NETFXSDK 已注册；之后尚未重新验证 Editor target |
+| UE 最新启动 | 全新 clone + 运行包：Editor-hosted `-game` 成功加载地图，NullRHI probe exit 0；D3D11 离屏运行 31 帧后 exit 0。见 [交接验证](evidence/runtime_bundle_delivery_v2.json)；旧 standalone Game loose-map 失败仍未验证修复 |
+| UE probe | Aya/weapon/Twisted 全 60 samples 与 Street 的实际组件 CPU-world 顶点通过独立比较，最大误差小于 0.0001 cm；`weapon_markers.json` 实际生成。见 [CPU 核验](evidence/runtime_bundle_ue_cpu_v2.json)，不代表像素/材质/玩法通过 |
+| 工具链 | MSVC 14.44、Windows SDK 10.0.22621.0、.NET Framework 4.8 SDK 已安装；本次 `T3BRemakeEditor Win64 Development` 构建返回成功 |
+| 私有运行包 | 655 个资产 + C exe/SDL2/自有 UE module/交接说明，共 662 个 payload 文件、约 21.8 MiB ZIP；全新 clone 的 C source-spawn 为 4 hits、enemy dead、Overdive 返回通过 |
 | 高清化 | 可选 4× atlas 重采样已有原型；缺失纹理细节、脸部/服装重建和完整高清美术尚未完成 |
 
 `docs/evidence/` 是本机历史报告副本，包含当时绝对路径及哈希；报告引用的大文件不在 Git 中。仓库 CI 只验证源码语法和独立 source-data core。
 
 ## 接手后优先做
 
-1. **UE Editor / cook / probe**：在英文短路径构建 `T3BRemakeEditor`，用已交接的 Content 启动地图，得到真实 `T3B.Replay.Probe` 输出后再测 cooked Game。成功标准是实际地图加载、退出码与 probe 文件核验，不是仅编译。
+1. **UE 可视验收 / cook**：Editor-hosted 地图和 reference CPU probe 已通过，继续同机位像素/材质检查，再测 cooked standalone Game。当前运行包通过 UE Editor host 启动，不包含 cooked 独立游戏。
 2. **修正 probe 的 clip 一致性**：检查 `T3BReplayWorld.cpp` 中 `WriteSourceProbe()` 使用 reference `Actor.Skin`、`ApplyReplay()` 使用选中 action clip 的潜在不一致；补齐 action pair 与 reference 几何/材质兼容验证。默认仍为 `reference`。
 3. **原材质视觉复核**：同相机、同帧检查 Aya 的身体/衣物、透明主深度、逐 draw CLUT。普通 UE translucent 不等价于原版 alpha blend + main depth write。
 4. **武器语义与连续动作**：source1/source2 marker 的数值恢复与 source1 的部分视觉 FX 链已有证据，但完整弹道/枪口语义及所有姿态尚未恢复；真实右手 timeline 当前 loaded、未绑定，禁止强行混接不同采集。

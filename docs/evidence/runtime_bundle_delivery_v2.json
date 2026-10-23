@@ -1,0 +1,104 @@
+{
+  "schema": "t3b-runtime-bundle-delivery/v2",
+  "status": "passed",
+  "bundle": "dist/T3B-HD-runtime-assets-20261023-v2.zip",
+  "bundle_sha256": "fd261d2218cd647cbcd07f111fba38cac72a0ab4af940aeba0ccb64ec66eecfc",
+  "bundle_bytes": 22828886,
+  "source_commit_at_pack": "5821a90eb7bf9932679dea2c02e03ec465ee0214",
+  "private_payloads": 662,
+  "original_asset_files": 655,
+  "clean_clone": "C:\\T3BHD_SyncTest_b0fda1db",
+  "installer_checks": {
+    "schema": "t3b-runtime-installer-checks/v1",
+    "idempotent_install_written": 0,
+    "changed_local_file_refused": true,
+    "changed_local_file_preserved": true,
+    "unsafe_paths_rejected": [
+      "../escape",
+      "work/t3b_hd/assets/../escape",
+      "work/t3b_hd/assets/NUL.txt",
+      "work/t3b_hd/assets/file:stream"
+    ],
+    "wrong_outer_sha256_refused": true,
+    "passed": true
+  },
+  "c_source_spawn": {
+    "exit_code": 0,
+    "shots_hit": 4,
+    "enemy_dead": true,
+    "overdive_seen": true,
+    "overdive_return": true,
+    "original_scene_draws": 140,
+    "original_scene_vertices": 31656,
+    "log_sha256": "e35fc76f40fd157c2164f62cb7e3dcc98b00241b6dcf850d0c4ac31b443c64c8"
+  },
+  "ue_editor_build_result": "Succeeded (up to date)",
+  "engine": "5.8.4-58902052+++UE5+Release-5.8",
+  "engine_module_build_id": "55116800",
+  "ue_nullrhi_exit": 0,
+  "ue_map_loaded": true,
+  "ue_cpu_geometry_verified": true,
+  "ue_marker_probe_file_written": true,
+  "ue_probe_files": [
+    {
+      "file": "Aya_world.csv",
+      "bytes": 32309960,
+      "sha256": "b1aeec2cc1a5e279af10682a5194502bc5e6106aac71b522c60dd47fc03ee9d9"
+    },
+    {
+      "file": "probe_metadata.json",
+      "bytes": 365,
+      "sha256": "9155394d960a25fbe4e9518192304eeca65e27d11da5158e65beddab12712438"
+    },
+    {
+      "file": "Street_world.csv",
+      "bytes": 4639539,
+      "sha256": "02f580b48e02e65cda528d9130f05f622d654bb31a6f7a727954e03895e8b887"
+    },
+    {
+      "file": "Twisted_world.csv",
+      "bytes": 16757848,
+      "sha256": "0aa29864580d877c3fe863fc8841cbe8898afd0fe82bca78752d74e6ded160ae"
+    },
+    {
+      "file": "weapon_markers.json",
+      "bytes": 798,
+      "sha256": "f27848f43276b214a2f0acb01678e0e65d395bddf729f448c2eeaaa070ae6e25"
+    },
+    {
+      "file": "Weapon_world.csv",
+      "bytes": 2232224,
+      "sha256": "7de65153555213d2e53c8115959272a44175539b0d0f3032298c1592a0c8e934"
+    }
+  ],
+  "ue_d3d11_exit": 0,
+  "ue_d3d11_command": [
+    "C:\\Program Files\\Epic Games\\UE_5.8\\Engine\\Binaries\\Win64\\UnrealEditor-Cmd.exe",
+    "C:\\T3BHD_SyncTest_b0fda1db\\work\\t3b_unreal\\T3BRemake.uproject",
+    "/Game/T3B/Maps/M1_SourceReplay",
+    "-game",
+    "-RenderOffscreen",
+    "-d3d11",
+    "-unattended",
+    "-NoSound",
+    "-nosplash",
+    "-windowed",
+    "-ResX=640",
+    "-ResY=360",
+    "-benchmark",
+    "-seconds=1",
+    "-fps=30",
+    "-abslog=C:\\T3BHD_SyncTest_b0fda1db/ue_bundle_d3d11.log",
+    "-stdout"
+  ],
+  "ue_d3d11_log_sha256": "9b65f78995e74bdedac60df40f02bfb49b70526c6de4c776684d4aa51ab3e823",
+  "ue_d3d11_benchmark_frames": 31,
+  "ue_nullrhi_log_sha256": "ccd98c1adc695161dd927f61abf75da6e67845a766236961f6b64a44acbcecd3",
+  "limits": [
+    "No pixel/material correctness acceptance",
+    "No cooked standalone UE game",
+    "No full UE playable combat acceptance",
+    "C collision/AI remain adapters"
+  ],
+  "asset_payloads_uploaded_to_github": false
+}

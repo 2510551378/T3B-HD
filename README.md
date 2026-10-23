@@ -31,7 +31,7 @@ python -X utf8 scripts/check_source.py
 
 ## 当前范围
 
-C 原型已接入 Aya 的 44 source bones、原版枪械、一个原版异形和 140-draw 街景，并具备锁定、射击、碰撞适配与 Overdive 验证流程。UE Game target 已在本机编译链接；最新 loose-map 启动仍失败，Editor/cook 和正式 C++ 渲染路径待验证。已有部分资产在独立 UE 诊断工程中出图，其结果不能替代正式 M1 验收。
+C 原型已接入 Aya 的 44 source bones、原版枪械、一个原版异形和 140-draw 街景，并具备锁定、射击、碰撞适配与 Overdive 验证流程。UE Game/Editor target 已编译；全新 clone 配合私有运行包，已通过 Editor-hosted 地图加载、实际 CPU 顶点 probe 和 D3D11 离屏启动。像素/材质、cook 与正式 UE M1 可玩验收仍未完成。
 
 原版 ISO、EBOOT/PRX、存档、内存/GE 转储、提取模型贴图、UE Content 包、第三方程序和构建产物均留在本地。仓库包含源码、工具、技术文档和资产身份清单；完整运行需按资产交接文档准备数据。原作及第三方内容不因本仓库而获得再分发授权，参见 [来源说明](THIRD_PARTY_NOTICES.md)。
 

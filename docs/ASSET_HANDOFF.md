@@ -32,7 +32,9 @@ UE 使用本机已验证的 5.8.4 / CL 58902052 / module BuildId `55116800`：
 .\scripts\run_unreal.ps1 -EngineRoot 'C:\Program Files\Epic Games\UE_5.8' -Game
 ```
 
-启动器检查 UE BuildId、module 哈希和对应源文件。相同引擎可直接加载预编译 module；引擎不同或代码变动时加 `-Build`，这需要 MSVC/SDK。首次启动可能编译 shader；运行包不是 cooked Unreal 独立游戏，画面与 gameplay 的限制见 `CURRENT_STATUS.md`。
+启动器检查 UE BuildId、module 哈希和对应源文件，默认使用本次启动测试通过的 D3D11。相同引擎可直接加载预编译 module；引擎不同或代码变动时加 `-Build`，这需要 MSVC/SDK。首次启动可能编译 shader；运行包不是 cooked Unreal 独立游戏，画面与 gameplay 的限制见 `CURRENT_STATUS.md`。
+
+最终 ZIP SHA-256：`fd261d2218cd647cbcd07f111fba38cac72a0ab4af940aeba0ccb64ec66eecfc`。全新 clone 验证见 [delivery report](evidence/runtime_bundle_delivery_v2.json)：安装、655 资产身份、C source-spawn、UE 地图/probe 与 D3D11 启动均通过；重复安装写入 0 个 payload，已修改文件被拒绝覆盖。
 
 维护者重新打包时，必须显式指定已验证的 build copy、引擎与 SDL 许可证：
 
