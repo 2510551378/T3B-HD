@@ -2,10 +2,10 @@ T3B-HD runtime asset bundle
 
 1. Clone/update https://github.com/2510551378/T3B-HD into C:\src\T3B-HD.
 2. Download the ZIP and .sha256 from the versioned GitHub Release:
-   https://github.com/2510551378/T3B-HD/releases/tag/runtime-assets-20261023-v2
+   https://github.com/2510551378/T3B-HD/releases/tag/runtime-assets-20261023-v3
    Do not add binary assets to Git history.
 3. From the clone root, install with the checksum printed in the sidecar:
-   python -X utf8 scripts/runtime_bundle.py install C:\Transfer\T3B-HD-runtime-assets-20261023-v2.zip --sha256 <SHA256>
+   python -X utf8 scripts/runtime_bundle.py install C:\Transfer\T3B-HD-runtime-assets-20261023-v3.zip --sha256 <SHA256>
 4. Verify the original asset identities:
    python -X utf8 scripts/asset_manifest.py verify
 5. Run the Windows C/SDL2 prototype (no compiler required):
@@ -25,3 +25,9 @@ not a cooked standalone Unreal game or a completed HD remake.
 Install checks every member before writing, skips identical files, and refuses
 to replace differing local assets unless --replace-existing is explicitly used.
 Back up edited assets before replacing them. See docs/ASSET_HANDOFF.md in Git.
+
+M1 v3: source scene and actors share ordered main-depth rendering.
+Hold left mouse for paired continuous firing animation; release to hold pose.
+The loop uses a120ms PC preview seam adapter, not recovered original scheduling.
+Unedited files from a previously installed bundle can upgrade automatically.
+User-edited files are still protected. See docs/UE_M1_V3.md for scope and checks.

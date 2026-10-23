@@ -2,6 +2,10 @@
 #include "T3BActionClip.h"
 #include "T3BGEWeaponMarkers.h"
 #include "T3BSourceData.h"
+#include "T3BGEViewExtension.h"
+#include "Engine/Texture2D.h"
+#include "Components/InputComponent.h"
+#include "InputCoreTypes.h"
 #include "Components/SceneComponent.h"
 #include "Dom/JsonObject.h"
 #include "Engine/Engine.h"
@@ -28,6 +32,8 @@ struct FReplayActorData
     T3BSource::Skin Skin;
     std::array<float, 3> Spawn{};
     TArray<UMaterialInterface*> Materials;
+    int32 Atlas = -1;
+    bool Cull = false, Blend = true, DepthWrite = true;
 };
 
 struct FReplayActionClip
@@ -116,6 +122,20 @@ TArray<UMaterialInterface*> LoadMaterials(const TArray<TSharedPtr<FJsonValue>>& 
     return Result;
 }
 
+FT3BGESection OrderedMaterial(const TSharedPtr<FJsonObject>& M, float ExpectedScale,
+    TArray<TObjectPtr<UTexture2D>>& Atlases) {
+    if (M->GetNumberField(TEXT("alpha_ref")) != 0 || !M->GetBoolField(TEXT("alpha_test")) ||
+        M->GetNumberField(TEXT("rgb_scale")) != ExpectedScale || M->GetNumberField(TEXT("su")) != 1 ||
+        M->GetNumberField(TEXT("sv")) != 1 || M->GetNumberField(TEXT("ou")) != 0 ||
+        M->GetNumberField(TEXT("ov")) != 0 || M->GetNumberField(TEXT("wrap_s")) != 0 || M->GetNumberField(TEXT("wrap_t")) != 0)
+        throw T3BSource::FormatError("Unsupported ordered source texture state");
+    UTexture2D* Texture=LoadObject<UTexture2D>(nullptr,*JsonString(M,TEXT("texture_asset")));
+    if (!Texture || Texture->SRGB) throw T3BSource::FormatError("Missing original linear atlas");
+    int32 Index=Atlases.IndexOfByKey(Texture); if(Index==INDEX_NONE)Index=Atlases.Add(Texture);
+    return {0,0,uint32(Index),M->GetNumberField(TEXT("cull"))!=0,
+        M->GetNumberField(TEXT("blend"))!=0,M->GetNumberField(TEXT("depth_write"))!=0};
+}
+
 FVector UEPoint(T3BSource::Vec3 PC)
 {
     const T3BSource::Vec3 U = T3BSource::ToUE(PC);
@@ -151,14 +171,26 @@ struct FT3BReplayState
 {
     T3BSource::Scene Scene;
     TArray<UMaterialInterface*> SceneMaterials;
+    TArray<FT3BGESection> SceneSections;
+    TArray<T3BGE::GPUVertex> SceneVertices;
     std::vector<FReplayActorData> Actors;
     std::vector<FReplayActionClip> ActionClips;
     T3BGE::WeaponMarkerDefinitions WeaponMarkers;
     bool HasWeaponMarkers = false;
     FString ActiveActionClip;
+    TSharedPtr<FT3BGEViewExtension, ESPMode::ThreadSafe> OrderedMaterials;
     double MaximumDuration = 0.0;
 };
 
+namespace {
+const T3BSource::Skin& PlaybackSkin(const FT3BReplayState& State, const FReplayActorData& Actor) {
+    for (const auto& Clip : State.ActionClips) if (Clip.Label == State.ActiveActionClip) {
+        if (Actor.Name == TEXT("Aya")) return Clip.Pair.body;
+        if (Actor.Name == TEXT("Weapon")) return Clip.Pair.weapon;
+    }
+    return Actor.Skin;
+}
+}
 void FT3BReplayStateDeleter::operator()(FT3BReplayState* Ptr) const { delete Ptr; }
 
 AT3BReplayWorld::AT3BReplayWorld()
@@ -172,6 +204,7 @@ AT3BReplayWorld::~AT3BReplayWorld() = default;
 void AT3BReplayWorld::FailReplay(const FString& Reason)
 {
     bReplayReady = false;
+    if (State && State->OrderedMaterials) State->OrderedMaterials->Submit(nullptr, {});
     SetActorTickEnabled(false);
     for (UProceduralMeshComponent* Mesh : ReplayMeshes) if (Mesh) Mesh->SetVisibility(false, true);
     UE_LOG(LogT3BReplay, Error, TEXT("SOURCE REPLAY FAILED: %s. Geometry hidden; no default-material success fallback."), *Reason);
@@ -192,10 +225,21 @@ void AT3BReplayWorld::BeginPlay()
         if (bReplayReady)
         {
             ApplyReplay(0.0f, true);
+            EnableInput(GetWorld()->GetFirstPlayerController());
+            if (InputComponent) {
+                InputComponent->BindKey(EKeys::LeftMouseButton, IE_Pressed, this, &AT3BReplayWorld::StartFire);
+                InputComponent->BindKey(EKeys::LeftMouseButton, IE_Released, this, &AT3BReplayWorld::StopFire);
+            }
             UE_LOG(LogT3BReplay, Display, TEXT("Source replay loaded (visual preview only). Console: T3B.Replay.Seek seconds; T3B.Replay.Pause 0|1; T3B.Replay.Probe"));
         }
     }
     catch (const std::exception& Error) { FailReplay(UTF8_TO_TCHAR(Error.what())); }
+}
+
+void AT3BReplayWorld::EndPlay(const EEndPlayReason::Type Reason) {
+    if (State && State->OrderedMaterials) State->OrderedMaterials->Submit(nullptr, {});
+    State.Reset();
+    Super::EndPlay(Reason);
 }
 
 bool AT3BReplayWorld::LoadSourceBundle()
@@ -215,6 +259,21 @@ bool AT3BReplayWorld::LoadSourceBundle()
     State->SceneMaterials = LoadMaterials(JsonArray(SceneDescription, TEXT("materials")), TEXT("Street"));
     if (State->Scene.draws.size() != 140 || State->Scene.materials != 81 || State->SceneMaterials.Num() != 81)
         throw T3BSource::FormatError("Original street must contain140 draws and81 materials");
+    TArray<FT3BGESection> SceneProfiles;
+    for(const auto& Entry:JsonArray(SceneDescription,TEXT("materials")))
+        SceneProfiles.Add(OrderedMaterial(ValueObject(Entry),1.f,ReplayAtlases));
+    for(const auto& Draw:State->Scene.draws){
+        auto Section=SceneProfiles[Draw.material];Section.First=uint32(State->SceneVertices.Num());Section.Count=Draw.count;
+        State->SceneSections.Add(Section);
+        for(uint32 V=Draw.first;V<Draw.first+Draw.count;++V){
+            const auto& Source=State->Scene.vertices[V];const auto P=UEPoint(Source.position);
+            T3BGE::GPUVertex Out{};Out.position[0]=float(P.X);Out.position[1]=float(P.Y);Out.position[2]=float(P.Z);
+            Out.uv[0]=Source.uv.u;Out.uv[1]=Source.uv.v;
+            // Shared shader's x2 color contract; street modulation itself is x1.
+            for(int32 C=0;C<3;++C)Out.color[C]=Source.rgba[C]/510.f;
+            Out.color[3]=Source.rgba[3]/255.f;State->SceneVertices.Add(Out);
+        }
+    }
     for (const auto& Value : JsonArray(Manifest, TEXT("actors")))
     {
         const auto Description = ValueObject(Value);
@@ -238,7 +297,13 @@ bool AT3BReplayWorld::LoadSourceBundle()
         }
         Actor.Skin = T3BSource::LoadSkin(ReadBundleBinary(JsonString(Description, TEXT("binary"))));
         if (Actor.Skin.flags & ~15u) throw T3BSource::FormatError("Actor source flags exceed the documented replay material contract");
-        Actor.Materials = LoadMaterials(JsonArray(Description, TEXT("materials")), Actor.Name);
+        const auto& MaterialEntries = JsonArray(Description, TEXT("materials"));
+        Actor.Materials = LoadMaterials(MaterialEntries, Actor.Name);
+        {
+            if (MaterialEntries.Num()!=1) throw T3BSource::FormatError("Ordered actor requires one verified atlas");
+            const auto Profile=OrderedMaterial(ValueObject(MaterialEntries[0]),2.f,ReplayAtlases);
+            Actor.Atlas=int32(Profile.Atlas);Actor.Cull=Profile.Cull;Actor.Blend=Profile.Blend;Actor.DepthWrite=Profile.DepthWrite;
+        }
         const size_t ExpectedPackets = Actor.Name == TEXT("Aya") ? 106 : Actor.Name == TEXT("Weapon") ? 1 : 28;
         if (Actor.Skin.packets.size() != ExpectedPackets || Actor.Skin.materials != static_cast<uint32>(Actor.Materials.Num()))
             throw T3BSource::FormatError("Original actor packet/material identity mismatch");
@@ -269,6 +334,8 @@ bool AT3BReplayWorld::LoadSourceBundle()
             Clip.Pair = T3BAction::LoadSynchronizedPair(
                 ReadBundleBinary(JsonString(Description, TEXT("body"))),
                 ReadBundleBinary(JsonString(Description, TEXT("weapon"))));
+            T3BAction::ValidateCompatible(Aya->Skin, Clip.Pair.body);
+            T3BAction::ValidateCompatible(Weapon->Skin, Clip.Pair.weapon);
             if (Clip.Label == TEXT("reference"))
                 throw T3BSource::FormatError("action_clips cannot redefine reference playback");
             for (const auto& Existing : State->ActionClips)
@@ -286,6 +353,8 @@ bool AT3BReplayWorld::LoadSourceBundle()
         State->HasWeaponMarkers = true;
         UE_LOG(LogT3BReplay, Display, TEXT("Loaded original T3BWMK1 weapon marker source indices 1/2; semantic gameplay socket name remains unresolved."));
     }
+    if (ReplayAtlases.IsEmpty() || ReplayAtlases.Num()>256) throw T3BSource::FormatError("Original atlas set incomplete");
+    State->OrderedMaterials = FSceneViewExtensions::NewExtension<FT3BGEViewExtension>(GetWorld());
     // Keep unsupported metadata visible. Submission order alone cannot promise
     // PSP blend/depth, fog, stencil or UE transparent sorting equivalence.
     UE_LOG(LogT3BReplay, Warning, TEXT("UE rendering acceptance pending: original triangle/section order and UV retained; UE winding, transparent sorting, PSP fog/stencil and blend/depth equivalence require actual editor verification."));
@@ -309,7 +378,7 @@ bool AT3BReplayWorld::LoadSourceBundle()
     return true;
 }
 
-void AT3BReplayWorld::ApplyReplay(float Seconds, bool CreateSections)
+void AT3BReplayWorld::ApplyReplay(float Seconds, bool CreateSections, bool ExactSample)
 {
     if (!State || ReplayMeshes.Num() != 4) throw T3BSource::FormatError("Replay mesh state incomplete");
     if (CreateSections)
@@ -328,23 +397,17 @@ void AT3BReplayWorld::ApplyReplay(float Seconds, bool CreateSections)
             ReplayMeshes[0]->SetMaterial(static_cast<int32>(Section), State->SceneMaterials[Draw.material]);
         }
     }
+    TSharedPtr<FT3BGEWorldFrame, ESPMode::ThreadSafe> OrderedFrame = MakeShared<FT3BGEWorldFrame, ESPMode::ThreadSafe>();
+    ReplayMeshes[0]->SetVisibility(!bOriginalMaterials);
+    if(bOriginalMaterials){OrderedFrame->Vertices=State->SceneVertices;OrderedFrame->Sections=State->SceneSections;}
     for (size_t Index = 0; Index < State->Actors.size(); ++Index)
     {
         const auto& Actor = State->Actors[Index];
-        const T3BSource::Skin* PlaybackSkin = &Actor.Skin;
-        if (!State->ActiveActionClip.IsEmpty())
-        {
-            for (const auto& Clip : State->ActionClips)
-            {
-                if (Clip.Label != State->ActiveActionClip) continue;
-                if (Actor.Name == TEXT("Aya")) PlaybackSkin = &Clip.Pair.body;
-                else if (Actor.Name == TEXT("Weapon")) PlaybackSkin = &Clip.Pair.weapon;
-                break;
-            }
-        }
-        const auto& Skin = *PlaybackSkin;
-        const auto Posed = T3BSource::PoseOriginal(Skin, Seconds);
+        const auto& Skin = PlaybackSkin(*State, Actor);
+        const auto Phase = T3BAction::PlaybackPhase(Seconds, Skin.time.back(), bLoopPlayback && !ExactSample);
+        const auto Posed = T3BAction::Pose(Skin, Phase);
         UProceduralMeshComponent* Mesh = ReplayMeshes[static_cast<int32>(Index) + 1];
+        Mesh->SetVisibility(!(bOriginalMaterials && Actor.Atlas >= 0));
         for (size_t Section = 0; Section < Skin.packets.size(); ++Section)
         {
             const auto& Packet = Skin.packets[Section];
@@ -357,16 +420,30 @@ void AT3BReplayWorld::ApplyReplay(float Seconds, bool CreateSections)
                     const auto& A = Posed[V]; const auto& B = Posed[V + 1]; const auto& C = Posed[V + 2];
                     const FVector SourceNormal = FVector::CrossProduct(FVector(B.x - A.x, B.y - A.y, B.z - A.z), FVector(C.x - A.x, C.y - A.y, C.z - A.z)).GetSafeNormal();
                     FaceShade = 0.75f + 0.25f * FMath::Max(0.0f, static_cast<float>(SourceNormal.Y * 0.7 + SourceNormal.Z * 0.3));
-                    if (Actor.Skin.flags & 2) FaceShade *= 0.5f;
+                    if (Skin.flags & 2) FaceShade *= 0.5f;
                 }
                 Points.Add(UEPoint(T3BSource::ToPC(Skin, Posed[V], Actor.Spawn[0], Actor.Spawn[1], Actor.Spawn[2])));
                 UV.Add(FVector2D(Skin.vertices[V].uv.u, Skin.vertices[V].uv.v));
                 Colors.Add(FLinearColor(FaceShade, FaceShade, FaceShade, 1.0f));
             }
+            if (Actor.Atlas >= 0 && bOriginalMaterials) {
+                OrderedFrame->Sections.Add({uint32(OrderedFrame->Vertices.Num()), Packet.count,
+                    uint32(Actor.Atlas), Actor.Cull, Actor.Blend, Actor.DepthWrite});
+                for (int32 V=0; V<Points.Num(); ++V) {
+                    T3BGE::GPUVertex Out{};
+                    Out.position[0]=float(Points[V].X); Out.position[1]=float(Points[V].Y); Out.position[2]=float(Points[V].Z);
+                    Out.uv[0]=float(UV[V].X); Out.uv[1]=float(UV[V].Y);
+                    Out.color[0]=Colors[V].R; Out.color[1]=Colors[V].G; Out.color[2]=Colors[V].B; Out.color[3]=Colors[V].A;
+                    OrderedFrame->Vertices.Add(Out);
+                }
+            }
             SetSection(Mesh, static_cast<int32>(Section), Points, UV, Colors, CreateSections);
             if (CreateSections) Mesh->SetMaterial(static_cast<int32>(Section), Actor.Materials[Packet.material]);
         }
     }
+    TArray<FTextureResource*> Resources;
+    for (UTexture2D* Texture : ReplayAtlases) Resources.Add(Texture->GetResource());
+    State->OrderedMaterials->Submit(bOriginalMaterials ? OrderedFrame : nullptr, Resources);
 }
 
 void AT3BReplayWorld::Tick(float DeltaSeconds)
@@ -375,7 +452,7 @@ void AT3BReplayWorld::Tick(float DeltaSeconds)
     if (!bReplayReady || bReplayPaused) return;
     // Preview loop only; it does not claim the original clips loop.
     ReplaySeconds += static_cast<double>(DeltaSeconds);
-    if (ReplaySeconds > State->MaximumDuration) ReplaySeconds = 0.0;
+    // Retain elapsed remainder; body/weapon evaluate the same phase, including the seam.
     try { ApplyReplay(static_cast<float>(ReplaySeconds), false); }
     catch (const std::exception& Error) { FailReplay(UTF8_TO_TCHAR(Error.what())); }
 }
@@ -384,7 +461,7 @@ void AT3BReplayWorld::SetReplaySeconds(float Seconds)
 {
     if (!bReplayReady || !FMath::IsFinite(Seconds)) return;
     ReplaySeconds = FMath::Clamp(static_cast<double>(Seconds), 0.0, State->MaximumDuration);
-    try { ApplyReplay(static_cast<float>(ReplaySeconds), false); }
+    try { ApplyReplay(static_cast<float>(ReplaySeconds), false, true); }
     catch (const std::exception& Error) { FailReplay(UTF8_TO_TCHAR(Error.what())); }
     UE_LOG(LogT3BReplay, Display, TEXT("Preview seconds=%.9g (per-clip clamped; capture groups remain distinct)"), ReplaySeconds);
 }
@@ -404,12 +481,26 @@ void AT3BReplayWorld::SetReplayActionClip(const FString& Label)
         }
     }
     State->ActiveActionClip = Requested;
+    ReplaySeconds = 0.0;
     try { ApplyReplay(static_cast<float>(ReplaySeconds), false); }
     catch (const std::exception& Error) { FailReplay(UTF8_TO_TCHAR(Error.what())); return; }
     UE_LOG(LogT3BReplay, Display, TEXT("Replay action clip=%s"), Requested.IsEmpty() ? TEXT("reference") : *Requested);
 }
 
 void AT3BReplayWorld::SetReplayPaused(bool Paused) { bReplayPaused = Paused; }
+void AT3BReplayWorld::StartFire() { SetFiring(true); }
+void AT3BReplayWorld::StopFire() { SetFiring(false); }
+void AT3BReplayWorld::SetFiring(bool Firing) {
+    if (!bReplayReady) return;
+    bReplayPaused = !Firing;
+    bLoopPlayback = true;
+    if (Firing) ReplaySeconds = 0.0;
+    UE_LOG(LogT3BReplay, Display, TEXT("Continuous-fire preview=%d; shared Aya/weapon source clock +120ms seam adapter"), Firing);
+}
+void AT3BReplayWorld::SetOriginalMaterials(bool Enabled) {
+    bOriginalMaterials = Enabled;
+    if (bReplayReady) ApplyReplay(static_cast<float>(ReplaySeconds), false, bReplayPaused);
+}
 
 bool AT3BReplayWorld::WriteSourceProbe()
 {
@@ -422,6 +513,9 @@ bool AT3BReplayWorld::WriteSourceProbe()
     Metadata->SetStringField(TEXT("engine_version"), FEngineVersion::Current().ToString());
     Metadata->SetStringField(TEXT("scope"), TEXT("actual_procedural_component_CPU_world_positions"));
     Metadata->SetBoolField(TEXT("gpu_pixels_verified"), false);
+    Metadata->SetStringField(TEXT("action_clip"), State->ActiveActionClip.IsEmpty() ? TEXT("reference") : State->ActiveActionClip);
+    Metadata->SetBoolField(TEXT("ordered_actor_materials"), bOriginalMaterials);
+    Metadata->SetStringField(TEXT("probe_sampling"), TEXT("exact_stored_samples_no_preview_seam"));
     const auto SaveMetadata = [&Directory, &Metadata](bool Complete)
     {
         Metadata->SetBoolField(TEXT("all_csv_written"), Complete);
@@ -490,23 +584,23 @@ bool AT3BReplayWorld::WriteSourceProbe()
     {
         for (size_t A = 0; A < State->Actors.size(); ++A)
         {
-            const auto& Actor = State->Actors[A]; FString CSV = Header;
-            for (size_t Sample = 0; Sample < Actor.Skin.time.size(); ++Sample)
+            const auto& Actor = State->Actors[A]; const auto& Skin = PlaybackSkin(*State, Actor); FString CSV = Header;
+            for (size_t Sample = 0; Sample < Skin.time.size(); ++Sample)
             {
-                ApplyReplay(Actor.Skin.time[Sample], false);
-                const auto Posed = T3BSource::PoseOriginal(Actor.Skin, Actor.Skin.time[Sample]);
+                ApplyReplay(Skin.time[Sample], false, true);
+                const auto Posed = T3BSource::PoseOriginal(Skin, Skin.time[Sample]);
                 size_t Section = 0;
                 for (size_t I = 0; I < Posed.size(); ++I)
                 {
-                    const auto S = Posed[I]; const auto P = T3BSource::ToPC(Actor.Skin, S, Actor.Spawn[0], Actor.Spawn[1], Actor.Spawn[2]);
-                    while (I >= Actor.Skin.packets[Section].first + Actor.Skin.packets[Section].count) ++Section;
+                    const auto S = Posed[I]; const auto P = T3BSource::ToPC(Skin, S, Actor.Spawn[0], Actor.Spawn[1], Actor.Spawn[2]);
+                    while (I >= Skin.packets[Section].first + Skin.packets[Section].count) ++Section;
                     UProceduralMeshComponent* Mesh = ReplayMeshes[static_cast<int32>(A) + 1];
                     FProcMeshSection* Buffer = Mesh->GetProcMeshSection(static_cast<int32>(Section));
-                    const int32 Local = static_cast<int32>(I - Actor.Skin.packets[Section].first);
+                    const int32 Local = static_cast<int32>(I - Skin.packets[Section].first);
                     if (!Buffer || !Buffer->ProcVertexBuffer.IsValidIndex(Local)) throw T3BSource::FormatError("Actual procedural mesh probe buffer is incomplete");
                     const FVector U = UEPoint(P); const FVector W = Mesh->GetComponentTransform().TransformPosition(FVector(Buffer->ProcVertexBuffer[Local].Position));
                     CSV += FString::Printf(TEXT("%llu,%.9g,%llu,%.9g,%.9g,%.9g,%.9g,%.9g,%.9g,%.9g,%.9g,%.9g,%.9g,%.9g,%.9g\n"),
-                        static_cast<unsigned long long>(Sample), Actor.Skin.time[Sample], static_cast<unsigned long long>(I),
+                        static_cast<unsigned long long>(Sample), Skin.time[Sample], static_cast<unsigned long long>(I),
                         S.x, S.y, S.z, P.x, P.y, P.z, U.X, U.Y, U.Z, W.X, W.Y, W.Z);
                 }
             }
@@ -519,6 +613,76 @@ bool AT3BReplayWorld::WriteSourceProbe()
     return SaveMetadata(OK) && OK;
 }
 
+bool AT3BReplayWorld::WriteMotionProbe() {
+    if (!bReplayReady || !State) return false;
+    const FString ProbeDirectory=FPaths::Combine(FPaths::ProjectSavedDir(),TEXT("SourceReplay"));
+    IFileManager::Get().MakeDirectory(*ProbeDirectory,true);
+    if(!FFileHelper::SaveStringToFile(TEXT("{\"all_csv_written\":false}"),
+        *FPaths::Combine(ProbeDirectory,TEXT("continuous_fire.json")),FFileHelper::EEncodingOptions::ForceUTF8WithoutBOM))return false;
+    try {
+        size_t Body=0, Weapon=0;
+        for (size_t i=0; i<State->Actors.size(); ++i) {
+            if (State->Actors[i].Name==TEXT("Aya")) Body=i;
+            if (State->Actors[i].Name==TEXT("Weapon")) Weapon=i;
+        }
+        const auto& A=State->Actors[Body]; const auto& W=State->Actors[Weapon];
+        const auto& BodySkin=PlaybackSkin(*State,A); const auto& GunSkin=PlaybackSkin(*State,W);
+        const auto AtZero=T3BSource::PoseOriginal(BodySkin,0), GunZero=T3BSource::PoseOriginal(GunSkin,0);
+        uint32 BodyContact=0, GunContact=0; double Closest=MAX_dbl;
+        // Mesh-surface vertex contact candidate, not an invented named skeleton socket.
+        for (uint32 i=0;i<AtZero.size();++i) for(uint32 j=0;j<GunZero.size();++j) {
+            const auto& a=AtZero[i]; const auto& b=GunZero[j];
+            const double D=FMath::Square(a.x-b.x)+FMath::Square(a.y-b.y)+FMath::Square(a.z-b.z);
+            if(D<Closest){Closest=D;BodyContact=i;GunContact=j;}
+        }
+        uint32 Tip=0, Base=0;
+        for(uint32 i=1;i<GunSkin.vertices.size();++i)
+            if(GunSkin.vertices[i].position.x<GunSkin.vertices[Tip].position.x)Tip=i;
+        const auto P=GunSkin.vertices[Tip].position; float Nearest=MAX_flt;
+        for(uint32 i=0;i<GunSkin.vertices.size();++i){const auto Q=GunSkin.vertices[i].position;
+            if(Q.y==P.y && Q.z==P.z && Q.x>P.x && Q.x<Nearest){Nearest=Q.x;Base=i;}}
+        if(Nearest==MAX_flt)throw T3BSource::FormatError("No matching original barrel cross-section");
+        const auto Actual=[&](size_t ActorIndex,uint32 Vertex){
+            const auto& Skin=PlaybackSkin(*State,State->Actors[ActorIndex]);
+            for(size_t i=0;i<Skin.packets.size();++i){const auto& Packet=Skin.packets[i];
+                if(Vertex>=Packet.first && Vertex<Packet.first+Packet.count){
+                    const auto* Buffer=ReplayMeshes[int32(ActorIndex)+1]->GetProcMeshSection(int32(i));
+                    if(!Buffer || Vertex-Packet.first>=uint32(Buffer->ProcVertexBuffer.Num()))break;
+                    return ReplayMeshes[int32(ActorIndex)+1]->GetComponentTransform().TransformPosition(
+                        FVector(Buffer->ProcVertexBuffer[int32(Vertex-Packet.first)].Position));
+                }
+            }
+            throw T3BSource::FormatError("Motion probe mesh vertex unavailable");
+        };
+        FString CSV=TEXT("sample,elapsed,source_time,next_time,seam_alpha,body_x,body_y,body_z,grip_x,grip_y,grip_z,tip_x,tip_y,tip_z,base_x,base_y,base_z\n");
+        for(uint32 Step=0;Step<=360;++Step){
+            const float Elapsed=float(Step)/30.f;
+            ApplyReplay(Elapsed,false);
+            const auto Phase=T3BAction::PlaybackPhase(Elapsed,BodySkin.time.back(),bLoopPlayback);
+            const FVector B=Actual(Body,BodyContact),G=Actual(Weapon,GunContact),T=Actual(Weapon,Tip),R=Actual(Weapon,Base);
+            CSV+=FString::Printf(TEXT("%u,%.9g,%.9g,%.9g,%.9g,%.9g,%.9g,%.9g,%.9g,%.9g,%.9g,%.9g,%.9g,%.9g,%.9g,%.9g,%.9g\n"),
+                Step,Elapsed,Phase.first,Phase.second,Phase.blend,B.X,B.Y,B.Z,G.X,G.Y,G.Z,T.X,T.Y,T.Z,R.X,R.Y,R.Z);
+        }
+        ApplyReplay(static_cast<float>(ReplaySeconds),false,bReplayPaused);
+        const FString Directory=FPaths::Combine(FPaths::ProjectSavedDir(),TEXT("SourceReplay"));
+        IFileManager::Get().MakeDirectory(*Directory,true);
+        const bool Written=FFileHelper::SaveStringToFile(CSV,*FPaths::Combine(Directory,TEXT("continuous_fire.csv")),FFileHelper::EEncodingOptions::ForceUTF8WithoutBOM);
+        const TSharedPtr<FJsonObject> Metadata=MakeShared<FJsonObject>();
+        Metadata->SetStringField(TEXT("schema"),TEXT("t3b-ue-continuous-fire/v1"));
+        Metadata->SetStringField(TEXT("action_clip"),State->ActiveActionClip.IsEmpty()?TEXT("reference"):State->ActiveActionClip);
+        Metadata->SetNumberField(TEXT("body_contact_vertex"),BodyContact);Metadata->SetNumberField(TEXT("weapon_contact_vertex"),GunContact);
+        Metadata->SetNumberField(TEXT("barrel_tip_vertex"),Tip);Metadata->SetNumberField(TEXT("barrel_base_vertex"),Base);
+        Metadata->SetNumberField(TEXT("samples"),361);Metadata->SetNumberField(TEXT("seam_seconds"),0.12f);
+        Metadata->SetBoolField(TEXT("named_original_socket_recovered"),false);
+        Metadata->SetBoolField(TEXT("actual_component_CPU_readback"),true);
+        Metadata->SetBoolField(TEXT("all_csv_written"),Written);
+        FString Text;const auto Writer=TJsonWriterFactory<>::Create(&Text);FJsonSerializer::Serialize(Metadata.ToSharedRef(),Writer);
+        const bool OK=FFileHelper::SaveStringToFile(Text,*FPaths::Combine(Directory,TEXT("continuous_fire.json")),FFileHelper::EEncodingOptions::ForceUTF8WithoutBOM)&&Written;
+        UE_LOG(LogT3BReplay,Display,TEXT("Continuous fire probe=%d;361 shared-clock samples; contact vertices %u/%u; no named socket claim"),OK,BodyContact,GunContact);
+        return OK;
+    }catch(const std::exception& Error){FailReplay(UTF8_TO_TCHAR(Error.what()));return false;}
+}
+
 namespace
 {
 AT3BReplayWorld* FindReplay(UWorld* World)
@@ -527,6 +691,18 @@ AT3BReplayWorld* FindReplay(UWorld* World)
     UE_LOG(LogT3BReplay, Error, TEXT("No T3BReplayWorld in the active world; start the replay map in PIE/game first."));
     return nullptr;
 }
+FAutoConsoleCommandWithWorldAndArgs MaterialsCommand(TEXT("T3B.Replay.OriginalMaterials"), TEXT("Ordered source scene/actors blend+main-depth: 1 enabled, 0 legacy UE translucent A/B."),
+    FConsoleCommandWithWorldAndArgsDelegate::CreateLambda([](const TArray<FString>& Args,UWorld* World){
+        if(Args.Num()!=1 || (Args[0]!=TEXT("0") && Args[0]!=TEXT("1")))return;
+        if(auto* Replay=FindReplay(World))Replay->SetOriginalMaterials(Args[0]==TEXT("1"));
+    }));
+FAutoConsoleCommandWithWorldAndArgs FireCommand(TEXT("T3B.Replay.Fire"), TEXT("Continuous paired source animation: 1 play, 0 hold (also left mouse)."),
+    FConsoleCommandWithWorldAndArgsDelegate::CreateLambda([](const TArray<FString>& Args,UWorld* World){
+        if(Args.Num()!=1 || (Args[0]!=TEXT("0") && Args[0]!=TEXT("1")))return;
+        if(auto* Replay=FindReplay(World))Replay->SetFiring(Args[0]==TEXT("1"));
+    }));
+FAutoConsoleCommandWithWorldAndArgs MotionCommand(TEXT("T3B.Replay.MotionProbe"),TEXT("Record actual component contact/barrel candidates over multiple fire loops."),
+    FConsoleCommandWithWorldAndArgsDelegate::CreateLambda([](const TArray<FString>&,UWorld* World){if(auto* Replay=FindReplay(World))Replay->WriteMotionProbe();}));
 FAutoConsoleCommandWithWorldAndArgs SeekCommand(TEXT("T3B.Replay.Seek"), TEXT("Seek original source replay to seconds; clamps each clip."),
     FConsoleCommandWithWorldAndArgsDelegate::CreateLambda([](const TArray<FString>& Args, UWorld* World)
     {

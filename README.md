@@ -27,7 +27,7 @@
 python -X utf8 scripts/check_source.py
 ```
 
-该命令检查 Python 语法并运行已有的 57 项 source-data 数值与格式拒绝测试；不会启动游戏、安装引擎或读取 ISO。GitHub Actions 运行相同入口。它不覆盖 UE 编译、画面或可玩验收。
+该命令检查 Python 语法，运行 57 项 source-data 数值/格式测试及 29 项动作兼容性/循环测试；不会启动游戏、安装引擎或读取 ISO。GitHub Actions 运行相同入口。它不覆盖 UE 编译、画面或可玩验收。
 
 ## 当前范围
 
@@ -37,4 +37,6 @@ Git 源码树包含源码、工具、技术文档和资产身份清单；运行�
 
 各子目录 README 和 `CONTINUATION_CHECKPOINT.md` 保留大量历史记录；当前状态以 `docs/CURRENT_STATUS.md` 为准。
 
-从 [GitHub Release 下载运行包](https://github.com/2510551378/T3B-HD/releases/tag/runtime-assets-20261023-v2)，安装到 clone 后用 `scripts/run_m1.ps1` 或 `scripts/run_unreal.ps1` 启动。具体校验、引擎版本与命令见[运行包交接](docs/ASSET_HANDOFF.md#可安装的运行包)。
+从 [GitHub Release 下载运行包](https://github.com/2510551378/T3B-HD/releases/tag/runtime-assets-20261023-v3)，安装到 clone 后用 `scripts/run_m1.ps1` 或 `scripts/run_unreal.ps1` 启动。具体校验、引擎版本与命令见[运行包交接](docs/ASSET_HANDOFF.md#可安装的运行包)。
+
+最新 [UE M1 v3](docs/UE_M1_V3.md) 修正 Aya 透明自遮挡与异形覆盖，加入共享时间的连续射击动作、左键播放/停住，以及按当前动作输出的实际顶点检查。仍需完成正式 UE 战斗与高清美术。

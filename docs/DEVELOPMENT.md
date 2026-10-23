@@ -10,7 +10,7 @@ Python 3.10+、C++17 `g++`（本机原有 Strawberry MinGW 可用）：
 python -X utf8 scripts/check_source.py
 ```
 
-无需游戏数据或额外 Python 包。输出在忽略的 `build/source_check/`，执行现有 57 项 synthetic source-data tests。GitHub Actions 的 Linux 结果不替代 Windows/UE 验证。
+无需游戏数据或额外 Python 包。输出在忽略的 `build/source_check/`，执行 57 项 synthetic source-data tests 和 29 项动作兼容性/连续循环 tests。GitHub Actions 的 Linux 结果不替代 Windows/UE 验证。
 
 分析工具按需使用隔离环境：
 
@@ -23,7 +23,7 @@ py -3 -m venv .venv
 
 ## 2. 同步资产
 
-先从 [Release](https://github.com/2510551378/T3B-HD/releases/tag/runtime-assets-20261023-v2) 下载运行包，并按 [ASSET_HANDOFF.md](ASSET_HANDOFF.md) 安装。`Content`、C 原型 `assets`、原版输入不在 Git 源码树中；clone 后需先安装运行包。不要用旧 staging 脚本覆盖包含新增字段的 manifest。
+先从 [Release](https://github.com/2510551378/T3B-HD/releases/tag/runtime-assets-20261023-v3) 下载运行包，并按 [ASSET_HANDOFF.md](ASSET_HANDOFF.md) 安装。`Content`、C 原型 `assets`、原版输入不在 Git 源码树中；clone 后需先安装运行包。不要用旧 staging 脚本覆盖包含新增字段的 manifest。
 
 ## 3. C / SDL2 对照原型
 

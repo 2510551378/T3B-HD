@@ -1,0 +1,41 @@
+{
+  "schema": "t3b-m1-continuous-fire-verification/v1",
+  "passed": true,
+  "clip": "approach_fire",
+  "samples": 361,
+  "elapsed_seconds": 12.0,
+  "loop_seam_samples": 17,
+  "max_component_error_cm": 1.5248828120206781e-05,
+  "contact_candidate_distance_cm": {
+    "min": 1.1812166929474266,
+    "max": 1.3152562623049642
+  },
+  "max_barrel_direction_error_degrees": 7.917571076845593e-06,
+  "anchor_indices": {
+    "schema": "t3b-ue-continuous-fire/v1",
+    "action_clip": "approach_fire",
+    "body_contact_vertex": 1631,
+    "weapon_contact_vertex": 32,
+    "barrel_tip_vertex": 114,
+    "barrel_base_vertex": 121,
+    "samples": 361,
+    "seam_seconds": 0.11999999731779099,
+    "named_original_socket_recovered": false,
+    "actual_component_CPU_readback": true,
+    "all_csv_written": true
+  },
+  "inputs": {
+    "Aya": {
+      "file": "models/aya_approach_fire.bin",
+      "sha256": "24de0df5d4062546fd52cd40c5344e0ca088fb6683b4865b6e835b93ed71e219"
+    },
+    "Weapon": {
+      "file": "models/weapon_approach_fire.bin",
+      "sha256": "34eb9bafc04262ddcf442fea2694cec4e7febfc8b6f63ddf10e4dff175894cca"
+    }
+  },
+  "csv_sha256": "918dddd0b173f6418b6acf483bf7655818f3a5a2121816c720ee4430739de446",
+  "scope": "actual procedural CPU vertices, shared-clock/seam and geometry-derived contact/barrel candidates",
+  "named_original_socket_recovered": false,
+  "original_loop_timing_recovered": false
+}

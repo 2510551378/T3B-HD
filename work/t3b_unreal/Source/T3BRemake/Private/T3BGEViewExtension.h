@@ -5,7 +5,12 @@
 #include "RHIResources.h"
 
 class FTextureResource;
-struct FT3BGESection { uint32 First{}, Count{}, Atlas{}; };
+struct FT3BGESection {
+    uint32 First{}, Count{}, Atlas{};
+    bool Cull = true;
+    bool Blend = true;
+    bool DepthWrite = true;
+};
 struct FT3BGEWorldFrame {
     TArray<T3BGE::GPUVertex> Vertices;
     TArray<FT3BGESection> Sections;
@@ -14,7 +19,7 @@ struct FT3BGEWorldFrame {
 
 // Explicit source-compatibility pass. It draws real world vertices with the UE
 // view and writes main scene depth; it is not a bitmap overlay or material mask.
-// This version is scoped to the observed two-atlas/no-stencil blend contract.
+// Supports explicit per-draw blend/cull/depth and up to256 original atlases; no stencil/fog recovery.
 class FT3BGEViewExtension final : public FWorldSceneViewExtension {
 public:
     FT3BGEViewExtension(const FAutoRegister& Register, UWorld* World);

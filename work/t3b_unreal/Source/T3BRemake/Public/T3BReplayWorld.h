@@ -5,6 +5,7 @@
 #include "T3BReplayWorld.generated.h"
 
 class UProceduralMeshComponent;
+class UTexture2D;
 struct FT3BReplayState;
 struct FT3BReplayStateDeleter { void operator()(FT3BReplayState* Ptr) const; };
 
@@ -23,15 +24,24 @@ public:
     // Empty or "reference" restores the actor entries from manifest.json.
     void SetReplayActionClip(const FString& Label);
     bool WriteSourceProbe();
+    void SetOriginalMaterials(bool Enabled);
+    void SetFiring(bool Firing);
+    bool WriteMotionProbe();
 protected:
     virtual void BeginPlay() override;
+    virtual void EndPlay(const EEndPlayReason::Type Reason) override;
 private:
     bool LoadSourceBundle();
-    void ApplyReplay(float Seconds, bool CreateSections);
+    void ApplyReplay(float Seconds, bool CreateSections, bool ExactSample = false);
+    void StartFire();
+    void StopFire();
     void FailReplay(const FString& Reason);
     UPROPERTY(Transient) TArray<TObjectPtr<UProceduralMeshComponent>> ReplayMeshes;
+    UPROPERTY(Transient) TArray<TObjectPtr<UTexture2D>> ReplayAtlases;
     TUniquePtr<FT3BReplayState, FT3BReplayStateDeleter> State;
     double ReplaySeconds = 0.0;
     bool bReplayPaused = false;
     bool bReplayReady = false;
+    bool bOriginalMaterials = true;
+    bool bLoopPlayback = true;
 };

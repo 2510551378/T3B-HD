@@ -1,6 +1,8 @@
 # 当前交接状态
 
-最新交接验证：2026-10-23。运行包已在全新 clone 中安装、校验并启动，并通过 [GitHub Release](https://github.com/2510551378/T3B-HD/releases/tag/runtime-assets-20261023-v2) 提供下载；正式目标仍为独立 PC 高清重制，当前项目仍在开发。
+最新交接验证：2026-10-23。运行包已在全新 clone 中安装、校验并启动，并通过 [GitHub Release](https://github.com/2510551378/T3B-HD/releases/tag/runtime-assets-20261023-v3) 提供下载；正式目标仍为独立 PC 高清重制，当前项目仍在开发。
+
+最新 UE 改进见 [M1 v3](UE_M1_V3.md)：街景/角色共用按序主深度路径，修正 Aya 透体与透明层覆盖；reference/approach_fire 均使用共同循环相位，实际 probe 已跟随所选动作。
 
 ## 已有证据
 
@@ -23,8 +25,8 @@
 ## 接手后优先做
 
 1. **UE 可视验收 / cook**：Editor-hosted 地图和 reference CPU probe 已通过，继续同机位像素/材质检查，再测 cooked standalone Game。当前运行包通过 UE Editor host 启动，不包含 cooked 独立游戏。
-2. **修正 probe 的 clip 一致性**：检查 `T3BReplayWorld.cpp` 中 `WriteSourceProbe()` 使用 reference `Actor.Skin`、`ApplyReplay()` 使用选中 action clip 的潜在不一致；补齐 action pair 与 reference 几何/材质兼容验证。默认仍为 `reference`。
-3. **原材质视觉复核**：同相机、同帧检查 Aya 的身体/衣物、透明主深度、逐 draw CLUT。普通 UE translucent 不等价于原版 alpha blend + main depth write。
+2. **继续动作与事件恢复**：probe 已按实际选中的动作输出，static skin/material compatibility gate 已加入。当前循环是共享时间与 120 ms 过渡适配，还需原状态/事件调度。
+3. **扩展材质复核**：v3 同机位截图已确认头发/衣料/手臂自遮挡修复；继续原光照、fog/stencil 与更多姿态，不把当前 C face shade 当原版光照。
 4. **武器语义与连续动作**：source1/source2 marker 的数值恢复与 source1 的部分视觉 FX 链已有证据，但完整弹道/枪口语义及所有姿态尚未恢复；真实右手 timeline 当前 loaded、未绑定，禁止强行混接不同采集。
 5. **玩法与高清制作**：在原版接入可重复验证后迁移 M1，再补原 AI、碰撞/伤害、状态机和高清模型/材质。
 

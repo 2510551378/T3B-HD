@@ -39,6 +39,15 @@ def main() -> None:
         "-o", str(executable),
     ], check=True)
     subprocess.run([str(executable)], check=True)
+    playback = output / ("action_playback_tests.exe" if os.name == "nt" else "action_playback_tests")
+    subprocess.run([
+        compiler, "-std=c++17", "-O2", "-Wall", "-Wextra", "-Werror",
+        "-ffp-contract=off", str(project / "Tools/action_playback_tests.cpp"),
+        str(project / "Source/T3BRemake/Private/T3BActionClip.cpp"),
+        str(project / "Source/T3BRemake/Private/T3BSourceData.cpp"),
+        "-o", str(playback),
+    ], check=True)
+    subprocess.run([str(playback)], check=True)
     print("source_only_check=passed; UE/runtime/assets not exercised", flush=True)
 
 

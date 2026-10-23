@@ -59,6 +59,13 @@ def verify(project, tolerance):
         raise ValueError("UE probe metadata is missing, incomplete or from another producer")
     if not metadata.get("engine_version", "").startswith("5.8.") or metadata.get("scope") != "actual_procedural_component_CPU_world_positions":
         raise ValueError("UE engine version/probe scope differs from selected baseline")
+    active = metadata.get("action_clip", "reference")
+    if active != "reference":
+        candidates = [clip for clip in manifest.get("action_clips", []) if clip["label"] == active]
+        if len(candidates) != 1: raise ValueError("Probe active clip missing/ambiguous in manifest")
+        for actor in manifest["actors"]:
+            if actor["name"] == "Aya": actor["binary"] = candidates[0]["body"]
+            elif actor["name"] == "Weapon": actor["binary"] = candidates[0]["weapon"]
     data_root = project/"Content/SourceData"
     scene_path = data_root/manifest["scene"]["binary"]
     scene = scene_path.read_bytes()

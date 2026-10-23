@@ -1,6 +1,6 @@
 # 运行资产下载与交接
 
-Git 源码树仅承载源码与文档，运行资产通过 [GitHub Release](https://github.com/2510551378/T3B-HD/releases/tag/runtime-assets-20261023-v2) 单独下载。安装后以下目录保持仓库相对路径：
+Git 源码树仅承载源码与文档，运行资产通过 [GitHub Release](https://github.com/2510551378/T3B-HD/releases/tag/runtime-assets-20261023-v3) 单独下载。安装后以下目录保持仓库相对路径：
 
 | 目录 | 用途 |
 | --- | --- |
@@ -12,23 +12,23 @@ Git 源码树仅承载源码与文档，运行资产通过 [GitHub Release](http
 
 ## 可安装的运行包
 
-从 [运行资产 Release](https://github.com/2510551378/T3B-HD/releases/tag/runtime-assets-20261023-v2) 下载：
+从 [运行资产 Release](https://github.com/2510551378/T3B-HD/releases/tag/runtime-assets-20261023-v3) 下载：
 
-- [运行包 ZIP](https://github.com/2510551378/T3B-HD/releases/download/runtime-assets-20261023-v2/T3B-HD-runtime-assets-20261023-v2.zip)
-- [SHA-256 校验文件](https://github.com/2510551378/T3B-HD/releases/download/runtime-assets-20261023-v2/T3B-HD-runtime-assets-20261023-v2.zip.sha256)
-- [安装说明](https://github.com/2510551378/T3B-HD/releases/download/runtime-assets-20261023-v2/INSTALL_RUNTIME.md)
+- [运行包 ZIP](https://github.com/2510551378/T3B-HD/releases/download/runtime-assets-20261023-v3/T3B-HD-runtime-assets-20261023-v3.zip)
+- [SHA-256 校验文件](https://github.com/2510551378/T3B-HD/releases/download/runtime-assets-20261023-v3/T3B-HD-runtime-assets-20261023-v3.zip.sha256)
+- [安装说明](https://github.com/2510551378/T3B-HD/releases/download/runtime-assets-20261023-v3/INSTALL_RUNTIME.md)
 
 本地副本保存在 `dist/`。ZIP 内的早期私下传送提示属于打包时记录，当前下载与安装方式以本页和 Release 的 `INSTALL_RUNTIME.md` 为准。
 
 同事先更新源码，在仓库根目录执行（用 sidecar 中的实际 SHA-256 替换占位符）：
 
 ```powershell
-python -X utf8 scripts/runtime_bundle.py install 'C:\Transfer\T3B-HD-runtime-assets-20261023-v2.zip' --sha256 <SHA256>
+python -X utf8 scripts/runtime_bundle.py install 'C:\Transfer\T3B-HD-runtime-assets-20261023-v3.zip' --sha256 <SHA256>
 python -X utf8 scripts/asset_manifest.py verify
 .\scripts\run_m1.ps1
 ```
 
-运行包包含上述 655 个资产，以及 C 原型 exe、SDL2.dll/许可证、已编译的自有 UE Editor module；不含引擎、SDK、ISO、存档和采集 dump。安装会先逐项验证，再写入仓库相对路径；相同文件跳过，发现已修改文件默认拒绝覆盖。备份后可显式加 `--replace-existing`。
+运行包包含上述 655 个资产，以及 C 原型 exe、SDL2.dll/许可证、已编译的自有 UE Editor module；不含引擎、SDK、ISO、存档和采集 dump。安装会先逐项验证，再写入仓库相对路径；相同文件跳过，从先前运行包安装且未被修改的文件可自动升级；用户修改过的文件默认拒绝覆盖。备份后可显式加 `--replace-existing`。
 
 UE 使用本机已验证的 5.8.4 / CL 58902052 / module BuildId `55116800`：
 
@@ -40,7 +40,7 @@ UE 使用本机已验证的 5.8.4 / CL 58902052 / module BuildId `55116800`：
 
 启动器检查 UE BuildId、module 哈希和对应源文件，默认使用本次启动测试通过的 D3D11。相同引擎可直接加载预编译 module；引擎不同或代码变动时加 `-Build`，这需要 MSVC/SDK。首次启动可能编译 shader；运行包不是 cooked Unreal 独立游戏，画面与 gameplay 的限制见 `CURRENT_STATUS.md`。
 
-最终 ZIP SHA-256：`fd261d2218cd647cbcd07f111fba38cac72a0ab4af940aeba0ccb64ec66eecfc`。全新 clone 验证见 [delivery report](evidence/runtime_bundle_delivery_v2.json)：安装、655 资产身份、C source-spawn、UE 地图/probe 与 D3D11 启动均通过；重复安装写入 0 个 payload，已修改文件被拒绝覆盖。
+v3 ZIP SHA-256 见 Release 附带的 `.sha256`；v2 历史包的校验仍保留在旧 Release。全新 clone 验证见 [delivery report](evidence/runtime_bundle_delivery_v2.json)：安装、655 资产身份、C source-spawn、UE 地图/probe 与 D3D11 启动均通过；重复安装写入 0 个 payload，已修改文件被拒绝覆盖。
 
 维护者重新打包时，必须显式指定已验证的 build copy、引擎与 SDL 许可证：
 
@@ -73,3 +73,5 @@ python -X utf8 scripts/asset_manifest.py snapshot
 PPSSPP 采集时先复制存档与配置，在独立 emulator 目录启动；某些旧脚本会发送按键、继续执行 guest 或写输出。`trace_*_selftest.js` 使用模拟环境，不能当成真实运行采集。
 
 版本化运行包通过维护者发布的 Release 分发，不加入 Git 历史、Git LFS 或 Actions artifact。原 ISO、存档和采集 dump 不在运行包中；UE 引擎、SDK 和解析所需的第三方程序由开发者单独安装。
+
+UE 材质与连续射击修正、左键操作及同机位截图见 [M1 v3](UE_M1_V3.md)。

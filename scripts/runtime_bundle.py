@@ -179,11 +179,24 @@ def inspect_or_install(args) -> None:
             raise ValueError("Clone uses a different asset manifest; use the matching source revision")
         plans = []
         conflicts = []
+        previous = {}
+        installed_file = project_root / "build/runtime_bundle/installed_manifest.json"
+        if installed_file.exists() or installed_file.is_symlink():
+            destination(project_root, "build/runtime_bundle/README.txt")
+            reject_link(installed_file)
+            installed = json.loads(installed_file.read_text(encoding="utf-8"))
+            if installed.get("schema") != SCHEMA:
+                raise ValueError("Invalid previous runtime installation manifest")
+            previous = {row["path"]: row["sha256"] for row in installed["files"]}
+        upgraded = 0
         for row in manifest["files"]:
             target = destination(project_root, row["path"])
             identical = target.is_file() and target.stat().st_size == row["bytes"] and digest(target) == row["sha256"]
             if target.exists() and not identical:
-                conflicts.append(row["path"])
+                if target.is_file() and previous.get(row["path"]) == digest(target):
+                    upgraded += 1  # Unedited files from a known installed version.
+                else:
+                    conflicts.append(row["path"])
             if not identical:
                 plans.append((row, target))
         if conflicts and not args.replace_existing:
@@ -202,7 +215,7 @@ def inspect_or_install(args) -> None:
         if installed.exists() or installed.is_symlink():
             reject_link(installed)
         installed.write_bytes(encoded(manifest))
-    print(f"bundle_installation=passed; files={manifest['file_count']}; written={len(plans)}; root={project_root}")
+    print(f"bundle_installation=passed; files={manifest['file_count']}; written={len(plans)}; managed_upgrades={upgraded}; root={project_root}")
 
 
 def main() -> None:
