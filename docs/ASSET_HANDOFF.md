@@ -12,12 +12,12 @@ Git 仓库仅承载源码与文档。为了运行当前工程，同事需通过�
 
 ## 可安装的运行包
 
-维护者本地已提供 `dist/T3B-HD-runtime-assets-20261023-v1.zip` 与同名 `.zip.sha256`。通过双方约定的私有位置传送这两个文件；压缩包不上传到公开 GitHub。
+维护者本地已提供 `dist/T3B-HD-runtime-assets-20261023-v2.zip` 与同名 `.zip.sha256`。通过双方约定的私有位置传送这两个文件；压缩包不上传到公开 GitHub。
 
 同事先更新源码，在仓库根目录执行（用 sidecar 中的实际 SHA-256 替换占位符）：
 
 ```powershell
-python -X utf8 scripts/runtime_bundle.py install 'C:\Transfer\T3B-HD-runtime-assets-20261023-v1.zip' --sha256 <SHA256>
+python -X utf8 scripts/runtime_bundle.py install 'C:\Transfer\T3B-HD-runtime-assets-20261023-v2.zip' --sha256 <SHA256>
 python -X utf8 scripts/asset_manifest.py verify
 .\scripts\run_m1.ps1
 ```

@@ -7,6 +7,12 @@ param(
 )
 $ErrorActionPreference='Stop'
 [Console]::OutputEncoding=[System.Text.UTF8Encoding]::new($false)
+function Get-RuntimeSHA256([string]$Path) {
+    $stream=[System.IO.File]::OpenRead($Path)
+    $algorithm=[System.Security.Cryptography.SHA256]::Create()
+    try { return [System.BitConverter]::ToString($algorithm.ComputeHash($stream)).Replace('-','').ToLowerInvariant() }
+    finally { $algorithm.Dispose();$stream.Dispose() }
+}
 $repoRoot=[System.IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..'))
 $projectRoot=Join-Path $repoRoot 'work\t3b_unreal'
 $editorFile=Join-Path $EngineRoot 'Engine\Binaries\Win64\UnrealEditor.exe'
@@ -22,13 +28,13 @@ if(-not $Build){
     if($engineModules.BuildId -ne $bundle.engine_build_id){throw 'Precompiled module uses a different UE build. Install the matching engine or run with -Build.'}
     foreach($entry in $bundle.required_module_sources.PSObject.Properties){
         $path=Join-Path $repoRoot $entry.Name
-        if(-not(Test-Path -LiteralPath $path -PathType Leaf) -or (Get-FileHash -LiteralPath $path -Algorithm SHA256).Hash.ToLowerInvariant() -ne $entry.Value){
+        if(-not(Test-Path -LiteralPath $path -PathType Leaf) -or (Get-RuntimeSHA256 $path) -ne $entry.Value){
             throw "Sources differ from the precompiled module: $($entry.Name). Run with -Build."
         }
     }
     foreach($entry in @($bundle.files | Where-Object {$_.path -like 'work/t3b_unreal/Binaries/*'})){
         $path=Join-Path $repoRoot $entry.path
-        if(-not(Test-Path -LiteralPath $path -PathType Leaf) -or (Get-FileHash -LiteralPath $path -Algorithm SHA256).Hash.ToLowerInvariant() -ne $entry.sha256){throw "Precompiled module missing or changed: $($entry.path). Reinstall bundle or use -Build."}
+        if(-not(Test-Path -LiteralPath $path -PathType Leaf) -or (Get-RuntimeSHA256 $path) -ne $entry.sha256){throw "Precompiled module missing or changed: $($entry.path). Reinstall bundle or use -Build."}
     }
 }
 if($ValidateOnly){Write-Output 'UE launch prerequisites validated; editor not started.';return}
