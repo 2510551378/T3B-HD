@@ -1,5 +1,7 @@
 # UE M1 v3：材质遮挡与连续射击动作
 
+历史阶段记录；当前可玩版本与操作以 [M1 v4](UE_M1_V4.md) 为准。
+
 本轮修正 UE source replay 中 Aya 的材质遮挡、动作切换检查，以及连续射击循环中的身体/枪械同步。仍不是完整 UE 战斗切片，也没有新增高清纹理细节。
 
 ## 行为变化
@@ -12,11 +14,11 @@
 
 ## 查看和操作
 
-从 [v3 Release](https://github.com/2510551378/T3B-HD/releases/tag/runtime-assets-20261023-v3) 下载运行包，更新源码后安装。旧运行包中未修改的文件可以直接升级；本地修改过的资产仍会被保护。
+从 [v4 Release（包含本轮修正）](https://github.com/2510551378/T3B-HD/releases/tag/runtime-assets-20261023-v4) 下载运行包，更新源码后安装。旧运行包中未修改的文件可以直接升级；本地修改过的资产仍会被保护。
 
 ```powershell
-python -X utf8 scripts/runtime_bundle.py install 'C:\Transfer\T3B-HD-runtime-assets-20261023-v3.zip'
-powershell -NoProfile -ExecutionPolicy Bypass -File scripts/run_unreal.ps1 -Game
+python -X utf8 scripts/runtime_bundle.py install 'C:\Transfer\T3B-HD-runtime-assets-20261023-v4.zip'
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/run_unreal.ps1 -Game -ReplayOnly
 ```
 
 需要 UE 5.8.4 / BuildId `55116800`。按住左键推进连续射击动作，松开停在当前姿势。当前控制的是动作预览，尚未接入完整 UE 伤害/AI。
@@ -39,11 +41,11 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts/run_unreal.ps1 -Game
 
 旧 UE 透明材质：
 
-![Legacy UE translucency](https://github.com/2510551378/T3B-HD/releases/download/runtime-assets-20261023-v3/Aya_material_legacy.png)
+![Legacy UE translucency](https://github.com/2510551378/T3B-HD/releases/download/runtime-assets-20261023-v4/Aya_material_legacy.png)
 
 新按序主深度路径：
 
-![Ordered source depth](https://github.com/2510551378/T3B-HD/releases/download/runtime-assets-20261023-v3/Aya_material_fixed.png)
+![Ordered source depth](https://github.com/2510551378/T3B-HD/releases/download/runtime-assets-20261023-v4/Aya_material_fixed.png)
 
 ## 验证
 

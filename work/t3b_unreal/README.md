@@ -1,3 +1,28 @@
+# UE M1 v4：当前运行入口
+
+更新：2026-10-23。默认 `M1_SourceReplay` 地图已接入可玩战斗 Pawn / HUD / Director，详见 [UE_M1_V4.md](../../docs/UE_M1_V4.md)。v4 保留 v3 的 Aya 材质遮挡与 body/weapon 同步动作修复。
+
+- 8,551 个原街景可见三角形用于胶囊移动、射线与相机遮挡；敌人命中使用当前 posed 三角形，与墙体比较最近距离。
+- 已有锁定、持续射击、30 发弹夹、装填、敌人追击/近战、HP、受击/死亡、重启及 Overdive 镜头返回。玩法和碰撞属于 PC M1 适配规则。
+- Overdive 为 0.32 s 进入、1 s 停留、0.32 s 返回、3 s 冷却的镜头适配，尚无原版宿主转移系统。
+- 真实枪口射线准星；Mouse pitch 当前只改镜头，不改恢复动作的枪管 pitch。Aya 和武器共享原 affine 动作时间及 120 ms 循环过渡。
+- UE 5.8.4 / CL 58902052 / module BuildId `55116800`；Editor 编译通过。最终模块 NullRHI / D3D11 严格战斗检查均 14 项通过；D3D11 4 shots / 4 hits / enemy HP 0 和 Overdive 返回通过，外侧镜头已目视复验。v4 冷 clone 交付验证与 Release 上传仍在进行。
+- 源码检查共 127 项（57 source-data + 29 动作 + 41 碰撞）。
+
+安装 v4 匹配运行包后，从仓库根目录运行：
+
+```powershell
+.\scripts\run_unreal.ps1 -EngineRoot 'C:\Program Files\Epic Games\UE_5.8' -Game
+# 原 Spectator / source probe 诊断：
+.\scripts\run_unreal.ps1 -EngineRoot 'C:\Program Files\Epic Games\UE_5.8' -Game -ReplayOnly
+```
+
+WASD 移动、Shift 跑、Mouse View、RMB / Tab 锁定、LMB 连射、R 装填、E Overdive、Backspace 重启；Esc 释放鼠标，单击重新捕获。启动需要匹配的 UE Editor host；尚未 cooked，也尚未完成高清美术和完整原版系统。运行包[预定发布入口](https://github.com/2510551378/T3B-HD/releases/tag/runtime-assets-20261023-v4)与[安装方法](../../docs/ASSET_HANDOFF.md)。
+
+## 历史开发记录
+
+以下内容保留各阶段原始结论，含已过期的“当前/最新”“未安装 SDK”“尚未移植战斗”等表述。请以本页顶部和 [CURRENT_STATUS.md](../../docs/CURRENT_STATUS.md) 为当前状态；历史原始证据不被新结果改写。
+
 > GitHub 协作入口：[../../README.md](../../README.md)，当前状态见 [../../docs/CURRENT_STATUS.md](../../docs/CURRENT_STATUS.md)。下文保留各阶段历史记录；本机数据路径不随 Git 发布。
 
 ## 最新：type23 可选 RCX 随机路径已进入生产 core

@@ -9,7 +9,7 @@ class UTexture2D;
 struct FT3BReplayState;
 struct FT3BReplayStateDeleter { void operator()(FT3BReplayState* Ptr) const; };
 
-// Visual replay only. No original collision, AI, damage or events are inferred.
+// Source-preserving visuals with an explicit PC combat/collision adapter.
 UCLASS()
 class T3BREMAKE_API AT3BReplayWorld : public AActor
 {
@@ -27,6 +27,15 @@ public:
     void SetOriginalMaterials(bool Enabled);
     void SetFiring(bool Firing);
     bool WriteMotionProbe();
+    bool IsCombatReady() const;
+    bool GetCombatSpawns(FVector& AyaFeet, FVector& EnemyFeet, float& AyaYaw, float& EnemyYaw) const;
+    FVector MoveCombatCapsule(const FVector& Feet, const FVector& Delta, float Radius, float Height, float StepHeight, bool& Blocked) const;
+    bool TraceCombatScene(const FVector& Start, const FVector& End, FVector& Hit, float& Distance) const;
+    bool TraceCombatEnemy(const FVector& Start, const FVector& End, float& Distance) const;
+    bool GetCombatMuzzle(FVector& Origin, FVector& Direction) const;
+    void SetCombatActors(const FVector& AyaFeet, float AyaYaw, const FVector& EnemyFeet, float EnemyYaw, float HitFraction, bool Dead);
+    void SetCombatAnimation(bool Firing, bool Moving);
+    int32 CombatSolidTriangles() const;
 protected:
     virtual void BeginPlay() override;
     virtual void EndPlay(const EEndPlayReason::Type Reason) override;

@@ -1,40 +1,47 @@
 # 当前交接状态
 
-最新交接验证：2026-10-23。运行包已在全新 clone 中安装、校验并启动，并通过 [GitHub Release](https://github.com/2510551378/T3B-HD/releases/tag/runtime-assets-20261023-v3) 提供下载；正式目标仍为独立 PC 高清重制，当前项目仍在开发。
-
-最新 UE 改进见 [M1 v3](UE_M1_V3.md)：街景/角色共用按序主深度路径，修正 Aya 透体与透明层覆盖；reference/approach_fire 均使用共同循环相位，实际 probe 已跟随所选动作。
+更新：2026-10-23。最新实现为 [UE M1 v4 战斗切片](UE_M1_V4.md)；[v4 Release 目标](https://github.com/2510551378/T3B-HD/releases/tag/runtime-assets-20261023-v4)等待运行包交付验证与上传。正式目标仍是独立 PC 高清重制，当前使用 UE Editor-hosted 开发工程。
 
 ## 已有证据
 
 | 项目 | 事实与范围 |
 | --- | --- |
-| 正式引擎 | Unreal Engine 5.8 / C++；本机已有 5.8.4 的部分诊断运行记录 |
-| C 原型 | C/SDL2/OpenGL 2.1，可玩战斗验证；并非正式 UE 产品 |
-| Aya | 44 source bones、106 packets、3,456 顶点；35 个直接加权索引有 GE 对应；其余 9 个并非都必须出现在 draw palette |
-| 枪械与动作 | 原枪 243 顶点；60 帧同步 Aya/weapon source pair；`approach_fire` 为移动+开火采样，不是完整 locomotion |
-| 场景与敌人 | 街景 140 draws / 31,656 顶点 / 81 材质状态；一个 11-bone 原异形；碰撞为可见网格适配，8,551 个三角形 |
-| UE Game target | `T3BRemake Win64 Development` 实际完成编译链接，最新 marker probe 代码已包含；见 [构建快照](evidence/ue_game_build_markerprobe_v1.json) |
-| UE 最新启动 | 全新 clone + 运行包：Editor-hosted `-game` 成功加载地图，NullRHI probe exit 0；D3D11 离屏运行 31 帧后 exit 0。见 [交接验证](evidence/runtime_bundle_delivery_v2.json)；旧 standalone Game loose-map 失败仍未验证修复 |
-| UE probe | Aya/weapon/Twisted 全 60 samples 与 Street 的实际组件 CPU-world 顶点通过独立比较，最大误差小于 0.0001 cm；`weapon_markers.json` 实际生成。见 [CPU 核验](evidence/runtime_bundle_ue_cpu_v2.json)，不代表像素/材质/玩法通过 |
-| 工具链 | MSVC 14.44、Windows SDK 10.0.22621.0、.NET Framework 4.8 SDK 已安装；本次 `T3BRemakeEditor Win64 Development` 构建返回成功 |
-| 运行包 | 655 个资产 + C exe/SDL2/自有 UE module/交接说明，共 662 个 payload 文件、约 21.8 MiB ZIP；全新 clone 的 C source-spawn 为 4 hits、enemy dead、Overdive 返回通过 |
-| 高清化 | 可选 4× atlas 重采样已有原型；缺失纹理细节、脸部/服装重建和完整高清美术尚未完成 |
+| 引擎与工具链 | UE 5.8.4 / CL 58902052 / module BuildId `55116800`；MSVC 14.44、Windows SDK 10.0.22621.0、.NET Framework 4.8 SDK；Editor target 实际编译通过 |
+| Aya / 武器 | 44 source bones、106 packets、3,456 Aya 顶点；原枪 243 顶点；60 帧同步 pair；reference / approach_fire 共用相位及 120 ms PC 循环过渡 |
+| 材质 | 街景和角色共用按序主深度路径，修正 Aya 透体和异形覆盖；原 CLUT、UV 和 alpha 保留；原版完整光照/fog/stencil 尚未复现 |
+| 场景与敌人 | 街景 140 draws / 31,656 顶点 / 81 材质状态；一个 11-bone 原版 Twisted；8,551 个可见网格三角形用于碰撞适配 |
+| 玩家与射击 | WASD / Shift、越肩相机遮挡、锁定、真实枪口方向准星；场景与实际 posed enemy 三角形做同一有限射线的最近命中选择，墙体优先阻挡 |
+| 战斗规则 | 敌人追击 55 cm/s、近战 20 damage；双方 100 HP；每发 25 damage、30 发弹夹、射击间隔 0.22 s、装填 1.2 s；受击反馈、死亡和重启 |
+| Overdive | PC 镜头适配：0.32 s 进入、1 s 停留、0.32 s 返回、3 s 冷却；尚无原版宿主/意识转移系统 |
+| 实际 UE 验证 | 最终模块 NullRHI 和 D3D11 严格战斗检查均 14 项通过；D3D11 记录 4 shots / 4 hits / enemy HP 0、Overdive 1 次返回；外侧 Overdive 截图已目视确认无穿躯体 |
+| 独立源码检查 | 57 source-data + 29 动作 + 41 碰撞，共 127 项；CI 不替代 UE 构建或画面检查 |
+| 运行资产 | 655 个原资产；Release 另含 C exe / SDL2 / 自有 UE module，未包含 UE 引擎；v4 冷 clone 交付验证与公开发布仍在进行 |
+| 高清化 | 原版资源已接入；可选 4× atlas 重采样仅为原型；脸部、服装细节重建和完整高清美术尚未完成 |
 
-`docs/evidence/` 是本机历史报告副本，包含当时绝对路径及哈希；报告引用的大文件不在 Git 中。仓库 CI 只验证源码语法和独立 source-data core。
+v3 的材质与连续动作证据保留在 [历史报告](UE_M1_V3.md)，其修复已包含于 v4。旧运行包的冷 clone 交付记录见 [v2 delivery](evidence/runtime_bundle_delivery_v2.json)，不能据此推断 v4 已完成相同验证。`docs/evidence/` 是本机报告副本，部分大文件和绝对路径仅在原机器存在。
+
+## 启动与操作
+
+安装匹配的运行包后，`scripts/run_unreal.ps1 -Game` 进入战斗；`-Game -ReplayOnly` 保留原 Spectator 与 source probe 路径。运行包尚未 cooked，需要 UE Editor host。
+
+- WASD 移动，Shift 跑，Mouse 调整观察方向。
+- RMB / Tab 锁定，LMB 连续射击，R 装填，Backspace 重启。
+- E 触发锁定目标的 Overdive 镜头；Esc 释放鼠标，单击重新捕获。
+
+准星投影实际原枪管射线。Mouse 上下当前只调整镜头，不改变已恢复源动作的枪管 pitch；锁定只校准水平 yaw。碰撞、敌人行为、伤害、死亡表现和 Overdive 为 PC M1 规则，未冒充原版格式恢复结果。
 
 ## 接手后优先做
 
-1. **UE 可视验收 / cook**：Editor-hosted 地图和 reference CPU probe 已通过，继续同机位像素/材质检查，再测 cooked standalone Game。当前运行包通过 UE Editor host 启动，不包含 cooked 独立游戏。
-2. **继续动作与事件恢复**：probe 已按实际选中的动作输出，static skin/material compatibility gate 已加入。当前循环是共享时间与 120 ms 过渡适配，还需原状态/事件调度。
-3. **扩展材质复核**：v3 同机位截图已确认头发/衣料/手臂自遮挡修复；继续原光照、fog/stencil 与更多姿态，不把当前 C face shade 当原版光照。
-4. **武器语义与连续动作**：source1/source2 marker 的数值恢复与 source1 的部分视觉 FX 链已有证据，但完整弹道/枪口语义及所有姿态尚未恢复；真实右手 timeline 当前 loaded、未绑定，禁止强行混接不同采集。
-5. **玩法与高清制作**：在原版接入可重复验证后迁移 M1，再补原 AI、碰撞/伤害、状态机和高清模型/材质。
+1. 完成 v4 冷 clone 安装及发布包验收，再测试 cooked standalone Game。
+2. 恢复更多 idle / strafe / 受击 / 倒地动作及原状态/事件调度；当前 approach_fire 不是完整 locomotion。
+3. 继续原版光照、fog/stencil 和更多姿态的材质复核，再推进高清模型/贴图。
+4. 恢复真实武器 socket / muzzle 语义及 pitch 控制；真实右手 timeline 当前 loaded、未绑定，不混接不同采集。
+5. 扩展原碰撞、AI、伤害和章节解析，逐步替换 PC 适配规则。
 
-## 数据与工具的已知限制
+## 数据与工具限制
 
-- 当前 source bundle 的 `coordinates.pc_to_ue` 文本仍有旧 `(z,x,y)*100` 描述；实际 core `ToUE` 是 **`(PC.z, -PC.x, PC.y) * 100`**。不要据旧元数据二次变换资产，修复需同时校验相关工具。
-- `stage_source_bundle.py` 是早期生成器，重跑可能丢失后加的 FSD/action/marker manifest 字段。先备份 bundle，再扩展生成器与对应 gate。
-- 某些验证器读取 manifest 中原机器绝对 provenance 路径；同事迁移后需显式适配路径，不能把找不到旧路径当内容不匹配。
-- CLUT 206 signatures / 84 matches / 122 unmatched 来自特定 `frame_*.ppdmp` 采集集合。旧 coverage 检查不能证明所有命名方式和全部 GE captures 已覆盖。
-- 原版游戏整体、完整章节、AI、原碰撞/伤害和所有动作尚未解析完成。已有 native GPU 或 UE 诊断图不代表正式 C++ M1 已验收。
-- 历史文件中“未安装 SDK”“UE 从未编译”等结论属于当时阶段，优先采用本页及对应终态证据。
+- source bundle 的 `coordinates.pc_to_ue` 文本仍有旧描述；实际 core `ToUE` 是 **`(PC.z, -PC.x, PC.y) * 100`**。不要据旧元数据二次变换资产。
+- `stage_source_bundle.py` 是早期生成器，重跑可能丢失后加的 FSD/action/marker manifest 字段；先备份并扩展对应 gate。
+- 某些验证器读取原机器绝对 provenance 路径，迁移后须显式适配路径。
+- CLUT 206 signatures / 84 matches / 122 unmatched 来自特定采集集合，不能代表全部 GE captures。
+- 历史记录中的“未安装 SDK”“UE 从未编译”“尚未移植战斗”属于当时阶段，以本页及最新证据为准。

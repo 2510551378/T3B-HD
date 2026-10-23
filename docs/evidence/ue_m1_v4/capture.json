@@ -1,0 +1,27 @@
+{
+  "schema": "t3b-m1-combat-capture/v1",
+  "engine": "5.8.4-58902052+++UE5+Release-5.8",
+  "scope": "actual D3D11 normal gameplay with enemy AI enabled; visual review required",
+  "samples": [
+    {
+      "name": "M1_locked",
+      "file": "C:\\Users\\25105\\Documents\\\u5bc4\u751f\u524d\u591c\u7b2c\u56db\u65e5\\dist\\ue_m1_20261023_v4\\final_capture\\M1_locked.png",
+      "sha256": "f0d9014bf2390783f2b6c8f087a456aca14b4e253b223bfbe3879262edb41c3b"
+    },
+    {
+      "name": "M1_overdive",
+      "file": "C:\\Users\\25105\\Documents\\\u5bc4\u751f\u524d\u591c\u7b2c\u56db\u65e5\\dist\\ue_m1_20261023_v4\\final_capture\\M1_overdive.png",
+      "sha256": "3b7038050a38638b31564447a60f80f0feaa90c8df0032ab086c268be121857d"
+    },
+    {
+      "name": "M1_hit",
+      "file": "C:\\Users\\25105\\Documents\\\u5bc4\u751f\u524d\u591c\u7b2c\u56db\u65e5\\dist\\ue_m1_20261023_v4\\final_capture\\M1_hit.png",
+      "sha256": "c6a8a6a0668b74337dba7b4640bcbe26306c8493a2e550989a8cf644f0174a7a"
+    },
+    {
+      "name": "M1_clear",
+      "file": "C:\\Users\\25105\\Documents\\\u5bc4\u751f\u524d\u591c\u7b2c\u56db\u65e5\\dist\\ue_m1_20261023_v4\\final_capture\\M1_clear.png",
+      "sha256": "f4f20dbc0680456089829a696f57f6a992e457441b8a762bb2d40f719d16a8fc"
+    }
+  ]
+}

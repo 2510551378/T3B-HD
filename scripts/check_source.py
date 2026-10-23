@@ -48,6 +48,15 @@ def main() -> None:
         "-o", str(playback),
     ], check=True)
     subprocess.run([str(playback)], check=True)
+    collision = output / ("combat_collision_tests.exe" if os.name == "nt" else "combat_collision_tests")
+    subprocess.run([
+        compiler, "-std=c++17", "-O2", "-Wall", "-Wextra", "-Werror",
+        "-ffp-contract=off", str(project / "Tools/combat_collision_tests.cpp"),
+        str(project / "Source/T3BRemake/Private/T3BCombatCollision.cpp"),
+        str(project / "Source/T3BRemake/Private/T3BSourceData.cpp"),
+        "-o", str(collision),
+    ], check=True)
+    subprocess.run([str(collision)], check=True)
     print("source_only_check=passed; UE/runtime/assets not exercised", flush=True)
 
 

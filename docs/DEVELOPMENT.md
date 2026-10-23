@@ -10,7 +10,7 @@ Python 3.10+、C++17 `g++`（本机原有 Strawberry MinGW 可用）：
 python -X utf8 scripts/check_source.py
 ```
 
-无需游戏数据或额外 Python 包。输出在忽略的 `build/source_check/`，执行 57 项 synthetic source-data tests 和 29 项动作兼容性/连续循环 tests。GitHub Actions 的 Linux 结果不替代 Windows/UE 验证。
+无需游戏数据或额外 Python 包。输出在忽略的 `build/source_check/`，执行 57 项 source-data、29 项动作兼容性/连续循环、41 项碰撞 tests，共 127 项。GitHub Actions 的 Linux 结果不替代 Windows/UE 验证。
 
 分析工具按需使用隔离环境：
 
@@ -23,7 +23,7 @@ py -3 -m venv .venv
 
 ## 2. 同步资产
 
-先从 [Release](https://github.com/2510551378/T3B-HD/releases/tag/runtime-assets-20261023-v3) 下载运行包，并按 [ASSET_HANDOFF.md](ASSET_HANDOFF.md) 安装。`Content`、C 原型 `assets`、原版输入不在 Git 源码树中；clone 后需先安装运行包。不要用旧 staging 脚本覆盖包含新增字段的 manifest。
+v4 运行包将发布至 [Release](https://github.com/2510551378/T3B-HD/releases/tag/runtime-assets-20261023-v4)，发布后按 [ASSET_HANDOFF.md](ASSET_HANDOFF.md) 安装。`Content`、C 原型 `assets`、原版输入不在 Git 源码树中；clone 后需先安装匹配的运行包。不要用旧 staging 脚本覆盖包含新增字段的 manifest。
 
 ## 3. C / SDL2 对照原型
 
@@ -50,9 +50,21 @@ try {
 .\work\t3b_unreal\Tools\build_unreal.ps1 -EngineRoot 'C:\Program Files\Epic Games\UE_5.8' -Target Editor
 ```
 
-资产交接完成、Editor target 构建成功后，用 UnrealEditor 打开 `work/t3b_unreal/T3BRemake.uproject`。默认地图为 `M1_SourceReplay`；运行后控制台 `T3B.Replay.Probe` 应写到项目 `Saved/SourceReplay/`，需核验实际输出及日志。这个步骤尚未在最新正式模块上验收。
+资产交接完成、Editor target 构建成功后，用 UnrealEditor 打开 `work/t3b_unreal/T3BRemake.uproject`。默认地图为 `M1_SourceReplay`，Play 启动战斗 Pawn / HUD / Director。也可从仓库根目录直接启动：
 
-Cook 示例（需要先修复并验证 Editor 运行，不保证当前成功）：
+```powershell
+.\scripts\run_unreal.ps1 -EngineRoot 'C:\Program Files\Epic Games\UE_5.8' -Game
+# 原 source replay 诊断，不创建战斗 Director：
+.\scripts\run_unreal.ps1 -EngineRoot 'C:\Program Files\Epic Games\UE_5.8' -Game -ReplayOnly
+```
+
+默认 D3D11；预编译模块要求 UE 5.8.4 / CL 58902052 / BuildId `55116800` 与对应源文件哈希一致。引擎或源码变化后加 `-Build`。运行方式是 Editor-hosted，尚未提供 cooked 独立 exe。
+
+WASD 移动、Shift 跑、Mouse View、RMB / Tab 锁定、LMB 连射、R 装填、E Overdive、Backspace 重启。Esc 释放鼠标并停止输入，单击重新捕获。准星对应实际枪管射线；Mouse pitch 只改变镜头。
+
+在 `-ReplayOnly` 模式用 `T3B.Replay.Probe` 输出 `Saved/SourceReplay/`，再运行 `Tools/verify_unreal_replay.py`。`T3B.Replay.MotionProbe` 与 `Tools/verify_m1_motion.py` 检查同步动作；精确命令和战斗验收见 [UE_M1_V4.md](UE_M1_V4.md)。本机最终模块的 NullRHI / D3D11 严格战斗检查均 14 项通过，D3D11 战斗流程及外侧 Overdive 镜头复验通过；v4 包交付复验仍在进行。
+
+Cook 示例（尚未验收，不保证当前成功）：
 
 ```powershell
 $engineRoot = 'C:\Program Files\Epic Games\UE_5.8'

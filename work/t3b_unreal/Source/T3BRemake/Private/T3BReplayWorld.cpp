@@ -1,11 +1,17 @@
 #include "T3BReplayWorld.h"
 #include "T3BActionClip.h"
+#include "T3BCombatCollision.h"
 #include "T3BGEWeaponMarkers.h"
 #include "T3BSourceData.h"
 #include "T3BGEViewExtension.h"
 #include "Engine/Texture2D.h"
 #include "Components/InputComponent.h"
 #include "InputCoreTypes.h"
+#include "IImageWrapperModule.h"
+#include "ImageCore.h"
+#include "Modules/ModuleManager.h"
+#include "Misc/CommandLine.h"
+#include "Misc/Parse.h"
 #include "Components/SceneComponent.h"
 #include "Dom/JsonObject.h"
 #include "Engine/Engine.h"
@@ -142,6 +148,21 @@ FVector UEPoint(T3BSource::Vec3 PC)
     return FVector(U.x, U.y, U.z);
 }
 
+T3BSource::Vec3 PCPoint(const FVector& UE) { return {float(-UE.Y/100),float(UE.Z/100),float(UE.X/100)}; }
+
+bool PositiveAlphaTexture(const FString& Relative) {
+    TArray<uint8> Encoded;
+    if (!FFileHelper::LoadFileToArray(Encoded, *BundlePath(Relative)))
+        throw T3BSource::FormatError("Collision texture is missing");
+    auto& Module=FModuleManager::LoadModuleChecked<IImageWrapperModule>(TEXT("ImageWrapper"));
+    FImage Image;
+    if(!Module.DecompressImage(Encoded.GetData(),Encoded.Num(),Image))
+        throw T3BSource::FormatError("Cannot decode collision texture alpha");
+    FImage RGBA; Image.CopyTo(RGBA,ERawImageFormat::BGRA8,EGammaSpace::Linear);
+    for(int64 I=3;I<RGBA.RawData.Num();I+=4) if(RGBA.RawData[I]==0)return false;
+    return true;
+}
+
 void SetSection(UProceduralMeshComponent* Mesh, int32 Section, const TArray<FVector>& Points,
                 const TArray<FVector2D>& UV, const TArray<FLinearColor>& Colors, bool Create)
 {
@@ -170,6 +191,13 @@ void SetSection(UProceduralMeshComponent* Mesh, int32 Section, const TArray<FVec
 struct FT3BReplayState
 {
     T3BSource::Scene Scene;
+    T3BCombat::CollisionWorld Collision;
+    bool Combat=false, CombatDead=false, CombatFiring=false, CombatMoving=false;
+    FVector AyaFeet=FVector::ZeroVector, EnemyFeet=FVector::ZeroVector;
+    float AyaYaw=0, EnemyYaw=0, Hurt=0, DeathSeconds=0;
+    TArray<FVector> EnemyVertices;
+    FVector Muzzle=FVector::ZeroVector, Barrel=FVector::ForwardVector;
+    bool MuzzleValid=false;
     TArray<UMaterialInterface*> SceneMaterials;
     TArray<FT3BGESection> SceneSections;
     TArray<T3BGE::GPUVertex> SceneVertices;
@@ -189,6 +217,14 @@ const T3BSource::Skin& PlaybackSkin(const FT3BReplayState& State, const FReplayA
         if (Actor.Name == TEXT("Weapon")) return Clip.Pair.weapon;
     }
     return Actor.Skin;
+}
+FVector CombatPoint(const FT3BReplayState& State,const FReplayActorData& Actor,const T3BSource::Skin& Skin,T3BSource::Vec3 P) {
+    if(!State.Combat) return UEPoint(T3BSource::ToPC(Skin,P,Actor.Spawn[0],Actor.Spawn[1],Actor.Spawn[2]));
+    FVector Local=UEPoint(T3BSource::ToPC(Skin,P,0,0,0));
+    const bool Enemy=Actor.Name==TEXT("Twisted");
+    // Death/hit are explicit PC presentation adapters, not recovered animation clips.
+    const float Pitch=Enemy?(State.CombatDead?FMath::Clamp(State.DeathSeconds/.55f,0.f,1.f)*85.f:State.Hurt*9.f):0;
+    return FRotator(Pitch,Enemy?State.EnemyYaw:State.AyaYaw,0).RotateVector(Local)+(Enemy?State.EnemyFeet:State.AyaFeet);
 }
 }
 void FT3BReplayStateDeleter::operator()(FT3BReplayState* Ptr) const { delete Ptr; }
@@ -225,8 +261,8 @@ void AT3BReplayWorld::BeginPlay()
         if (bReplayReady)
         {
             ApplyReplay(0.0f, true);
-            EnableInput(GetWorld()->GetFirstPlayerController());
-            if (InputComponent) {
+            if (FParse::Param(FCommandLine::Get(), TEXT("T3BReplayOnly"))) EnableInput(GetWorld()->GetFirstPlayerController());
+            if (InputComponent && FParse::Param(FCommandLine::Get(), TEXT("T3BReplayOnly"))) {
                 InputComponent->BindKey(EKeys::LeftMouseButton, IE_Pressed, this, &AT3BReplayWorld::StartFire);
                 InputComponent->BindKey(EKeys::LeftMouseButton, IE_Released, this, &AT3BReplayWorld::StopFire);
             }
@@ -262,6 +298,14 @@ bool AT3BReplayWorld::LoadSourceBundle()
     TArray<FT3BGESection> SceneProfiles;
     for(const auto& Entry:JsonArray(SceneDescription,TEXT("materials")))
         SceneProfiles.Add(OrderedMaterial(ValueObject(Entry),1.f,ReplayAtlases));
+    std::vector<bool> Solid;
+    for(const auto& Entry:JsonArray(SceneDescription,TEXT("materials"))) {
+        const auto M=ValueObject(Entry);
+        Solid.push_back(M->GetNumberField(TEXT("blend"))==0 && M->GetNumberField(TEXT("depth_write"))!=0 &&
+            PositiveAlphaTexture(JsonString(M,TEXT("texture"))));
+    }
+    State->Collision.Build(State->Scene,Solid);
+    UE_LOG(LogT3BReplay,Display,TEXT("PC visible geometry collision: %llu solid triangles"),uint64(State->Collision.SolidTriangleCount()));
     for(const auto& Draw:State->Scene.draws){
         auto Section=SceneProfiles[Draw.material];Section.First=uint32(State->SceneVertices.Num());Section.Count=Draw.count;
         State->SceneSections.Add(Section);
@@ -407,6 +451,9 @@ void AT3BReplayWorld::ApplyReplay(float Seconds, bool CreateSections, bool Exact
         const auto Phase = T3BAction::PlaybackPhase(Seconds, Skin.time.back(), bLoopPlayback && !ExactSample);
         const auto Posed = T3BAction::Pose(Skin, Phase);
         UProceduralMeshComponent* Mesh = ReplayMeshes[static_cast<int32>(Index) + 1];
+        const bool Enemy=Actor.Name==TEXT("Twisted");
+        if(Enemy)State->EnemyVertices.Reset();
+        TArray<FVector> WeaponPoints;
         Mesh->SetVisibility(!(bOriginalMaterials && Actor.Atlas >= 0));
         for (size_t Section = 0; Section < Skin.packets.size(); ++Section)
         {
@@ -422,9 +469,13 @@ void AT3BReplayWorld::ApplyReplay(float Seconds, bool CreateSections, bool Exact
                     FaceShade = 0.75f + 0.25f * FMath::Max(0.0f, static_cast<float>(SourceNormal.Y * 0.7 + SourceNormal.Z * 0.3));
                     if (Skin.flags & 2) FaceShade *= 0.5f;
                 }
-                Points.Add(UEPoint(T3BSource::ToPC(Skin, Posed[V], Actor.Spawn[0], Actor.Spawn[1], Actor.Spawn[2])));
+                const FVector Point=CombatPoint(*State,Actor,Skin,Posed[V]);
+                Points.Add(Point);
+                if(Enemy)State->EnemyVertices.Add(Point);
+                if(Actor.Name==TEXT("Weapon"))WeaponPoints.Add(Point);
                 UV.Add(FVector2D(Skin.vertices[V].uv.u, Skin.vertices[V].uv.v));
-                Colors.Add(FLinearColor(FaceShade, FaceShade, FaceShade, 1.0f));
+                const float Flash=Enemy?State->Hurt*.45f:0;
+                Colors.Add(FLinearColor(FaceShade+Flash, FaceShade+Flash*.35f, FaceShade, 1.0f));
             }
             if (Actor.Atlas >= 0 && bOriginalMaterials) {
                 OrderedFrame->Sections.Add({uint32(OrderedFrame->Vertices.Num()), Packet.count,
@@ -440,6 +491,13 @@ void AT3BReplayWorld::ApplyReplay(float Seconds, bool CreateSections, bool Exact
             SetSection(Mesh, static_cast<int32>(Section), Points, UV, Colors, CreateSections);
             if (CreateSections) Mesh->SetMaterial(static_cast<int32>(Section), Actor.Materials[Packet.material]);
         }
+        if(WeaponPoints.Num()>121) {
+            // Geometry-derived barrel sections, shared with the independent motion probe.
+            // This is not an inferred original source1/2 named muzzle socket.
+            State->Muzzle=WeaponPoints[114];
+            State->Barrel=(WeaponPoints[114]-WeaponPoints[121]).GetSafeNormal();
+            State->MuzzleValid=!State->Barrel.IsNearlyZero();
+        }
     }
     TArray<FTextureResource*> Resources;
     for (UTexture2D* Texture : ReplayAtlases) Resources.Add(Texture->GetResource());
@@ -449,9 +507,11 @@ void AT3BReplayWorld::ApplyReplay(float Seconds, bool CreateSections, bool Exact
 void AT3BReplayWorld::Tick(float DeltaSeconds)
 {
     Super::Tick(DeltaSeconds);
-    if (!bReplayReady || bReplayPaused) return;
+    if (!bReplayReady) return;
+    if(State->Combat && State->CombatDead)State->DeathSeconds+=DeltaSeconds;
+    if (bReplayPaused && !State->Combat) return;
     // Preview loop only; it does not claim the original clips loop.
-    ReplaySeconds += static_cast<double>(DeltaSeconds);
+    if(!State->Combat || State->CombatFiring || State->CombatMoving)ReplaySeconds += static_cast<double>(DeltaSeconds);
     // Retain elapsed remainder; body/weapon evaluate the same phase, including the seam.
     try { ApplyReplay(static_cast<float>(ReplaySeconds), false); }
     catch (const std::exception& Error) { FailReplay(UTF8_TO_TCHAR(Error.what())); }
@@ -488,6 +548,68 @@ void AT3BReplayWorld::SetReplayActionClip(const FString& Label)
 }
 
 void AT3BReplayWorld::SetReplayPaused(bool Paused) { bReplayPaused = Paused; }
+bool AT3BReplayWorld::IsCombatReady() const { return bReplayReady && State && State->Collision.SolidTriangleCount()>0; }
+int32 AT3BReplayWorld::CombatSolidTriangles() const { return IsCombatReady()?int32(State->Collision.SolidTriangleCount()):0; }
+bool AT3BReplayWorld::GetCombatSpawns(FVector& AyaFeet,FVector& EnemyFeet,float& AyaYaw,float& EnemyYaw) const {
+    if(!IsCombatReady())return false;
+    for(const auto& A:State->Actors) {
+        if(A.Name==TEXT("Aya")){AyaFeet=UEPoint({A.Spawn[0],0,A.Spawn[1]});AyaYaw=-FMath::RadiansToDegrees(A.Spawn[2]);}
+        if(A.Name==TEXT("Twisted")){EnemyFeet=UEPoint({A.Spawn[0],0,A.Spawn[1]});EnemyYaw=-FMath::RadiansToDegrees(A.Spawn[2]);}
+    }
+    for(FVector* P:{&AyaFeet,&EnemyFeet}) {
+        auto PC=PCPoint(*P);float Y=PC.y;
+        if(State->Collision.FindGround(PC,.3f,3.f,Y))P->Z=Y*100;
+    }
+    return true;
+}
+FVector AT3BReplayWorld::MoveCombatCapsule(const FVector& Feet,const FVector& Delta,float Radius,float Height,float StepHeight,bool& Blocked) const {
+    Blocked=false;if(!IsCombatReady())return Feet;
+    try {
+        const auto R=State->Collision.MoveCapsule(PCPoint(Feet),PCPoint(Delta),Radius/100,Height/100,StepHeight/100);
+        Blocked=R.wallBlocked||R.floorBlocked;return UEPoint(R.position);
+    } catch(const T3BSource::FormatError&) {Blocked=true;return Feet;}
+}
+bool AT3BReplayWorld::TraceCombatScene(const FVector& Start,const FVector& End,FVector& Hit,float& Distance) const {
+    Distance=float(FVector::Distance(Start,End));Hit=End;if(!IsCombatReady())return false;
+    if(Start.ContainsNaN()||End.ContainsNaN()||Distance<.001f)return false;
+    try {
+        const auto R=State->Collision.Raycast(PCPoint(Start),PCPoint(End));
+        if(!R.hit)return false;Hit=UEPoint(R.position);Distance=R.distance*100;return true;
+    } catch(const T3BSource::FormatError&) {return false;}
+}
+bool AT3BReplayWorld::TraceCombatEnemy(const FVector& Start,const FVector& End,float& Distance) const {
+    Distance=float(FVector::Distance(Start,End));if(!IsCombatReady()||State->CombatDead)return false;
+    if(Start.ContainsNaN()||End.ContainsNaN()||Distance<.001f||!FMath::IsFinite(Distance))return false;
+    const FVector Dir=(End-Start).GetSafeNormal();bool Hit=false;
+    for(int32 I=0;I+2<State->EnemyVertices.Num();I+=3) {
+        const FVector A=State->EnemyVertices[I],E1=State->EnemyVertices[I+1]-A,E2=State->EnemyVertices[I+2]-A;
+        const FVector P=FVector::CrossProduct(Dir,E2);const double Det=FVector::DotProduct(E1,P);
+        if(FMath::Abs(Det)<1.e-10)continue;
+        const FVector T=Start-A;const double U=FVector::DotProduct(T,P)/Det;if(U<0||U>1)continue;
+        const FVector Q=FVector::CrossProduct(T,E1);const double V=FVector::DotProduct(Dir,Q)/Det;if(V<0||U+V>1)continue;
+        const double D=FVector::DotProduct(E2,Q)/Det;
+        if(D>.01&&D<Distance){Distance=float(D);Hit=true;}
+    }
+    return Hit;
+}
+bool AT3BReplayWorld::GetCombatMuzzle(FVector& Origin,FVector& Direction) const {
+    if(!IsCombatReady()||!State->MuzzleValid)return false;
+    Direction=State->Barrel;Origin=State->Muzzle+Direction*2;return true;
+}
+void AT3BReplayWorld::SetCombatActors(const FVector& AyaFeet,float AyaYaw,const FVector& EnemyFeet,float EnemyYaw,float HitFraction,bool Dead) {
+    if(!IsCombatReady()||AyaFeet.ContainsNaN()||EnemyFeet.ContainsNaN()||!FMath::IsFinite(AyaYaw)||!FMath::IsFinite(EnemyYaw))return;
+    State->Combat=true;State->AyaFeet=AyaFeet;State->AyaYaw=AyaYaw;State->EnemyFeet=EnemyFeet;State->EnemyYaw=EnemyYaw;
+    State->Hurt=FMath::Clamp(HitFraction,0.f,1.f);
+    if(!Dead)State->DeathSeconds=0;
+    State->CombatDead=Dead;
+    try {ApplyReplay(float(ReplaySeconds),false);} catch(const std::exception& E){FailReplay(UTF8_TO_TCHAR(E.what()));}
+}
+void AT3BReplayWorld::SetCombatAnimation(bool Firing,bool Moving) {
+    if(!IsCombatReady())return;
+    const FString Desired=Moving?TEXT("approach_fire"):TEXT("");
+    if(Desired!=State->ActiveActionClip)SetReplayActionClip(Desired);
+    State->CombatFiring=Firing;State->CombatMoving=Moving;
+}
 void AT3BReplayWorld::StartFire() { SetFiring(true); }
 void AT3BReplayWorld::StopFire() { SetFiring(false); }
 void AT3BReplayWorld::SetFiring(bool Firing) {
@@ -505,6 +627,7 @@ void AT3BReplayWorld::SetOriginalMaterials(bool Enabled) {
 bool AT3BReplayWorld::WriteSourceProbe()
 {
     if (!bReplayReady || !State) return false;
+    if(State->Combat) { UE_LOG(LogT3BReplay,Warning,TEXT("Use -T3BReplayOnly for immutable source geometry probes."));return false; }
     const FString Directory = FPaths::Combine(FPaths::ProjectSavedDir(), TEXT("SourceReplay"));
     IFileManager::Get().MakeDirectory(*Directory, true);
     const TSharedPtr<FJsonObject> Metadata = MakeShared<FJsonObject>();
@@ -615,6 +738,7 @@ bool AT3BReplayWorld::WriteSourceProbe()
 
 bool AT3BReplayWorld::WriteMotionProbe() {
     if (!bReplayReady || !State) return false;
+    if(State->Combat) { UE_LOG(LogT3BReplay,Warning,TEXT("Use -T3BReplayOnly for immutable motion probes."));return false; }
     const FString ProbeDirectory=FPaths::Combine(FPaths::ProjectSavedDir(),TEXT("SourceReplay"));
     IFileManager::Get().MakeDirectory(*ProbeDirectory,true);
     if(!FFileHelper::SaveStringToFile(TEXT("{\"all_csv_written\":false}"),

@@ -1,0 +1,91 @@
+{
+	"schema": "t3b-ue-combat-slice/v1",
+	"engine_version": "5.8.4-58902052+++UE5+Release-5.8",
+	"run_id": "83A0B139-4D7F-1F65-97C3-A5A07E437895",
+	"solid_triangles": 8551,
+	"ready": true,
+	"smoke_complete": true,
+	"passed": true,
+	"smoke_frames": 236,
+	"elapsed_seconds": 2.3658714294433594,
+	"player_health": 100,
+	"enemy_health": 0,
+	"ammo": 26,
+	"shots": 4,
+	"hits": 4,
+	"blocked_shots": 0,
+	"misses": 0,
+	"movement_blocks": 0,
+	"enemy_attacks": 0,
+	"smoke_wall_stop_y_cm": -1543.8572998046875,
+	"smoke_occluder_distance_cm": 367.87588500976562,
+	"smoke_occluded_enemy_distance_cm": 597.72955322265625,
+	"smoke_enemy_attack_damage": 20,
+	"overdive_entries": 1,
+	"overdive_returns": 1,
+	"locked": false,
+	"enemy_dead": true,
+	"enemy_hit_geometry": "current_source_posed_triangles",
+	"collision_source": "source_visible_triangle_adapter",
+	"overdive_scope": "C_M1_camera_enter_hold_return_adapter",
+	"original_AI_or_damage_recovered": false,
+	"original_hit_or_death_animation_recovered": false,
+	"checks": [
+		{
+			"name": "source_capsule_wall_blocks_movement",
+			"passed": true
+		},
+		{
+			"name": "source_wall_occludes_real_enemy",
+			"passed": true
+		},
+		{
+			"name": "enemy_production_melee_damages_aya",
+			"passed": true
+		},
+		{
+			"name": "reload_timer_restores_full_ammo",
+			"passed": true
+		},
+		{
+			"name": "reset_restores_health_ammo_spawn",
+			"passed": true
+		},
+		{
+			"name": "lock_visible_live_target",
+			"passed": true
+		},
+		{
+			"name": "overdive_enter",
+			"passed": true
+		},
+		{
+			"name": "overdive_reentry_denied",
+			"passed": true
+		},
+		{
+			"name": "overdive_automatic_return",
+			"passed": true
+		},
+		{
+			"name": "overdive_cooldown_denies_entry",
+			"passed": true
+		},
+		{
+			"name": "source_muzzle_hits_posed_enemy_triangles",
+			"passed": true
+		},
+		{
+			"name": "enemy_hit_and_death",
+			"passed": true
+		},
+		{
+			"name": "continuous_shooting_ammo_rate",
+			"passed": true
+		},
+		{
+			"name": "dead_target_unlocks",
+			"passed": true
+		}
+	]
+}

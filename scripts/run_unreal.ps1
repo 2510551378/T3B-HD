@@ -3,6 +3,7 @@ param(
     [string]$EngineRoot='C:\Program Files\Epic Games\UE_5.8',
     [switch]$Build,
     [switch]$Game,
+    [switch]$ReplayOnly,
     [switch]$ValidateOnly
 )
 $ErrorActionPreference='Stop'
@@ -41,4 +42,5 @@ if($ValidateOnly){Write-Output 'UE launch prerequisites validated; editor not st
 if($Build){& (Join-Path $projectRoot 'Tools\build_unreal.ps1') -EngineRoot $EngineRoot -Target Editor}
 $editorArgs=@((Join-Path $projectRoot 'T3BRemake.uproject'),'-d3d11')
 if($Game){$editorArgs+=@('/Game/T3B/Maps/M1_SourceReplay','-game')}
+if($ReplayOnly){$editorArgs+='-T3BReplayOnly'}
 Start-Process -FilePath $editorFile -ArgumentList ($editorArgs | ForEach-Object {'"'+$_+'"'}) -WorkingDirectory $projectRoot
