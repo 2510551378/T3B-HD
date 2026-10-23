@@ -1,6 +1,6 @@
-# 本地资产交接
+# 运行资产下载与交接
 
-Git 仓库仅承载源码与文档。为了运行当前工程，同事需通过双方私下约定的位置取得以下目录，并保持相对路径：
+Git 源码树仅承载源码与文档，运行资产通过 [GitHub Release](https://github.com/2510551378/T3B-HD/releases/tag/runtime-assets-20261023-v2) 单独下载。安装后以下目录保持仓库相对路径：
 
 | 目录 | 用途 |
 | --- | --- |
@@ -12,7 +12,13 @@ Git 仓库仅承载源码与文档。为了运行当前工程，同事需通过�
 
 ## 可安装的运行包
 
-维护者本地已提供 `dist/T3B-HD-runtime-assets-20261023-v2.zip` 与同名 `.zip.sha256`。通过双方约定的私有位置传送这两个文件；压缩包不上传到公开 GitHub。
+从 [运行资产 Release](https://github.com/2510551378/T3B-HD/releases/tag/runtime-assets-20261023-v2) 下载：
+
+- [运行包 ZIP](https://github.com/2510551378/T3B-HD/releases/download/runtime-assets-20261023-v2/T3B-HD-runtime-assets-20261023-v2.zip)
+- [SHA-256 校验文件](https://github.com/2510551378/T3B-HD/releases/download/runtime-assets-20261023-v2/T3B-HD-runtime-assets-20261023-v2.zip.sha256)
+- [安装说明](https://github.com/2510551378/T3B-HD/releases/download/runtime-assets-20261023-v2/INSTALL_RUNTIME.md)
+
+本地副本保存在 `dist/`。ZIP 内的早期私下传送提示属于打包时记录，当前下载与安装方式以本页和 Release 的 `INSTALL_RUNTIME.md` 为准。
 
 同事先更新源码，在仓库根目录执行（用 sidecar 中的实际 SHA-256 替换占位符）：
 
@@ -66,4 +72,4 @@ python -X utf8 scripts/asset_manifest.py snapshot
 
 PPSSPP 采集时先复制存档与配置，在独立 emulator 目录启动；某些旧脚本会发送按键、继续执行 guest 或写输出。`trace_*_selftest.js` 使用模拟环境，不能当成真实运行采集。
 
-原资产的使用和私下交接由参与者自行确认权限；不把这些文件提交到此仓库、Git LFS、GitHub Release 或 Actions artifact。第三方程序与 SDL/UE SDK 单独安装。
+版本化运行包通过维护者发布的 Release 分发，不加入 Git 历史、Git LFS 或 Actions artifact。原 ISO、存档和采集 dump 不在运行包中；UE 引擎、SDK 和解析所需的第三方程序由开发者单独安装。

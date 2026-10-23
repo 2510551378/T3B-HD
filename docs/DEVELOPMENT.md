@@ -23,7 +23,7 @@ py -3 -m venv .venv
 
 ## 2. 同步资产
 
-先阅读 [ASSET_HANDOFF.md](ASSET_HANDOFF.md)。`Content`、C 原型 `assets`、原版输入不在 Git 中；clone 后不能直接打开完整场景。不要用旧 staging 脚本覆盖包含新增字段的 manifest。
+先从 [Release](https://github.com/2510551378/T3B-HD/releases/tag/runtime-assets-20261023-v2) 下载运行包，并按 [ASSET_HANDOFF.md](ASSET_HANDOFF.md) 安装。`Content`、C 原型 `assets`、原版输入不在 Git 源码树中；clone 后需先安装运行包。不要用旧 staging 脚本覆盖包含新增字段的 manifest。
 
 ## 3. C / SDL2 对照原型
 
@@ -39,7 +39,7 @@ try {
 } finally { Pop-Location }
 ```
 
-这些运行需要私有资产，测试退出码和日志应分别保存；`approach_fire` 只验证该片段选择/同步，不能要求它覆盖全部战斗状态。交互启动直接运行 `t3b_hd.exe`。旧 Makefile 保留，但默认 SDL 路径是本机历史布局。
+这些运行需要先安装运行包，测试退出码和日志应分别保存；`approach_fire` 只验证该片段选择/同步，不能要求它覆盖全部战斗状态。交互启动直接运行 `t3b_hd.exe`。旧 Makefile 保留，但默认 SDL 路径是本机历史布局。
 
 ## 4. UE 5.8
 

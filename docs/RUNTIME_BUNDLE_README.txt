@@ -1,7 +1,9 @@
-T3B-HD private runtime bundle
+T3B-HD runtime asset bundle
 
 1. Clone/update https://github.com/2510551378/T3B-HD into C:\src\T3B-HD.
-2. Transfer the ZIP and its .sha256 sidecar privately. Do not commit the ZIP.
+2. Download the ZIP and .sha256 from the versioned GitHub Release:
+   https://github.com/2510551378/T3B-HD/releases/tag/runtime-assets-20261023-v2
+   Do not add binary assets to Git history.
 3. From the clone root, install with the checksum printed in the sidecar:
    python -X utf8 scripts/runtime_bundle.py install C:\Transfer\T3B-HD-runtime-assets-20261023-v2.zip --sha256 <SHA256>
 4. Verify the original asset identities:

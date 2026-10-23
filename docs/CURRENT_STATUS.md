@@ -1,6 +1,6 @@
 # 当前交接状态
 
-最新交接验证：2026-10-23。私有运行包已在全新 clone 中安装、校验并启动；正式目标仍为独立 PC 高清重制，当前项目仍在开发。
+最新交接验证：2026-10-23。运行包已在全新 clone 中安装、校验并启动，并通过 [GitHub Release](https://github.com/2510551378/T3B-HD/releases/tag/runtime-assets-20261023-v2) 提供下载；正式目标仍为独立 PC 高清重制，当前项目仍在开发。
 
 ## 已有证据
 
@@ -15,7 +15,7 @@
 | UE 最新启动 | 全新 clone + 运行包：Editor-hosted `-game` 成功加载地图，NullRHI probe exit 0；D3D11 离屏运行 31 帧后 exit 0。见 [交接验证](evidence/runtime_bundle_delivery_v2.json)；旧 standalone Game loose-map 失败仍未验证修复 |
 | UE probe | Aya/weapon/Twisted 全 60 samples 与 Street 的实际组件 CPU-world 顶点通过独立比较，最大误差小于 0.0001 cm；`weapon_markers.json` 实际生成。见 [CPU 核验](evidence/runtime_bundle_ue_cpu_v2.json)，不代表像素/材质/玩法通过 |
 | 工具链 | MSVC 14.44、Windows SDK 10.0.22621.0、.NET Framework 4.8 SDK 已安装；本次 `T3BRemakeEditor Win64 Development` 构建返回成功 |
-| 私有运行包 | 655 个资产 + C exe/SDL2/自有 UE module/交接说明，共 662 个 payload 文件、约 21.8 MiB ZIP；全新 clone 的 C source-spawn 为 4 hits、enemy dead、Overdive 返回通过 |
+| 运行包 | 655 个资产 + C exe/SDL2/自有 UE module/交接说明，共 662 个 payload 文件、约 21.8 MiB ZIP；全新 clone 的 C source-spawn 为 4 hits、enemy dead、Overdive 返回通过 |
 | 高清化 | 可选 4× atlas 重采样已有原型；缺失纹理细节、脸部/服装重建和完整高清美术尚未完成 |
 
 `docs/evidence/` 是本机历史报告副本，包含当时绝对路径及哈希；报告引用的大文件不在 Git 中。仓库 CI 只验证源码语法和独立 source-data core。
