@@ -36,3 +36,5 @@ C 原型已接入 Aya 的 44 source bones、原版枪械、一个原版异形和
 原版 ISO、EBOOT/PRX、存档、内存/GE 转储、提取模型贴图、UE Content 包、第三方程序和构建产物均留在本地。仓库包含源码、工具、技术文档和资产身份清单；完整运行需按资产交接文档准备数据。原作及第三方内容不因本仓库而获得再分发授权，参见 [来源说明](THIRD_PARTY_NOTICES.md)。
 
 各子目录 README 和 `CONTINUATION_CHECKPOINT.md` 保留大量历史记录；当前状态以 `docs/CURRENT_STATUS.md` 为准。
+
+已有私有运行包，可将原模型、贴图、UE Content 与预编译项目模块安装到 clone；安装后用 `scripts/run_m1.ps1` 或 `scripts/run_unreal.ps1` 启动。具体校验、引擎版本与命令见[运行包交接](docs/ASSET_HANDOFF.md#可安装的运行包)。

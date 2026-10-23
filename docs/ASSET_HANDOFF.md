@@ -10,6 +10,38 @@ Git 仓库仅承载源码与文档。为了运行当前工程，同事需通过�
 
 本次整理已生成 [runtime_asset_manifest.json](runtime_asset_manifest.json)，逐项记录上述目录的相对路径、文件长度与 SHA-256。它不是资产下载地址，也不包含资源内容。
 
+## 可安装的运行包
+
+维护者本地已提供 `dist/T3B-HD-runtime-assets-20261023-v1.zip` 与同名 `.zip.sha256`。通过双方约定的私有位置传送这两个文件；压缩包不上传到公开 GitHub。
+
+同事先更新源码，在仓库根目录执行（用 sidecar 中的实际 SHA-256 替换占位符）：
+
+```powershell
+python -X utf8 scripts/runtime_bundle.py install 'C:\Transfer\T3B-HD-runtime-assets-20261023-v1.zip' --sha256 <SHA256>
+python -X utf8 scripts/asset_manifest.py verify
+.\scripts\run_m1.ps1
+```
+
+运行包包含上述 655 个资产，以及 C 原型 exe、SDL2.dll/许可证、已编译的自有 UE Editor module；不含引擎、SDK、ISO、存档和采集 dump。安装会先逐项验证，再写入仓库相对路径；相同文件跳过，发现已修改文件默认拒绝覆盖。备份后可显式加 `--replace-existing`。
+
+UE 使用本机已验证的 5.8.4 / CL 58902052 / module BuildId `55116800`：
+
+```powershell
+.\scripts\run_unreal.ps1 -EngineRoot 'C:\Program Files\Epic Games\UE_5.8'
+# 直接进入 source replay：
+.\scripts\run_unreal.ps1 -EngineRoot 'C:\Program Files\Epic Games\UE_5.8' -Game
+```
+
+启动器检查 UE BuildId、module 哈希和对应源文件。相同引擎可直接加载预编译 module；引擎不同或代码变动时加 `-Build`，这需要 MSVC/SDK。首次启动可能编译 shader；运行包不是 cooked Unreal 独立游戏，画面与 gameplay 的限制见 `CURRENT_STATUS.md`。
+
+维护者重新打包时，必须显式指定已验证的 build copy、引擎与 SDL 许可证：
+
+```powershell
+python -X utf8 scripts/runtime_bundle.py pack --output 'dist/T3B-HD-runtime-assets-NEW.zip' --ue-binary-root 'C:\T3BRemakeBuild_20261021_markerprobe' --engine-root 'C:\Program Files\Epic Games\UE_5.8' --sdl-license 'work/third_party_dl/sdl2/SDL2-2.32.10/LICENSE.txt'
+```
+
+打包器核对全部原资产身份、build copy 的源码/shader 与 UE BuildId，写入完整 payload 清单及外部 ZIP checksum；不覆盖已有版本。`verify ZIP --sha256 ...` 可只读检查压缩包。
+
 同步到 clone 根目录后运行：
 
 ```powershell
